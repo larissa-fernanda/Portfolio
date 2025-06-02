@@ -1,6 +1,6 @@
-<h1>Portifólio das APIs - Larissa Reis</h1>
+<h1>Portfólio das APIs - Larissa Reis</h1>
 <h2>Introdução</h2>
-<p>Este portifólio foi criado com o intuito de apresentar os projetos desenvolvidos ao longo do curso de Banco de Dados na Faculdade de Tecnologia de São José dos Campos - Prof. Jessen Vidal.</p>
+<p>Este portfólio foi criado com o intuito de apresentar os projetos desenvolvidos ao longo do curso de Banco de Dados na Faculdade de Tecnologia de São José dos Campos - Prof. Jessen Vidal.</p>
 <h2>Sumário</h2>
 <ul>
     <li><a href="#sobre_mim">Sobre mim</a></li>
@@ -28,6 +28,7 @@
     <li><a href="#api2">Projeto 2: Sistema de lançamento de horas-extras e sobreavisos desktop</a></li>
     <li><a href="#api3">Projeto 3: Sistema de lançamento de horas-extras e sobreavisos web</a></li>
     <li><a href="#api4">Projeto 4: Sistema de cadastro e atualização de parceiros</a></li>
+    <li><a href="#api5">Projeto 5: Sistema de análise de dados de recrutamento e seleção de candidatos</a></li>
 </ul>
 
 <h2 id="api1">Sistema de avaliação 360º</h2>
@@ -1973,3 +1974,32 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 </code></pre>
     </details>
 </ul>
+<h3>Hard Skills</h3>
+<ul>
+    <details><summary><strong>Arquitetura REST:</strong></summary>
+    <li> A arquitetura REST (Representational State Transfer) é um estilo arquitetural para sistemas distribuídos que enfatiza a comunicação entre sistemas por meio de interfaces simples e padronizadas. No contexto de desenvolvimento de APIs, REST define um conjunto de princípios e boas práticas para projetar serviços web que sejam escaláveis, flexíveis e de fácil manutenção. No projeto, os princípios RESTful foram utilizados para projetar e implementar as APIs do back-end por meio de rotas, garantindo que elas fossem acessíveis, interoperáveis e eficientes.</li></details>
+    <details><summary><strong>Protocolo HTTP:</strong></summary>
+    <li> O Protocolo de Transferência de Hipertexto (HTTP) é o protocolo de comunicação utilizado para transferir dados pela World Wide Web. Ele define um conjunto de métodos de requisição e códigos de status que especificam ações a serem realizadas em recursos identificados por URLs. No contexto do desenvolvimento web, o HTTP é usado para a comunicação entre clientes (navegadores) e servidores. Os clientes enviam solicitações HTTP para os servidores, que respondem com respostas HTTP contendo os dados solicitados. No projeto, o protocolo HTTP foi utilizado para definir as operações suportadas pelas APIs RESTful, como GET, POST, PUT e DELETE.</li></details>
+    <details><summary><strong>Rotas GET, POST, PUT e DELETE:</strong></summary>
+    <li> No contexto das APIs RESTful, GET, POST, PUT e DELETE são métodos HTTP utilizados para realizar operações em recursos.
+        <ul>
+            <details><summary><strong>GET:</strong></summary>
+            <li> O método GET é usado para recuperar informações sobre um recurso específico ou uma coleção de recursos. Ele não deve modificar o estado do recurso no servidor. No projeto, rotas GET foram implementadas para permitir a consulta de trilhas de parceiros.</li></details>
+            <details><summary><strong>POST:</strong></summary>
+            <li> O método POST é usado para criar um novo recurso no servidor. Ele envia dados ao servidor para serem processados e armazenados. No projeto, rotas POST foram utilizadas para permitir o cadastro de novas trilhas de parceiros.</li></details>
+            <details><summary><strong>PUT:</strong></summary>
+            <li> O método PUT é usado para atualizar um recurso existente no servidor. Ele substitui o recurso inteiro com os dados fornecidos na solicitação. No projeto, rotas PUT foram utilizadas para permitir a atualização de trilhas de parceiros.</li></details>
+            <details><summary><strong>DELETE:</strong></summary>
+            <li> O método DELETE é usado para excluir um recurso específico no servidor. Quando uma solicitação DELETE é enviada, o recurso correspondente é removido permanentemente. No projeto, rotas DELETE foram utilizadas para permitir a inativação de trilhas de parceiros.</li></details>
+        </ul>
+    </li></details>
+    <details><summary><strong>Java e Spring Boot:</strong></summary>
+    <li> Utilizados para o desenvolvimento do back-end da aplicação. Java é uma linguagem de programação popular que oferece portabilidade e robustez. Spring Boot é um framework que facilita a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.</li></details>
+    <details><summary><strong>MySQL:</strong></summary>
+    <li> Utilizado como o banco de dados relacional para armazenar os dados da aplicação. MySQL é um sistema de gerenciamento de banco de dados amplamente utilizado, conhecido por sua eficiência e escalabilidade.</li></details>
+    <details><summary><strong>Vue.js:</strong></summary>
+    <li> Utilizado para o desenvolvimento do front-end da aplicação. Vue.js é um framework JavaScript progressivo que permite a criação de interfaces de usuário interativas e reativas, facilitando o desenvolvimento de aplicações web modernas.</li></details>
+    <details><summary><strong>Git:</strong></summary>
+    <li> Utilizado para controle de versão do código-fonte. Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.</li></details>
+</ul>
+
