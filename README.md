@@ -1,4 +1,4 @@
-<h1>Portfólio das APIs - Larissa Reis</h1>
+<h1 align="center">Portfólio das APIs - Larissa Reis</h1>
 <h2>Introdução</h2>
 <p>Este portfólio foi criado com o intuito de apresentar os projetos desenvolvidos ao longo do curso de Banco de Dados na Faculdade de Tecnologia de São José dos Campos - Prof. Jessen Vidal.</p>
 <h2>Sumário</h2>
@@ -31,7 +31,7 @@
     <li><a href="#api5">Projeto 5: Sistema de análise de dados de recrutamento e seleção de candidatos</a></li>
 </ul>
 
-<h2 id="api1">Sistema de avaliação 360º</h2>
+<h2 id="api1">Projeto 1: Sistema de avaliação 360º</h2>
 
 <h3>Descrição</h3>
 
@@ -960,7 +960,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     </details>
 </ul>
 
-<h2 id="api2">Sistema de lançamento de horas-extras e sobreavisos desktop</h2>
+<h2 id="api2">Projeto 2: Sistema de lançamento de horas-extras e sobreavisos desktop</h2>
 
 <h3>Descrição</h3>
 
@@ -1580,7 +1580,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     </details>
 </ul>
 
-<h2 id="api3">Sistema de lançamento de horas-extras e sobreavisos web</h2>
+<h2 id="api3">Projeto 3: Sistema de lançamento de horas-extras e sobreavisos web</h2>
 
 <h3>Descrição</h3>
 
@@ -1700,7 +1700,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     <li> Utilizado para controle de versão do código-fonte. Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.</li></details>
 </ul>
 
-<h2 id="api4">Sistema de cadastro e atualização de parceiros</h2>
+<h2 id="api4">Projeto 4: Sistema de cadastro e atualização de parceiros</h2>
 
 <h3>Descrição</h3>
 
@@ -2001,5 +2001,60 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     <li> Utilizado para o desenvolvimento do front-end da aplicação. Vue.js é um framework JavaScript progressivo que permite a criação de interfaces de usuário interativas e reativas, facilitando o desenvolvimento de aplicações web modernas.</li></details>
     <details><summary><strong>Git:</strong></summary>
     <li> Utilizado para controle de versão do código-fonte. Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.</li></details>
+</ul>
+<h2 id="api5">Projeto 5: Sistema de análise de dados de recrutamento e seleção de candidatos</h2>
+<h3>Descrição</h3>
+<p align="justify">
+    Este projeto foi desenvolvido em parceria com a empresa <a href="https://pro4tech.com.br/" target="_blank">Pro4Tech</a>. 
+    O objetivo era criar uma aplicação web que permitisse a análise de dados de recrutamento e seleção de candidatos a partir de várias bases de dados já existentes, centralizando todos eles. 
+    Além disso, a ideia principal era gerar insights a partir dessas informações, como: 
+</p>
+
+<ul>
+    <li>Métricas de eficiência no recrutamento (ex. tempo médio de contratação, quantidade de contratações por processo seletivo).</li>
+    <li>Identificação de padrões e tendências para otimizar o processo de seleção.</li>
+    <li>Personalização de relatórios conforme as necessidades específicas dos gestores.</li>
+</ul>
+
+<p align="justify">
+    Um dos diferenciais deste projeto foi a aplicação da modelagem de dados em formato estrela, que é uma técnica de modelagem de dados utilizada em data warehouses para facilitar a análise e consulta de grandes volumes de dados. 
+    A modelagem estrela organiza os dados em tabelas de fatos e tabelas de dimensões, permitindo consultas eficientes e relatórios analíticos. 
+    Além disso, outro desafio técnico foi a implementação da cultura DevOps, integrando práticas de desenvolvimento e operações para melhorar a colaboração entre a equipe de desenvolvimento e a equipe de operações. 
+    Isso envolveu desde a padronização de rotinas de desenvolvimento da equipe até a automação de processos.
+</p>
+
+<p align="justify">
+    A aplicação foi desenvolvida em Java, utilizando o framework Spring Boot e o banco de dados MySQL. 
+    No front-end, foram utilizadas as tecnologias Vue.js, HTML, CSS e JavaScript.
+</p>
+<h3>Contribuições Individuais</h3>
+
+<p align="justify">
+    Na parte de desenvolvimento, atuei exclusivamente como Scrum Master, coordenando a equipe de desenvolvimento e garantindo que as práticas ágeis fossem seguidas. Já na parte de DevOps, fui responsável por implementar o versionamento do banco de dados, utilizando o Flyway para gerenciar as migrações do banco de dados. 
+    A seguir, estão listadas as minhas contribuições para o projeto:
+</p>
+<ul>
+    <details>
+        <summary>Como Scrum Master:</summary>
+        <ul>
+            <li>Coordenei a equipe de desenvolvimento, garantindo que as práticas ágeis fossem seguidas.</li>
+            <li>Organizei e conduzi as reuniões diárias e retrospectivas.</li>
+            <li>Facilitei a comunicação entre os membros da equipe e com o Product Owner.</li>
+            <li>Ajudei a remover impedimentos e garantir que a equipe estivesse focada nas metas da sprint.</li>
+            <li>Colaborei com o Product Owner para priorizar o backlog e definir as histórias de usuário.</li>
+            <li>Monitorei o progresso da equipe, com o auxílio do gráfico de Burndown, garantindo que as entregas fossem feitas dentro do prazo.</li>
+            <li>Documentei o README do projeto.</li>
+        </ul>
+    </details>
+    <details>
+        <summary>Como DevOps:</summary>
+        <ul>
+            <li>Implementei o versionamento do banco de dados, utilizando o Flyway para gerenciar as migrações do banco de dados.</li>
+            <li>Como o DevOps começou a ser implementado no meio do projeto, eu realizei a migração do banco de dados existente para o Flyway, criando os scripts de migração necessários para manter o histórico das alterações.</li>
+            <li>Criei os scripts de migração do banco de dados, garantindo que as alterações fossem aplicadas de forma controlada e rastreável.</li>
+            <li>Documentei o processo de versionamento do banco de dados, incluindo instruções sobre como criar novas migrações e aplicar as alterações no ambiente de produção.</li>
+            <li>Coloquei os scripts de migração dentro de um diretório que aponta para um repositório no GitHub, mesmo dentro do Java, para garantir que as alterações fossem sempre versionadas e rastreáveis.</li>
+        </ul>
+    </details>
 </ul>
 
