@@ -1686,91 +1686,146 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     <td>Arquitetura REST</td>
     <td>★★★★★★★★★☆</td>
     <td>
-        A arquitetura REST (Representational State Transfer) é um estilo arquitetural para sistemas distribuídos que enfatiza a comunicação entre sistemas por meio de interfaces simples e padronizadas.
-        No contexto do projeto, os princípios RESTful foram utilizados para projetar e implementar as APIs do back-end por meio de rotas, garantindo que elas fossem acessíveis, interoperáveis e eficientes.
+        <details>
+            <summary>Explicação: </summary>
+            <p>
+                A arquitetura REST (Representational State Transfer) é um estilo arquitetural para sistemas distribuídos que enfatiza a comunicação entre sistemas por meio de interfaces simples e padronizadas.
+                No contexto do projeto, os princípios RESTful foram utilizados para projetar e implementar as APIs do back-end por meio de rotas, garantindo que elas fossem acessíveis, interoperáveis e eficientes.
+            </p>
+        </details>
     </td>
   </tr>
   <tr>
     <td>Protocolo HTTP</td>
     <td>★★★★★★★★★☆</td>
     <td>
-        O Protocolo de Transferência de Hipertexto (HTTP) é o protocolo de comunicação utilizado para transferir dados pela World Wide Web. 
-        Ele define um conjunto de métodos de requisição e códigos de status que especificam ações a serem realizadas em recursos identificados por URLs.
-        No contexto do projeto, o protocolo HTTP foi utilizado para definir as operações suportadas pelas APIs RESTful, como GET, POST, PATCH e DELETE.
+        <details>
+            <summary>Explicação: </summary>
+            <p>
+                O Protocolo de Transferência de Hipertexto (HTTP) é o protocolo de comunicação utilizado para transferir dados pela World Wide Web. 
+                Ele define um conjunto de métodos de requisição e códigos de status que especificam ações a serem realizadas em recursos identificados por URLs.
+                No contexto do projeto, o protocolo HTTP foi utilizado para definir as operações suportadas pelas APIs RESTful, como GET, POST, PATCH e DELETE.
+            </p>
+        </details>
     </td>        
   </tr>
   <tr>
     <td>Rotas PATCH</td>
     <td>★★★★★★★★★☆</td>
     <td>
-        No contexto das APIs RESTful, o método PATCH é usado para realizar atualizações parciais em um recurso. 
-        Em vez de substituir o recurso inteiro, como ocorre com o método PUT, o PATCH permite enviar apenas as modificações que devem ser aplicadas ao recurso.
-        No projeto, rotas PATCH foram implementadas para permitir a atualização de entidades como usuários e CRs (Centros de Resultados).
+        <details>
+            <summary>Explicação: </summary>
+            <p>
+                No contexto das APIs RESTful, o método PATCH é usado para realizar atualizações parciais em um recurso. 
+                Em vez de substituir o recurso inteiro, como ocorre com o método PUT, o PATCH permite enviar apenas as modificações que devem ser aplicadas ao recurso.
+                No projeto, rotas PATCH foram implementadas para permitir a atualização de entidades como usuários e CRs (Centros de Resultados).
+            </p>
+        </details>
     </td>
   </tr>
   <tr>
     <td>Rotas DELETE</td>
     <td>★★★★★★★★★☆</td>
     <td>
-        No contexto das APIs RESTful, o método DELETE é usado para excluir um recurso específico. 
-        Quando uma solicitação DELETE é enviada para o servidor, o recurso correspondente é removido permanentemente.
-        No projeto, rotas DELETE foram utilizadas para permitir a inativação de entidades (e não a exclusão) como usuários e CRs, excluindo-os do contexto de negócio.
+        <details>
+            <summary>Explicação: </summary>
+            <p>
+                No contexto das APIs RESTful, o método DELETE é usado para excluir um recurso específico. 
+                Quando uma solicitação DELETE é enviada para o servidor, o recurso correspondente é removido permanentemente.
+                No projeto, rotas DELETE foram utilizadas para permitir a inativação de entidades (e não a exclusão) como usuários e CRs, excluindo-os do contexto de negócio.
+            </p>
+        </details>
     </td>
   </tr>
   <tr>
     <td>Java</td>
     <td>★★★★★★★★☆☆</td>
     <td>
-        Utilizado para o desenvolvimento do back-end da aplicação. Java é uma linguagem de programação popular que oferece portabilidade e robustez.
-        No projeto, foi utilizado o framework Spring Boot para facilitar a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.
+        <details>
+            <summary>Explicação: </summary>
+            <p>
+                Utilizado para o desenvolvimento do back-end da aplicação. Java é uma linguagem de programação popular que oferece portabilidade e robustez.
+                No projeto, foi utilizado o framework Spring Boot para facilitar a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.
+            </p>
+        </details>
     </td>
   </tr>
   <tr>
     <td>Spring Boot</td>
     <td>★★★★★★☆☆☆☆</td>
     <td>
-        Spring Boot é um framework que facilita a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.
-        No projeto, foi utilizado para desenvolver o back-end da aplicação, permitindo a criação de rotas e a integração com o banco de dados.
+        <details>
+            <summary>Explicação: </summary>
+            <p>
+                Spring Boot é um framework que facilita a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.
+                No projeto, foi utilizado para desenvolver o back-end da aplicação, permitindo a criação de rotas e a integração com o banco de dados.
+            </p>
+        </details>
     </td>
   </tr>
   <tr>
     <td>HTML</td>
     <td>★★★★★★☆☆☆☆</td>
     <td>
-        HTML é a linguagem de marcação utilizada para estruturar o conteúdo da página web. 
-        No projeto, foi utilizado para desenvolver o front-end da aplicação, criando as telas de cadastro e visualização de dados.
+        <details>
+            <summary>Explicação: </summary>
+            <p>
+                HTML é a linguagem de marcação utilizada para estruturar o conteúdo da página web. 
+                No projeto, foi utilizado para desenvolver o front-end da aplicação, criando as telas de cadastro e visualização de dados.
+            </p>
+        </details>
     </td>
   </tr>
   <tr>
     <td>CSS</td>
     <td>★★★★★★☆☆☆☆</td>
     <td>
-        CSS é utilizada para estilizar a aparência da página, definindo cores, fontes e layout.
-        No projeto, foi utilizado para desenvolver o front-end da aplicação, garantindo uma interface amigável.
+        <details>
+            <summary>Explicação: </summary>
+            <p>
+                CSS é utilizada para estilizar a aparência da página, definindo cores, fontes e layout.
+                No projeto, foi utilizado para desenvolver o front-end da aplicação, garantindo uma interface amigável.
+            </p>
+        </details>
     </td>
   </tr>
   <tr>
     <td>JavaScript</td>
     <td>★★★★★★★☆☆☆</td>
     <td>
-        JavaScript é uma linguagem de programação que adiciona interatividade e dinamismo à página web.
-        No projeto, foi utilizado para desenvolver o front-end da aplicação, permitindo a comunicação com o back-end e a manipulação de dados.
+        <details>
+            <summary>Explicação: </summary>
+            <p>
+                JavaScript é uma linguagem de programação que adiciona interatividade e dinamismo à página web.
+                No projeto, foi utilizado para desenvolver o front-end da aplicação, permitindo a comunicação com o back-end e a manipulação de dados.
+            </p>
+        </details>
     </td>
   </tr>
   <tr>
     <td>PostgreSQL</td>
     <td>★★★★★★★★★☆</td>
     <td>
-        PostgreSQL é um sistema de gerenciamento de banco de dados relacional (SGBD) que oferece recursos avançados de armazenamento e consulta de dados.
-        No projeto, foi utilizado para armazenar as informações da aplicação, como usuários, CRs e horas lançadas.
+        <details>
+            <summary>Explicação: </summary>
+            <p>
+                PostgreSQL é um sistema de gerenciamento de banco de dados relacional (SGBD) que oferece recursos avançados de armazenamento e consulta de dados.
+                No projeto, foi utilizado para armazenar as informações da aplicação, como usuários, CRs e horas lançadas.
+            </p>
+        </details>
     </td>
   </tr>
   <tr>
     <td>Git</td>
     <td>★★★★★★★★☆☆</td>
     <td>
-        Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.
-        No projeto, foi utilizado para controle de versão do código-fonte, facilitando a colaboração entre os membros da equipe.
+        <details>
+            <summary>Explicação: </summary>
+            <p>
+                Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.
+                No projeto, foi utilizado para controle de versão do código-fonte, facilitando a colaboração entre os membros da equipe.
+            </p>
+        </details>
     </td>
   </tr>
 </table>
@@ -1787,25 +1842,40 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
         <td>Comunicação</td>
         <td>★★★★★★★★★☆</td>
         <td>
-            A habilidade de conseguir transmitir informações de forma clara e eficaz, tanto verbalmente quanto por escrito.
-            Como Scrum Master, fui responsável por facilitar a comunicação entre os membros da equipe, garantindo que todos estivessem alinhados e informados sobre o progresso do projeto.
-            Além disso, fui responsável por facilitar o entendimento das necessidades do Product Owner e da empresa parceira, garantindo que as expectativas fossem atendidas.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A habilidade de conseguir transmitir informações de forma clara e eficaz, tanto verbalmente quanto por escrito.
+                    Como Scrum Master, fui responsável por facilitar a comunicação entre os membros da equipe, garantindo que todos estivessem alinhados e informados sobre o progresso do projeto.
+                    Além disso, fui responsável por facilitar o entendimento das necessidades do Product Owner e da empresa parceira, garantindo que as expectativas fossem atendidas.
+                </p>
+            </details>
         </td>
     </tr>
     <tr>
         <td>Trabalho em equipe</td>
         <td>★★★★★★★☆☆☆</td>
         <td>
-            A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
-            Como Scrum Master, trabalhei em estreita colaboração com os desenvolvedores, tentando sempre garantir que todos estivessem alinhados e trabalhando em conjunto para o sucesso do projeto.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
+                    Como Scrum Master, trabalhei em estreita colaboração com os desenvolvedores, tentando sempre garantir que todos estivessem alinhados e trabalhando em conjunto para o sucesso do projeto.
+                </p>
+            </details>
         </td>
     </tr>
     <tr>
         <td>Resolução de problemas</td>
         <td>★★★★★★☆☆☆☆</td>
         <td>
-            A habilidade de identificar e resolver problemas de forma eficaz e eficiente.
-            Durante o desenvolvimento do projeto, enfrentei diversos desafios técnicos e funcionais, mas as maiores dificuldades que enfrentei foram relacionadas à integração da equipe.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A habilidade de identificar e resolver problemas de forma eficaz e eficiente.
+                    Durante o desenvolvimento do projeto, enfrentei diversos desafios técnicos e funcionais, mas as maiores dificuldades que enfrentei foram relacionadas à integração da equipe.
+                </p>
+            </details>
         </td>
     </tr>
 </table>
@@ -2096,71 +2166,113 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
         <td>Arquitetura REST</td>
         <td>★★★★★★★★★☆</td>
         <td>
-            A arquitetura REST (Representational State Transfer) é um estilo arquitetural para sistemas distribuídos que enfatiza a comunicação entre sistemas por meio de interfaces simples e padronizadas.
-            No contexto do projeto, os princípios RESTful foram utilizados para projetar e implementar as APIs do back-end por meio de rotas, garantindo que elas fossem acessíveis, interoperáveis e eficientes.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A arquitetura REST (Representational State Transfer) é um estilo arquitetural para sistemas distribuídos que enfatiza a comunicação entre sistemas por meio de interfaces simples e padronizadas.
+                    No contexto do projeto, os princípios RESTful foram utilizados para projetar e implementar as APIs do back-end por meio de rotas, garantindo que elas fossem acessíveis, interoperáveis e eficientes.
+                </p>
+            </details>
         </td>
     </tr>
     <tr>
         <td>Protocolo HTTP</td>
         <td>★★★★★★★★★☆</td>
         <td>
-            O Protocolo de Transferência de Hipertexto (HTTP) é o protocolo de comunicação utilizado para transferir dados pela World Wide Web.
-            Ele define um conjunto de métodos de requisição e códigos de status que especificam ações a serem realizadas em recursos identificados por URLs.
-            No projeto, o protocolo HTTP foi utilizado para definir as operações suportadas pelas APIs RESTful, como GET, POST, PUT e DELETE.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    O Protocolo de Transferência de Hipertexto (HTTP) é o protocolo de comunicação utilizado para transferir dados pela World Wide Web.
+                    Ele define um conjunto de métodos de requisição e códigos de status que especificam ações a serem realizadas em recursos identificados por URLs.
+                    No projeto, o protocolo HTTP foi utilizado para definir as operações suportadas pelas APIs RESTful, como GET, POST, PUT e DELETE.
+                </p>
+            </details>
         </td>
     </tr>
     <tr>
         <td>Rotas GET, POST, PUT e DELETE</td>
         <td>★★★★★★★★★☆</td>
         <td>
-            No contexto das APIs RESTful, GET, POST, PUT e DELETE são métodos HTTP utilizados para realizar operações em recursos.
-            <ul>
-                <li><strong>GET:</strong> Usado para recuperar informações sobre um recurso específico ou uma coleção de recursos.</li>
-                <li><strong>POST:</strong> Usado para criar um novo recurso no servidor.</li>
-                <li><strong>PUT:</strong> Usado para atualizar um recurso existente no servidor.</li>
-                <li><strong>DELETE:</strong> Usado para excluir um recurso específico no servidor.</li>
-            </ul>
-            No projeto, essas rotas foram implementadas para permitir a consulta, criação, atualização e inativação de trilhas de parceiros.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    No contexto das APIs RESTful, GET, POST, PUT e DELETE são métodos HTTP utilizados para realizar operações em recursos.
+                </p>
+                <ul>
+                    <li><strong>GET:</strong> Usado para recuperar informações sobre um recurso específico ou uma coleção de recursos.</li>
+                    <li><strong>POST:</strong> Usado para criar um novo recurso no servidor.</li>
+                    <li><strong>PUT:</strong> Usado para atualizar um recurso existente no servidor.</li>
+                    <li><strong>DELETE:</strong> Usado para excluir um recurso específico no servidor.</li>
+                </ul>
+                <p>
+                    No projeto, essas rotas foram implementadas para permitir a consulta, criação, atualização e inativação de trilhas de parceiros.
+                </p>
+            </details>
         </td>
     </tr>
     <tr>
         <td>Java</td>
         <td>★★★★★★★★☆☆</td>
         <td>
-            Utilizado para o desenvolvimento do back-end da aplicação. Java é uma linguagem de programação popular que oferece portabilidade e robustez.
-            No projeto, foi utilizado o framework Spring Boot para facilitar a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Utilizado para o desenvolvimento do back-end da aplicação. Java é uma linguagem de programação popular que oferece portabilidade e robustez.
+                    No projeto, foi utilizado o framework Spring Boot para facilitar a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.
+                </p>
+            </details>
         </td>
     </tr>
     <tr>
         <td>Spring Boot</td>
         <td>★★★★★★★☆☆☆</td>
         <td>
-            Spring Boot é um framework que facilita a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.
-            No projeto, foi utilizado para desenvolver o back-end da aplicação, permitindo a criação de rotas e a integração com o banco de dados.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Spring Boot é um framework que facilita a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.
+                    No projeto, foi utilizado para desenvolver o back-end da aplicação, permitindo a criação de rotas e a integração com o banco de dados.
+                </p>
+            </details>
         </td>
     </tr>
     <tr>
         <td>MySQL</td>
         <td>★★★★★★★★★☆</td>
         <td>
-            MySQL é um sistema de gerenciamento de banco de dados relacional amplamente utilizado, conhecido por sua eficiência e escalabilidade.
-            No projeto, foi utilizado como o banco de dados relacional para armazenar os dados da aplicação, permitindo a persistência e consulta das informações das trilhas de parceiros.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    MySQL é um sistema de gerenciamento de banco de dados relacional amplamente utilizado, conhecido por sua eficiência e escalabilidade.
+                    No projeto, foi utilizado como o banco de dados relacional para armazenar os dados da aplicação, permitindo a persistência e consulta das informações das trilhas de parceiros.
+                </p>
+            </details>
         </td>
     </tr>
     <tr>
         <td>Vue.js</td>
         <td>★★★★★★☆☆☆☆</td>
         <td>
-            Vue.js é um framework JavaScript progressivo que permite a criação de interfaces de usuário interativas e reativas.
-            No projeto, foi utilizado para o desenvolvimento do front-end da aplicação, facilitando a criação de telas de cadastro e visualização de dados das trilhas de parceiros.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Vue.js é um framework JavaScript progressivo que permite a criação de interfaces de usuário interativas e reativas.
+                    No projeto, foi utilizado para o desenvolvimento do front-end da aplicação, facilitando a criação de telas de cadastro e visualização de dados das trilhas de parceiros.
+                </p>
+            </details>
         </td>
     </tr>
     <tr>
         <td>Git</td>
         <td>★★★★★★★★☆☆</td>
         <td>
-            Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.
-            No projeto, foi utilizado para controle de versão do código-fonte, facilitando a colaboração entre os membros da equipe.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.
+                    No projeto, foi utilizado para controle de versão do código-fonte, facilitando a colaboração entre os membros da equipe.
+                </p>
+            </details>
         </td>
     </tr>
 </table>
@@ -2184,34 +2296,55 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
         <td>Comunicação</td>
         <td>★★★★★★★☆☆☆</td>
         <td>
-            A habilidade de conseguir transmitir informações de forma clara e eficaz, tanto verbalmente quanto por escrito.
-            Como Scrum Master, fui responsável por facilitar a comunicação entre os membros da equipe, tentando garantir que todos estivessem alinhados e informados sobre o progresso do projeto.
-            Além disso, fui responsável por tentar facilitar o entendimento das necessidades do Product Owner e da empresa parceira, garantindo que as expectativas fossem atendidas.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A habilidade de conseguir transmitir informações de forma clara e eficaz, tanto verbalmente quanto por escrito.
+                    Como Scrum Master, fui responsável por facilitar a comunicação entre os membros da equipe, tentando garantir que todos estivessem alinhados e informados sobre o progresso do projeto.
+                    Além disso, fui responsável por tentar facilitar o entendimento das necessidades do Product Owner e da empresa parceira, garantindo que as expectativas fossem atendidas.
+                </p>
+            </details>
         </td>
     </tr>
     <tr>
         <td>Trabalho em equipe</td>
         <td>★★★★★★★★★☆</td>
         <td>
-            A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
-            Como Scrum Master, era meu papel trabalhar em estreita colaboração com os desenvolvedores, tentando sempre garantir que todos estivessem alinhados e trabalhando em conjunto para o sucesso do projeto.
-            Durante este projeto, aprendi a importância de ter um bom relacionamento interpessoal, podendo contar com o apoio da equipe em momentos difíceis.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
+                    Como Scrum Master, trabalhei em estreita colaboração com os desenvolvedores, tentando sempre garantir que todos estivessem alinhados e trabalhando em conjunto para o sucesso do projeto.
+                    Durante este projeto, aprendi a importância de ter um bom relacionamento interpessoal, podendo contar com o apoio da equipe em momentos difíceis.
+                </p>
+            </details>
         </td>
     </tr>
     <tr>
         <td>Resolução de problemas</td>
         <td>★★★★★★☆☆☆☆</td>
         <td>
-            A habilidade de identificar e resolver problemas de forma eficaz e eficiente.
-            Durante o desenvolvimento do projeto, enfrentei diversos desafios técnicos e funcionais, mas as maiores dificuldades que enfrentei foram aquelas que mencionei anteriormente, relecionadas à falta de clareza no escopo.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A habilidade de identificar e resolver problemas de forma eficaz e eficiente.
+                    Durante o desenvolvimento do projeto, enfrentei diversos desafios técnicos e funcionais, mas as maiores dificuldades que enfrentei foram aquelas relacionadas à falta de clareza no escopo.
+                    Aprendi a importância de ter um bom relacionamento interpessoal, podendo contar com o apoio da equipe em momentos difíceis.
+                </p>
+            </details>
         </td>
     </tr>
     <tr>
         <td>Resiliência</td>
         <td>★★★★★★☆☆☆☆</td>
         <td>
-            A habilidade de se adaptar a mudanças e superar desafios, mantendo o foco nos objetivos.
-            Durante este projeto, enfrentei momentos difíceis, tanto pessoais quanto profissionais, mas consegui superar esses desafios junto com a equipe, aprendendo muito sobre resiliência e adaptação.
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A habilidade de se recuperar rapidamente de dificuldades e manter a motivação mesmo diante de desafios.
+                    Durante este projeto, enfrentei momentos difíceis, tanto pessoais quanto profissionais, mas consegui superar esses desafios junto com a equipe, aprendendo muito sobre resiliência e adaptação.
+                </p>
+            </details>
         </td>
     </tr>
 </table>
