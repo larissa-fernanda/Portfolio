@@ -2405,3 +2405,203 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     </details>
 </ul>
 
+<h3>Hard Skills</h3>
+
+<table align="center">
+    <tr>
+        <th width="300px">Tecnologia ou metodologia</th>
+        <th width="300px">Classificação</th>
+        <th width="300px">Explicação</th>
+    </tr>
+    <tr>
+        <td>Metodologia Ágil</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A metodologia ágil é um conjunto de práticas e princípios que visa promover a flexibilidade, colaboração e entrega contínua de valor em projetos de software.
+                    No projeto, foi utilizada a metodologia Scrum para organizar o trabalho da equipe, com sprints, reuniões diárias e retrospectivas.
+                    Como Scrum Master, fui responsável por garantir que as práticas ágeis fossem seguidas e que a equipe estivesse alinhada com os objetivos do projeto.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Scrum</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Scrum é uma metodologia ágil que se concentra na entrega incremental e iterativa de software, promovendo a colaboração entre equipes multifuncionais.
+                    No projeto, foi utilizado o Scrum para organizar o trabalho da equipe, com sprints, reuniões diárias e retrospectivas.
+                    Como Scrum Master, fui responsável por garantir que as práticas do Scrum fossem seguidas e que a equipe estivesse alinhada com os objetivos do projeto.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Quadro para controle de tarefas</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    O quadro para controle de tarefas é uma ferramenta visual que permite organizar e acompanhar o progresso das atividades da equipe.
+                    No projeto, foi utilizado um quadro Kanban dividido em sprints para visualizar as tarefas abertas, em andamento, para revisão e concluídas, facilitando a colaboração e o acompanhamento do progresso.
+                    Como Scrum Master, utilizei o quadro para monitorar o progresso da equipe e garantir que as entregas fossem feitas dentro do prazo e com a qualidade esperada.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Documentação do README.md</td>
+        <td>★★★★★★★☆☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A documentação do README.md é uma prática importante para fornecer informações sobre o projeto, como objetivos, tecnologias utilizadas, instruções de instalação e uso.
+                    No projeto, fui responsável por documentar o README.md, garantindo que as informações fossem claras e acessíveis para outros desenvolvedores e usuários.
+                    A documentação incluiu detalhes sobre o objetivo do projetom, o backlog, as tecnologias utilizadas, as regras estabelecidas para o desenvolvimento e o planejamento de entregas.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Flyway</td>
+        <td>★★★★★★★☆☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Flyway é uma ferramenta de versionamento de banco de dados que permite gerenciar migrações de forma controlada e rastreável.
+                    No projeto, foi utilizado para implementar o versionamento do banco de dados, garantindo que as alterações fossem aplicadas de forma controlada e rastreável.
+                    Como DevOps, fui responsável por criar os scripts de migração e documentar o processo de versionamento do banco de dados.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Conceitos de DevOps</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    DevOps é uma abordagem que integra práticas de desenvolvimento e operações para melhorar a colaboração entre equipes e acelerar a entrega de software.
+                    No projeto, foi implementada a cultura DevOps, integrando práticas de desenvolvimento e operações para melhorar a colaboração entre a equipe de desenvolvimento e a equipe de operações.
+                    Isso envolveu desde a padronização de rotinas de desenvolvimento da equipe até a automação de processos.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>SQL</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    SQL (Structured Query Language) é uma linguagem de consulta estruturada utilizada para interagir com bancos de dados relacionais.
+                    No projeto, foi utilizado para criar e gerenciar as tabelas do banco de dados, além de realizar consultas e manipulações de dados.
+                    Como DevOps, fui responsável por criar os scripts de migração do banco de dados, garantindo que as alterações fossem aplicadas de forma controlada e rastreável.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Spark para Java</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Apache Spark é um framework de processamento de dados em larga escala que permite realizar análises e consultas eficientes em grandes volumes de dados.
+                    No projeto, foi utilizado para fazer a ingestão dos dados de recrutamento e seleção, permitindo a análise e geração de insights a partir dessas informações.
+                    Como Scrum Master, eu não podia atuar diretamente no desenvolvimento, mas, por já ter experiência com o framework em Python, pude auxiliar bastante a equipe de desenvolvimento com as dúvidas e sugestões sobre o uso do Spark para Java.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Git</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.
+                    No projeto, foi utilizado para controle de versão do código-fonte, facilitando a colaboração entre os membros da equipe.
+                    Como Scrum Master, utilizei o Git para monitorar o progresso da equipe e garantir que as entregas fossem feitas dentro do prazo.
+                    Como DevOps, utilizei para criar o submódulo que gerenciaria os scripts de migração do banco de dados, garantindo que as alterações fossem sempre versionadas e rastreáveis.
+                </p>
+            </details>
+        </td>
+    </tr>
+</table>
+
+<h3>Soft Skills</h3>
+
+<p align="justify">
+    Durante esse projeto, fui me reencontrando: me recuperei da anemia e me estabilizei emocionalmente, o que me permitiu atuar como Scrum Master e DevOps de forma mais efetiva. 
+    Além disso, formei minha própria equipe, com pessoas que já conhecia e confiava, o que facilitou a comunicação e colaboração entre os membros da equipe. 
+</p>
+
+<p align="justify">
+    Diria que minha maior contribuição foi a de conseguir manter a equipe unida e motivada, mesmo diante dos desafios técnicos que enfrentamos.
+    Aprendi ainda mais sobre a importância de ter um bom relacionamento interpessoal e de ser um facilitador para a equipe, ajudando a remover impedimentos e garantindo que todos estivessem alinhados com os objetivos do projeto.
+    No geral, este projeto foi uma experiência muito enriquecedora, tanto do ponto de vista técnico quanto do ponto de vista humano e o maior desafio que enfrentei foi o de conseguir ajustar a agenda da equipe, já que todos os membros tinham outras atividades e compromissos, o que exigiu uma boa dose de flexibilidade e adaptação.
+</p>
+
+<table align="center">
+    <tr>
+        <th width="300px">Habilidade</th>
+        <th width="300px">Classificação</th>
+        <th width="300px">Explicação</th>
+    </tr>
+    <tr>
+        <td>Comunicação</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A habilidade de conseguir transmitir informações de forma clara e eficaz, tanto verbalmente quanto por escrito.
+                    Como Scrum Master, fui responsável por facilitar a comunicação entre os membros da equipe, garantindo que todos estivessem alinhados e informados sobre o progresso do projeto.
+                    Além disso, fui responsável por tentar facilitar o entendimento das necessidades do Product Owner e da empresa parceira, garantindo que as expectativas fossem atendidas.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Trabalho em equipe</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
+                    Como Scrum Master, trabalhei em estreita colaboração com os desenvolvedores e com o Product Owner, garantindo que todos estivessem alinhados e trabalhando em conjunto para o sucesso do projeto.
+                    Durante este projeto, senti que a equipe estava quase em perfeita harmonia, o que facilitou a comunicação e colaboração entre os membros da equipe.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Flexibilidade</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A habilidade de se adaptar a mudanças e ajustar planos conforme necessário.
+                    Durante o projeto, enfrentei desafios técnicos e mudanças de escopo, mas consegui me adaptar rapidamente e encontrar soluções eficazes.
+                    Como Scrum Master, fui responsável por garantir que a equipe estivesse alinhada com as mudanças e que todos estivessem focados nas metas do projeto.
+                    Além disso, tive que ser flexível para ajustar a agenda da equipe, já que todos os membros tinham outras atividades e compromissos, o que exigiu uma boa dose de adaptação.
+                </p>
+            </details>
+        </td>
+    </tr>
+</table>
