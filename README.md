@@ -35,7 +35,7 @@
 
 <h3>Descrição</h3>
 
-<p align="justify">Este projeto foi desenvolvido tendo como cliente a própria FATEC São José dos Campos. O objetivo era criar uma aplicação que permitisse que um time ágil de desenvolvimento dentro da instituição pudesse avaliar o desempenho de seus membros em um processo de avaliação 360º. A aplicação foi desenvolvida em Python, exclusivamente pelo terminal e sem banco de dados.</p>
+<p align="justify">Desenvolvido no segundo semestre de 2022 (1° semestre do curso), este projeto teve como cliente a própria FATEC São José dos Campos. O objetivo era criar uma aplicação que permitisse que um time ágil de desenvolvimento dentro da instituição pudesse avaliar o desempenho de seus membros em um processo de avaliação 360º. A aplicação foi desenvolvida em Python, exclusivamente pelo terminal e sem banco de dados.</p>
 
 <p align="justify">O sistema era composto por três categorias de usuários: adminitradores, instrutores e alunos. Além disso, o sistema era divido em turmas, que eram formadas por alunos e instrutores. Para cada turma, um instrutor poderia atuar como Fake Client ou como Group Leader. Dentro de uma mesma turma, os alunos eram divididos em times, que eram formados por um Líder Técnico, um Product Owner e membros do time.</p>
 
@@ -964,7 +964,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 
 <h3>Descrição</h3>
 
-<p align="justify">Este projeto foi desenvolvido em parceria com a empresa 2RP. O objetivo era criar uma aplicação desktop que permitisse o lançamento de horas-extras e sobreavisos dos colaboradores, para facilitar a gestão e o controle das horas trabalhadas. A aplicação foi desenvolvida em Java, juntamente com JavaFX para o front-end e banco de dados MySQL.</p>
+<p align="justify">Desenvolvido no primeiro semestre de 2023 (2° semestre do curso), este projeto teve como parceria a empresa <a href="https://www.2rpnet.com.br/">2RP Net</a>. O objetivo era criar uma aplicação desktop que permitisse o lançamento de horas-extras e sobreavisos dos colaboradores, para facilitar a gestão e o controle das horas trabalhadas. A aplicação foi desenvolvida em Java, juntamente com JavaFX para o front-end e banco de dados MySQL.</p>
 
 <p align="justify">A empresa parceira possuía dificuldades na gestão de horas extras e sobreavisos dos colaboradores, uma vez que o processo era manual e demandava muito tempo. A aplicação desenvolvida permitiu a automatização do processo, facilitando a gestão e o controle das horas lançadas.</p>
 
@@ -1584,7 +1584,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 
 <h3>Descrição</h3>
 
-<p align="justify">Este projeto foi desenvolvido em parceria com a empresa 2RP. O objetivo era criar uma aplicação web que permitisse a gestão de horas extras e sobreavisos dos colaboradores. A aplicação foi desenvolvida em Java, utilizando o framework Spring Boot e o banco de dados PostgreSQL. No front-end, foram utilizadas as tecnologias HTML, CSS e JavaScript.</p>
+<p align="justify">Desenvolvido no segundo semestre de 2023 (3° semestre do curso), este projeto teve parceria com a empresa <a href="https://www.2rpnet.com.br/">2RP Net</a>. O objetivo era criar uma aplicação web que permitisse a gestão de horas extras e sobreavisos dos colaboradores. A aplicação foi desenvolvida em Java, utilizando o framework Spring Boot e o banco de dados PostgreSQL. No front-end, foram utilizadas as tecnologias HTML, CSS e JavaScript.</p>
 
 <p align="justify">A empresa parceira possuía dificuldades na gestão de horas extras e sobreavisos dos colaboradores, uma vez que o processo era manual e demandava muito tempo. A aplicação desenvolvida permitiu a automatização do processo, facilitando a gestão e o controle das horas lançadas.</p>
 
@@ -1676,35 +1676,145 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 
 <h3>Hard Skills</h3>
 
-<ul>
-    <details><summary><strong>Arquitetura REST:</strong></summary>
-    <li> A arquitetura REST (Representational State Transfer) é um estilo arquitetural para sistemas distribuídos que enfatiza a comunicação entre sistemas por meio de interfaces simples e padronizadas. No contexto de desenvolvimento de APIs, REST define um conjunto de princípios e boas práticas para projetar serviços web que sejam escaláveis, flexíveis e de fácil manutenção. No projeto, os princípios RESTful foram utilizados para projetar e implementar as APIs do back-end por meio de rotas, garantindo que elas fossem acessíveis, interoperáveis e eficientes.</li></details>
-    <details><summary><strong>Protocolo HTTP:</strong></summary>
-    <li> O Protocolo de Transferência de Hipertexto (HTTP) é o protocolo de comunicação utilizado para transferir dados pela World Wide Web. Ele define um conjunto de métodos de requisição e códigos de status que especificam ações a serem realizadas em recursos identificados por URLs. No contexto do desenvolvimento web, o HTTP é usado para a comunicação entre clientes (navegadores) e servidores. Os clientes enviam solicitações HTTP para os servidores, que respondem com respostas HTTP contendo os dados solicitados. No projeto, o protocolo HTTP foi utilizado para definir as operações suportadas pelas APIs RESTful, como GET, POST, PATCH e DELETE.</li></details>
-    <details><summary><strong>Rotas PATCH e DELETE:</strong></summary>
-    <li> No contexto das APIs RESTful, PATCH e DELETE são métodos HTTP utilizados para atualizar e excluir recursos, respectivamente.
-        <ul>
-            <details><summary><strong>PATCH:</strong></summary>
-            <li> O método PATCH é usado para realizar atualizações parciais em um recurso. Em vez de substituir o recurso inteiro, como ocorre com o método PUT, o PATCH permite enviar apenas as modificações que devem ser aplicadas ao recurso. No projeto, rotas PATCH foram implementadas para permitir a atualização de entidades como usuários e CRs (Centros de Resultados).</li></details>
-            <details><summary><strong>DELETE:</strong></summary>
-            <li>O método DELETE é usado para excluir um recurso específico. Quando uma solicitação DELETE é enviada para o servidor, o recurso correspondente é removido permanentemente. No projeto, rotas DELETE foram utilizadas para permitir a inativação de entidades como usuários e CRs, excluindo-os do contexto de negócio.</li></details>
-        </ul>
-    </li></details>
-    <details><summary><strong>Java e Spring Boot:</strong></summary>
-    <li> Utilizados para o desenvolvimento do back-end da aplicação. Java é uma linguagem de programação popular que oferece portabilidade e robustez. Spring Boot é um framework que facilita a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.</li></details>
-    <details><summary><strong>PostgreSQL:</strong></summary>
-    <li> Utilizado como o banco de dados relacional para armazenar os dados da aplicação. </li></details>
-    <details><summary><strong>HTML, CSS e JavaScript:</strong></summary>
-    <li> Utilizados para o desenvolvimento do front-end da aplicação. HTML é a linguagem de marcação utilizada para estruturar o conteúdo da página web. CSS é utilizada para estilizar a aparência da página, enquanto JavaScript é uma linguagem de programação que adiciona interatividade e dinamismo à página web.</li></details>
-    <details><summary><strong>Git:</strong></summary>
-    <li> Utilizado para controle de versão do código-fonte. Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.</li></details>
-</ul>
+<table align="center">
+  <tr>
+    <th width="300px">Tecnologia ou metodologia</th>
+    <th width="300px">Classificação</th>
+    <th width="300px">Explicação</th>
+  </tr>
+  <tr>
+    <td>Arquitetura REST</td>
+    <td>★★★★★★★★★☆</td>
+    <td>
+        A arquitetura REST (Representational State Transfer) é um estilo arquitetural para sistemas distribuídos que enfatiza a comunicação entre sistemas por meio de interfaces simples e padronizadas.
+        No contexto do projeto, os princípios RESTful foram utilizados para projetar e implementar as APIs do back-end por meio de rotas, garantindo que elas fossem acessíveis, interoperáveis e eficientes.
+    </td>
+  </tr>
+  <tr>
+    <td>Protocolo HTTP</td>
+    <td>★★★★★★★★★☆</td>
+    <td>
+        O Protocolo de Transferência de Hipertexto (HTTP) é o protocolo de comunicação utilizado para transferir dados pela World Wide Web. 
+        Ele define um conjunto de métodos de requisição e códigos de status que especificam ações a serem realizadas em recursos identificados por URLs.
+        No contexto do projeto, o protocolo HTTP foi utilizado para definir as operações suportadas pelas APIs RESTful, como GET, POST, PATCH e DELETE.
+    </td>        
+  </tr>
+  <tr>
+    <td>Rotas PATCH</td>
+    <td>★★★★★★★★★☆</td>
+    <td>
+        No contexto das APIs RESTful, o método PATCH é usado para realizar atualizações parciais em um recurso. 
+        Em vez de substituir o recurso inteiro, como ocorre com o método PUT, o PATCH permite enviar apenas as modificações que devem ser aplicadas ao recurso.
+        No projeto, rotas PATCH foram implementadas para permitir a atualização de entidades como usuários e CRs (Centros de Resultados).
+    </td>
+  </tr>
+  <tr>
+    <td>Rotas DELETE</td>
+    <td>★★★★★★★★★☆</td>
+    <td>
+        No contexto das APIs RESTful, o método DELETE é usado para excluir um recurso específico. 
+        Quando uma solicitação DELETE é enviada para o servidor, o recurso correspondente é removido permanentemente.
+        No projeto, rotas DELETE foram utilizadas para permitir a inativação de entidades (e não a exclusão) como usuários e CRs, excluindo-os do contexto de negócio.
+    </td>
+  </tr>
+  <tr>
+    <td>Java</td>
+    <td>★★★★★★★★☆☆</td>
+    <td>
+        Utilizado para o desenvolvimento do back-end da aplicação. Java é uma linguagem de programação popular que oferece portabilidade e robustez.
+        No projeto, foi utilizado o framework Spring Boot para facilitar a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.
+    </td>
+  </tr>
+  <tr>
+    <td>Spring Boot</td>
+    <td>★★★★★★☆☆☆☆</td>
+    <td>
+        Spring Boot é um framework que facilita a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.
+        No projeto, foi utilizado para desenvolver o back-end da aplicação, permitindo a criação de rotas e a integração com o banco de dados.
+    </td>
+  </tr>
+  <tr>
+    <td>HTML</td>
+    <td>★★★★★★☆☆☆☆</td>
+    <td>
+        HTML é a linguagem de marcação utilizada para estruturar o conteúdo da página web. 
+        No projeto, foi utilizado para desenvolver o front-end da aplicação, criando as telas de cadastro e visualização de dados.
+    </td>
+  </tr>
+  <tr>
+    <td>CSS</td>
+    <td>★★★★★★☆☆☆☆</td>
+    <td>
+        CSS é utilizada para estilizar a aparência da página, definindo cores, fontes e layout.
+        No projeto, foi utilizado para desenvolver o front-end da aplicação, garantindo uma interface amigável.
+    </td>
+  </tr>
+  <tr>
+    <td>JavaScript</td>
+    <td>★★★★★★★☆☆☆</td>
+    <td>
+        JavaScript é uma linguagem de programação que adiciona interatividade e dinamismo à página web.
+        No projeto, foi utilizado para desenvolver o front-end da aplicação, permitindo a comunicação com o back-end e a manipulação de dados.
+    </td>
+  </tr>
+  <tr>
+    <td>PostgreSQL</td>
+    <td>★★★★★★★★★☆</td>
+    <td>
+        PostgreSQL é um sistema de gerenciamento de banco de dados relacional (SGBD) que oferece recursos avançados de armazenamento e consulta de dados.
+        No projeto, foi utilizado para armazenar as informações da aplicação, como usuários, CRs e horas lançadas.
+    </td>
+  </tr>
+  <tr>
+    <td>Git</td>
+    <td>★★★★★★★★☆☆</td>
+    <td>
+        Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.
+        No projeto, foi utilizado para controle de versão do código-fonte, facilitando a colaboração entre os membros da equipe.
+    </td>
+  </tr>
+</table>
+
+<h3>Soft Skills</h3>
+
+<table align="center">
+    <tr>
+        <th width="300px">Habilidade</th>
+        <th width="300px">Classificação</th>
+        <th width="300px">Explicação</th>
+    </tr>
+    <tr>
+        <td>Comunicação</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            A habilidade de conseguir transmitir informações de forma clara e eficaz, tanto verbalmente quanto por escrito.
+            Como Scrum Master, fui responsável por facilitar a comunicação entre os membros da equipe, garantindo que todos estivessem alinhados e informados sobre o progresso do projeto.
+            Além disso, fui responsável por facilitar o entendimento das necessidades do Product Owner e da empresa parceira, garantindo que as expectativas fossem atendidas.
+        </td>
+    </tr>
+    <tr>
+        <td>Trabalho em equipe</td>
+        <td>★★★★★★★☆☆☆</td>
+        <td>
+            A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
+            Como Scrum Master, trabalhei em estreita colaboração com os desenvolvedores, tentando sempre garantir que todos estivessem alinhados e trabalhando em conjunto para o sucesso do projeto.
+        </td>
+    </tr>
+    <tr>
+        <td>Resolução de problemas</td>
+        <td>★★★★★★☆☆☆☆</td>
+        <td>
+            A habilidade de identificar e resolver problemas de forma eficaz e eficiente.
+            Durante o desenvolvimento do projeto, enfrentei diversos desafios técnicos e funcionais, mas as maiores dificuldades que enfrentei foram relacionadas à integração da equipe.
+        </td>
+    </tr>
+</table>
 
 <h2 id="api4">Projeto 4: Sistema de cadastro e atualização de parceiros</h2>
 
 <h3>Descrição</h3>
 
-<p align="justify">Este projeto foi desenvolvido em parceria com a empresa Oracle. O objetivo era criar uma aplicação web que permitisse cadastrar e gerenciar empresas parceiras da Oracle. A aplicação foi desenvolvida em Java, utilizando o framework Spring Boot e o banco de dados Mysql. Para o front-end, foi utilizado o Vue.js, com HTML e CSS.</p>
+<p align="justify">Desenvolvido no primeiro semestre de 2024 (4° semestre do curso), este projeto teve parceria com a empresa <a href="https://www.oracle.com/br/">Oracle Brasil</a>. O objetivo era criar uma aplicação web que permitisse cadastrar e gerenciar empresas parceiras da Oracle. A aplicação foi desenvolvida em Java, utilizando o framework Spring Boot e o banco de dados Mysql. Para o front-end, foi utilizado o Vue.js, com HTML e CSS.</p>
 
 <p align="justify">A empresa parceira possuía dificuldades no controle e gestão das empresas parceiras, possuindo pouca visibilidade dos dados e processos relacionados a essas empresas. A aplicação desenvolvida permitiu a centralização das informações, facilitando o cadastro, atualização e consulta das empresas parceiras, além da visualização gráfica dessas informações.</p>
 
@@ -1975,37 +2085,141 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     </details>
 </ul>
 <h3>Hard Skills</h3>
-<ul>
-    <details><summary><strong>Arquitetura REST:</strong></summary>
-    <li> A arquitetura REST (Representational State Transfer) é um estilo arquitetural para sistemas distribuídos que enfatiza a comunicação entre sistemas por meio de interfaces simples e padronizadas. No contexto de desenvolvimento de APIs, REST define um conjunto de princípios e boas práticas para projetar serviços web que sejam escaláveis, flexíveis e de fácil manutenção. No projeto, os princípios RESTful foram utilizados para projetar e implementar as APIs do back-end por meio de rotas, garantindo que elas fossem acessíveis, interoperáveis e eficientes.</li></details>
-    <details><summary><strong>Protocolo HTTP:</strong></summary>
-    <li> O Protocolo de Transferência de Hipertexto (HTTP) é o protocolo de comunicação utilizado para transferir dados pela World Wide Web. Ele define um conjunto de métodos de requisição e códigos de status que especificam ações a serem realizadas em recursos identificados por URLs. No contexto do desenvolvimento web, o HTTP é usado para a comunicação entre clientes (navegadores) e servidores. Os clientes enviam solicitações HTTP para os servidores, que respondem com respostas HTTP contendo os dados solicitados. No projeto, o protocolo HTTP foi utilizado para definir as operações suportadas pelas APIs RESTful, como GET, POST, PUT e DELETE.</li></details>
-    <details><summary><strong>Rotas GET, POST, PUT e DELETE:</strong></summary>
-    <li> No contexto das APIs RESTful, GET, POST, PUT e DELETE são métodos HTTP utilizados para realizar operações em recursos.
-        <ul>
-            <details><summary><strong>GET:</strong></summary>
-            <li> O método GET é usado para recuperar informações sobre um recurso específico ou uma coleção de recursos. Ele não deve modificar o estado do recurso no servidor. No projeto, rotas GET foram implementadas para permitir a consulta de trilhas de parceiros.</li></details>
-            <details><summary><strong>POST:</strong></summary>
-            <li> O método POST é usado para criar um novo recurso no servidor. Ele envia dados ao servidor para serem processados e armazenados. No projeto, rotas POST foram utilizadas para permitir o cadastro de novas trilhas de parceiros.</li></details>
-            <details><summary><strong>PUT:</strong></summary>
-            <li> O método PUT é usado para atualizar um recurso existente no servidor. Ele substitui o recurso inteiro com os dados fornecidos na solicitação. No projeto, rotas PUT foram utilizadas para permitir a atualização de trilhas de parceiros.</li></details>
-            <details><summary><strong>DELETE:</strong></summary>
-            <li> O método DELETE é usado para excluir um recurso específico no servidor. Quando uma solicitação DELETE é enviada, o recurso correspondente é removido permanentemente. No projeto, rotas DELETE foram utilizadas para permitir a inativação de trilhas de parceiros.</li></details>
-        </ul>
-    </li></details>
-    <details><summary><strong>Java e Spring Boot:</strong></summary>
-    <li> Utilizados para o desenvolvimento do back-end da aplicação. Java é uma linguagem de programação popular que oferece portabilidade e robustez. Spring Boot é um framework que facilita a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.</li></details>
-    <details><summary><strong>MySQL:</strong></summary>
-    <li> Utilizado como o banco de dados relacional para armazenar os dados da aplicação. MySQL é um sistema de gerenciamento de banco de dados amplamente utilizado, conhecido por sua eficiência e escalabilidade.</li></details>
-    <details><summary><strong>Vue.js:</strong></summary>
-    <li> Utilizado para o desenvolvimento do front-end da aplicação. Vue.js é um framework JavaScript progressivo que permite a criação de interfaces de usuário interativas e reativas, facilitando o desenvolvimento de aplicações web modernas.</li></details>
-    <details><summary><strong>Git:</strong></summary>
-    <li> Utilizado para controle de versão do código-fonte. Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.</li></details>
-</ul>
+
+<table align="center">
+    <tr>
+        <th width="300px">Tecnologia ou metodologia</th>
+        <th width="300px">Classificação</th>
+        <th width="300px">Explicação</th>
+    </tr>
+    <tr>
+        <td>Arquitetura REST</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            A arquitetura REST (Representational State Transfer) é um estilo arquitetural para sistemas distribuídos que enfatiza a comunicação entre sistemas por meio de interfaces simples e padronizadas.
+            No contexto do projeto, os princípios RESTful foram utilizados para projetar e implementar as APIs do back-end por meio de rotas, garantindo que elas fossem acessíveis, interoperáveis e eficientes.
+        </td>
+    </tr>
+    <tr>
+        <td>Protocolo HTTP</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            O Protocolo de Transferência de Hipertexto (HTTP) é o protocolo de comunicação utilizado para transferir dados pela World Wide Web.
+            Ele define um conjunto de métodos de requisição e códigos de status que especificam ações a serem realizadas em recursos identificados por URLs.
+            No projeto, o protocolo HTTP foi utilizado para definir as operações suportadas pelas APIs RESTful, como GET, POST, PUT e DELETE.
+        </td>
+    </tr>
+    <tr>
+        <td>Rotas GET, POST, PUT e DELETE</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            No contexto das APIs RESTful, GET, POST, PUT e DELETE são métodos HTTP utilizados para realizar operações em recursos.
+            <ul>
+                <li><strong>GET:</strong> Usado para recuperar informações sobre um recurso específico ou uma coleção de recursos.</li>
+                <li><strong>POST:</strong> Usado para criar um novo recurso no servidor.</li>
+                <li><strong>PUT:</strong> Usado para atualizar um recurso existente no servidor.</li>
+                <li><strong>DELETE:</strong> Usado para excluir um recurso específico no servidor.</li>
+            </ul>
+            No projeto, essas rotas foram implementadas para permitir a consulta, criação, atualização e inativação de trilhas de parceiros.
+        </td>
+    </tr>
+    <tr>
+        <td>Java</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            Utilizado para o desenvolvimento do back-end da aplicação. Java é uma linguagem de programação popular que oferece portabilidade e robustez.
+            No projeto, foi utilizado o framework Spring Boot para facilitar a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.
+        </td>
+    </tr>
+    <tr>
+        <td>Spring Boot</td>
+        <td>★★★★★★★☆☆☆</td>
+        <td>
+            Spring Boot é um framework que facilita a configuração e o desenvolvimento de aplicativos Java, fornecendo uma estrutura sólida para a construção de APIs RESTful.
+            No projeto, foi utilizado para desenvolver o back-end da aplicação, permitindo a criação de rotas e a integração com o banco de dados.
+        </td>
+    </tr>
+    <tr>
+        <td>MySQL</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            MySQL é um sistema de gerenciamento de banco de dados relacional amplamente utilizado, conhecido por sua eficiência e escalabilidade.
+            No projeto, foi utilizado como o banco de dados relacional para armazenar os dados da aplicação, permitindo a persistência e consulta das informações das trilhas de parceiros.
+        </td>
+    </tr>
+    <tr>
+        <td>Vue.js</td>
+        <td>★★★★★★☆☆☆☆</td>
+        <td>
+            Vue.js é um framework JavaScript progressivo que permite a criação de interfaces de usuário interativas e reativas.
+            No projeto, foi utilizado para o desenvolvimento do front-end da aplicação, facilitando a criação de telas de cadastro e visualização de dados das trilhas de parceiros.
+        </td>
+    </tr>
+    <tr>
+        <td>Git</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.
+            No projeto, foi utilizado para controle de versão do código-fonte, facilitando a colaboração entre os membros da equipe.
+        </td>
+    </tr>
+</table>
+
+<h3>Soft Skills</h3>
+
+<p align="justify">
+    Este talvez tenha sido o projeto mais desafiador que já participei: o cliente não nos forneceu um escopo claro, o Product Owner não conseguia se comunicar corretamente com a equipe de desenvolvimento e eu estava passando por um momento pessoal muito difícil, com anemia e depressão profundas, o que afetou minha capacidade de concentração e foco.
+</p>
+<p align="justify">
+    Em diversos momentos, pensei em desistir do projeto, mas consegui superar esses desafios junto com a equipe, aprendendo muito sobre resiliência e adaptação.
+</p>
+
+<table align="center">
+    <tr>
+        <th width="300px">Habilidade</th>
+        <th width="300px">Classificação</th>
+        <th width="300px">Explicação</th>
+    </tr>
+    <tr>
+        <td>Comunicação</td>
+        <td>★★★★★★★☆☆☆</td>
+        <td>
+            A habilidade de conseguir transmitir informações de forma clara e eficaz, tanto verbalmente quanto por escrito.
+            Como Scrum Master, fui responsável por facilitar a comunicação entre os membros da equipe, tentando garantir que todos estivessem alinhados e informados sobre o progresso do projeto.
+            Além disso, fui responsável por tentar facilitar o entendimento das necessidades do Product Owner e da empresa parceira, garantindo que as expectativas fossem atendidas.
+        </td>
+    </tr>
+    <tr>
+        <td>Trabalho em equipe</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
+            Como Scrum Master, era meu papel trabalhar em estreita colaboração com os desenvolvedores, tentando sempre garantir que todos estivessem alinhados e trabalhando em conjunto para o sucesso do projeto.
+            Durante este projeto, aprendi a importância de ter um bom relacionamento interpessoal, podendo contar com o apoio da equipe em momentos difíceis.
+        </td>
+    </tr>
+    <tr>
+        <td>Resolução de problemas</td>
+        <td>★★★★★★☆☆☆☆</td>
+        <td>
+            A habilidade de identificar e resolver problemas de forma eficaz e eficiente.
+            Durante o desenvolvimento do projeto, enfrentei diversos desafios técnicos e funcionais, mas as maiores dificuldades que enfrentei foram aquelas que mencionei anteriormente, relecionadas à falta de clareza no escopo.
+        </td>
+    </tr>
+    <tr>
+        <td>Resiliência</td>
+        <td>★★★★★★☆☆☆☆</td>
+        <td>
+            A habilidade de se adaptar a mudanças e superar desafios, mantendo o foco nos objetivos.
+            Durante este projeto, enfrentei momentos difíceis, tanto pessoais quanto profissionais, mas consegui superar esses desafios junto com a equipe, aprendendo muito sobre resiliência e adaptação.
+        </td>
+    </tr>
+</table>
+
 <h2 id="api5">Projeto 5: Sistema de análise de dados de recrutamento e seleção de candidatos</h2>
 <h3>Descrição</h3>
 <p align="justify">
-    Este projeto foi desenvolvido em parceria com a empresa <a href="https://pro4tech.com.br/" target="_blank">Pro4Tech</a>. 
+    Desenvolvido no segundo semestre de 2024 (5° semestre do curso), este projeto teve parceria com a empresa <a href="https://pro4tech.com.br/" target="_blank">Pro4Tech</a>. 
     O objetivo era criar uma aplicação web que permitisse a análise de dados de recrutamento e seleção de candidatos a partir de várias bases de dados já existentes, centralizando todos eles. 
     Além disso, a ideia principal era gerar insights a partir dessas informações, como: 
 </p>
