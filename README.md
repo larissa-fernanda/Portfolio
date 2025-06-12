@@ -2,25 +2,35 @@
 <h2>Introdução</h2>
 <p>Este portfólio foi criado com o intuito de apresentar os projetos desenvolvidos ao longo do curso de Banco de Dados na Faculdade de Tecnologia de São José dos Campos - Prof. Jessen Vidal.</p>
 <h2>Sumário</h2>
-<ul>
-    <li><a href="#sobre_mim">Sobre mim</a></li>
-    <li><a href="#contato">Contato</a></li>
-    <li><a href="#projetos">Projetos</a></li>
-</ul>
+<p align="center">
+    <a href="#sobre_mim">Sobre mim</a></li> • 
+    <a href="#contato">Contato</a> • 
+    <a href="#projetos">Projetos</a>
+</p>
 
 <h2 id="sobre_mim">Sobre mim</h2>
 <p align="justify">
-    Atualmente, atuo como Engenheira de Dados na Zarp.AI, uma empresa de consultoria em banco de dados brasileira. 
-    Comecei minha carreira como estagiária em Engenharia de Dados na Quero Educaçao, EdTech brasileira, onde me tornei júnior. 
-    Como Engenheira de Dados, sou responsável por manter pipelines de dados e desenvolver soluções para clientes, dentro ou fora da empresa. 
-    Além disso, sou estudante de Banco de Dados na FATEC São José dos Campos.</p>
+    Ingressei na FATEC São José dos Campos no segundo semestre de 2022, após concluir o Ensino Médio em 2018 e me ver perdida em relação ao meu futuro profissional. 
+    Após considerar várias opções, decidi começar a estudar Python no final da pandemia, o que me levou a descobrir o curso de Banco de Dados na FATEC.
+</p>
+<p align="justify">
+    Ainda no 1° semestre do curso, tive a oportunidade de começar a estagiar como Engenheira de Dados na Quero Educação, EdTech brasileira responsável por diversos projetos, como por exemplo, o <a href="https://querobolsa.com.br/">Quero Bolsa</a>.
+    Após 1 ano de estágio, fui efetivada, desenvolvendo ainda mais minhas habilidades em Engenharia de Dados, trabalhando com Python, SQL, Apache Spark, Apache Airflow e outras tecnologias.
+    Durante esse período, tive a oportunidade de trabalhar em diversos projetos relevantes para a empresa e para meus colegas. 
+    Infelizmente, a empresa passou por uma reestruturação e, com isso, vários times foram desfeitos ou reestruturados, incluindo o meu, o que resultou na minha saída.
+</p>
+<p align="justify">
+    Atualmente, trabalho como Engenheira de Dados para a Zarp.AI, uma empresa de consultoria em banco de dados brasileira.
+    Como Engenheira de Dados, sou responsável por manter pipelines de dados e desenvolver soluções para clientes, dentro ou fora da empresa.
+    Para isso, utilizo tecnologias como Python, SQL, Pandas, Polars, Windmill, Supabase, Power BI, Metabase, entre outras. 
+</p>
 
 <h1 id="contato">Contato</h1>
-<ul>
-    <li><a href="https://www.linkedin.com/in/larissa-reis-693568250">Linkedin</a></li>
-    <li><a href="mailto:larireis.contato@gmail.com">Email</a></li>
-    <li><a href="https://github.com/larissa-fernanda">GitHub</a></li>
-</ul>
+<p align="center">
+    <a href="https://www.linkedin.com/in/larissa-reis-693568250">Linkedin</a> • 
+    <a href="mailto:larireis.contato@gmail.com">Email</a> • 
+    <a href="https://github.com/larissa-fernanda">GitHub</a>
+</p>
 
 <h1 id="projetos">Projetos</h1>
 <ul>
