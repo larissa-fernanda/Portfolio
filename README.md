@@ -977,6 +977,72 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     </details>
 </ul>
 
+<h3>Hard Skills</h3>
+
+<table align="center">
+    <tr>
+        <th width="300px">Tecnologia ou metodologia</th>
+        <th width="300px">Classificação</th>
+        <th width="300px">Explicação</th>
+    </tr>
+    <tr>
+        <td>Python</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                Utilizado para o desenvolvimento geral do projeto. Python é uma linguagem de programação versátil e amplamente utilizada, especialmente em aplicações de back-end e automação. No contexto deste projeto, Python foi usado para implementar a lógica de negócios, manipulação de dados e interação com o sistema de arquivos, assim como para a exibição de informações no terminal.
+                </p>
+            </details>
+        </td>
+    </tr>
+</table>
+
+<h3>Soft Skills</h3>
+
+<table align="center">
+    <tr>
+        <th width="300px">Habilidade</th>
+        <th width="300px">Classificação</th>
+        <th width="300px">Explicação</th>
+    </tr>
+    <tr>
+        <td>Trabalho em equipe</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
+                Trabalhei efetivamente em equipe ao ajudar meus colegas a desenvolverem suas próprias tarefas.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Comunicação</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                A capacidade de transmitir informações de forma clara e eficaz, tanto verbalmente quanto por escrito.
+                Utilizei essa habilidade para explicar conceitos técnicos complexos de forma acessível aos membros da equipe que ainda não tinham experiência com Python.
+                </p>
+            </details>
+        </td>
+    </tr>
+</table>
+
+<h3>Lições Aprendidas</h3>
+
+<p align="justify">
+    Este primeiro projeto foi um leve choque: pessoas com níveis de conhecimento sobre a área muito diferentes e um método de ensino diferente do que eu estava acostumada.
+    Para minha sorte, eu já tinha um prévio conhecimento em Python e lógica de programação, o que me ajudou a me adaptar mais rapidamente.
+    Aprendi a importância de ser paciente e didática ao explicar conceitos para pessoas que estão começando na área, além de desenvolver minha capacidade de trabalhar em equipe com pessoas de diferentes níveis de conhecimento. Mas, em contrapartida, também tive alguns conflitos de ideias com colegas, acarretando no desmanche do grupo ao final do semestre.
+</p>
+
 <h2 id="api2">Projeto 2: Sistema de lançamento de horas-extras e sobreavisos desktop</h2>
 
 <h3>Descrição</h3>
