@@ -10,14 +10,16 @@
 
 <h2 id="sobre_mim">Sobre mim</h2>
 <p align="justify">
-    Ingressei na FATEC São José dos Campos no segundo semestre de 2022, após concluir o Ensino Médio em 2018 e me ver perdida em relação ao meu futuro profissional. 
-    Após considerar várias opções, decidi começar a estudar Python no final da pandemia, o que me levou a descobrir o curso de Banco de Dados na FATEC.
+    Concluí o Ensino Médio em 2018 e me vi diante do gigante desafio de escolher uma profissão.
+    Sempre fui apaixonada por animais e, por muito tempo, pensei em seguir a carreira de veterinária, mas era economicamente inviável para mim.
+    Então, após considerar várias opções, decidi estudar Python e lógica de programação no final da pandemia, o que me levou a descobrir o curso de Banco de Dados na FATEC como uma boa opção.
+    Coincidentemente, as inscrições para o vestibular para o segundo semestre de 2022 da Faculdade estavam abertas. 
+    Fiz a prova, passei e assim comecei minha jornada oficial na área de tecnologia.
 </p>
 <p align="justify">
     Ainda no 1° semestre do curso, tive a oportunidade de começar a estagiar como Engenheira de Dados na Quero Educação, EdTech brasileira responsável por diversos projetos, como por exemplo, o <a href="https://querobolsa.com.br/">Quero Bolsa</a>.
     Após 1 ano de estágio, fui efetivada, desenvolvendo ainda mais minhas habilidades em Engenharia de Dados, trabalhando com Python, SQL, Apache Spark, Apache Airflow e outras tecnologias.
     Durante esse período, tive a oportunidade de trabalhar em diversos projetos relevantes para a empresa e para meus colegas. 
-    Infelizmente, a empresa passou por uma reestruturação e, com isso, vários times foram desfeitos ou reestruturados, incluindo o meu, o que resultou na minha saída.
 </p>
 <p align="justify">
     Atualmente, trabalho como Engenheira de Dados para a Zarp.AI, uma empresa de consultoria em banco de dados brasileira.
