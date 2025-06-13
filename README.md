@@ -1597,6 +1597,117 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     </details>
 </ul>
 
+<h3>Hard Skills</h3>
+
+<table align="center">
+    <tr>
+        <th width="300px">Tecnologia ou metodologia</th>
+        <th width="300px">Classificação</th>
+        <th width="300px">Explicação</th>
+    </tr>
+    <tr>
+        <td>Java</td>
+        <td>★★★★★☆☆☆☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Utilizado para o desenvolvimento do back-end da aplicação. Java é uma linguagem de programação popular que oferece portabilidade e robustez.
+                    No contexto do projeto, foi utilizado para implementar a lógica de negócios e interações com o banco de dados e também para o desenvolvimento do front-end com JavaFX.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Diagrama de Entidade-Relacionamento (DER)</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Utilizado para modelar o banco de dados da aplicação. O DER é uma ferramenta visual que ajuda a representar as entidades, atributos e relacionamentos do sistema.
+                    No projeto, foi utilizado para garantir que o banco de dados atendesse às necessidades da empresa parceira.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>MySQL</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Utilizado como sistema de gerenciamento de banco de dados para armazenar as informações da aplicação. MySQL é um dos bancos de dados relacionais mais populares e é conhecido por sua eficiência e escalabilidade.
+                    No projeto, foi utilizado para armazenar os dados dos usuários, horas extras, sobreavisos e outras informações relevantes.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>JavaFX</td>
+        <td>★★★★★☆☆☆☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Utilizado para o desenvolvimento do front-end da aplicação. JavaFX é uma biblioteca para construção de interfaces gráficas em Java, permitindo a criação de aplicações desktop ricas e interativas.
+                    No projeto, foi utilizado para criar as telas de login, cadastro e lançamento de horas.
+                </p>
+            </details>
+        </td>
+</table>
+
+<h3>Soft Skills</h3>
+
+<table align="center">
+    <tr>
+        <th width="300px">Habilidade</th>
+        <th width="300px">Classificação</th>
+        <th width="300px">Explicação</th>
+    </tr>
+    <tr>
+        <td>Trabalho em equipe</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
+                    Trabalhei em colaboração com outros membros da equipe, compartilhando conhecimentos e experiências para alcançar os objetivos do projeto.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Comunicação Empática</td>
+        <td>★★★★☆☆☆☆☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A habilidade de ouvir e compreender as necessidades dos outros, demonstrando empatia e compreensão.
+                    Durante o projeto, em diversos momentos, estive muito focada na entrega de valor para a empresa parceira, me esquecendo de ouvir as necessidades dos outros membros da equipe.
+                    Aprendi a importância de ouvir e compreender as necessidades dos outros, demonstrando empatia e compreensão.
+                </p>
+            </details>
+        </td>
+    </tr>
+</table>
+
+<h3>Lições Aprendidas</h3>
+
+<p align="justify">
+    Este projeto foi uma experiência valiosa: estive tão focada na entrega de valor para a empresa parceira que, em alguns momentos, me esqueci de ouvir as necessidades dos outros membros da equipe e as minhas próprias.
+    Ao final dele, aprendi a importância de colocar o pé no freio e ouvir as necessidades dos outros, demonstrando empatia e compreensão.
+</p>
+
+<p align="justify">
+    Além disso, foi meu primeiro contato com Java e, mergulhando de cabeça no projeto, foi um primeiro contato muito enriquecedor, pois é uma linguagem de programação completamente diferente do Python.
+    Com isso, consegui perceber também que, mais importante do que saber a linguagem de programação, é saber como resolver problemas e como aplicar os conceitos de programação, principalmente os conceitos de lógica de programação.
+</p>
+
+
 <h2 id="api3">Projeto 3: Sistema de lançamento de horas-extras e sobreavisos web</h2>
 
 <h3>Descrição</h3>
@@ -2296,13 +2407,6 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 
 <h3>Soft Skills</h3>
 
-<p align="justify">
-    Este talvez tenha sido o projeto mais desafiador que já participei: o cliente não nos forneceu um escopo claro, o Product Owner não conseguia se comunicar corretamente com a equipe de desenvolvimento e eu estava passando por um momento pessoal muito difícil, com anemia e depressão profundas, o que afetou minha capacidade de concentração e foco.
-</p>
-<p align="justify">
-    Em diversos momentos, pensei em desistir do projeto, mas consegui superar esses desafios junto com a equipe, aprendendo muito sobre resiliência e adaptação.
-</p>
-
 <table align="center">
     <tr>
         <th width="300px">Habilidade</th>
@@ -2365,6 +2469,15 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
         </td>
     </tr>
 </table>
+
+<h3>Lições Aprendidas</h3>
+
+<p align="justify">
+    Este talvez tenha sido o projeto mais desafiador que já participei: o cliente não nos forneceu um escopo claro, o Product Owner não conseguia se comunicar corretamente com a equipe de desenvolvimento e eu estava passando por um momento pessoal muito difícil, com anemia e depressão profundas, o que afetou minha capacidade de concentração e foco.
+</p>
+<p align="justify">
+    Em diversos momentos, pensei em desistir do projeto, mas consegui superar esses desafios junto com a equipe, aprendendo muito sobre resiliência e adaptação.
+</p>
 
 <h2 id="api5">Projeto 5: Sistema de análise de dados de recrutamento e seleção de candidatos</h2>
 <h3>Descrição</h3>
@@ -2561,17 +2674,6 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 
 <h3>Soft Skills</h3>
 
-<p align="justify">
-    Durante esse projeto, fui me reencontrando: me recuperei da anemia e me estabilizei emocionalmente, o que me permitiu atuar como Scrum Master e DevOps de forma mais efetiva. 
-    Além disso, formei minha própria equipe, com pessoas que já conhecia e confiava, o que facilitou a comunicação e colaboração entre os membros da equipe. 
-</p>
-
-<p align="justify">
-    Diria que minha maior contribuição foi a de conseguir manter a equipe unida e motivada, mesmo diante dos desafios técnicos que enfrentamos.
-    Aprendi ainda mais sobre a importância de ter um bom relacionamento interpessoal e de ser um facilitador para a equipe, ajudando a remover impedimentos e garantindo que todos estivessem alinhados com os objetivos do projeto.
-    No geral, este projeto foi uma experiência muito enriquecedora, tanto do ponto de vista técnico quanto do ponto de vista humano e o maior desafio que enfrentei foi o de conseguir ajustar a agenda da equipe, já que todos os membros tinham outras atividades e compromissos, o que exigiu uma boa dose de flexibilidade e adaptação.
-</p>
-
 <table align="center">
     <tr>
         <th width="300px">Habilidade</th>
@@ -2622,3 +2724,16 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
         </td>
     </tr>
 </table>
+
+<h3>Lições Aprendidas</h3>
+
+<p align="justify">
+    Durante esse projeto, fui me reencontrando: me recuperei da anemia e me estabilizei emocionalmente, o que me permitiu atuar como Scrum Master e DevOps de forma mais efetiva. 
+    Além disso, formei minha própria equipe, com pessoas que já conhecia e confiava, o que facilitou a comunicação e colaboração entre os membros da equipe. 
+</p>
+
+<p align="justify">
+    Diria que minha maior contribuição foi a de conseguir manter a equipe unida e motivada, mesmo diante dos desafios técnicos que enfrentamos.
+    Aprendi ainda mais sobre a importância de ter um bom relacionamento interpessoal e de ser um facilitador para a equipe, ajudando a remover impedimentos e garantindo que todos estivessem alinhados com os objetivos do projeto.
+    No geral, este projeto foi uma experiência muito enriquecedora, tanto do ponto de vista técnico quanto do ponto de vista humano e o maior desafio que enfrentei foi o de conseguir ajustar a agenda da equipe, já que todos os membros tinham outras atividades e compromissos, o que exigiu uma boa dose de flexibilidade e adaptação.
+</p>
