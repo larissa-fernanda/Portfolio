@@ -46,13 +46,14 @@
     <li><a href="#api3">Projeto 3: Sistema de lançamento de horas-extras e sobreavisos web</a></li>
     <li><a href="#api4">Projeto 4: Sistema de cadastro e atualização de parceiros</a></li>
     <li><a href="#api5">Projeto 5: Sistema de análise de dados de recrutamento e seleção de candidatos</a></li>
+    <li><a href="#api6">Projeto 6: DataForest - Sistema de análise inteligente de reflorestamento de áreas</a></li>
 </ul>
 
 <h2 id="api1">Projeto 1: Sistema de avaliação 360º</h2>
 
 <h3>Descrição</h3>
 
-<p align="justify">Desenvolvido no segundo semestre de 2022 (1° semestre do curso), este projeto teve como cliente a própria FATEC São José dos Campos. O objetivo era criar uma aplicação que permitisse que um time ágil de desenvolvimento dentro da instituição pudesse avaliar o desempenho de seus membros em um processo de avaliação 360º. A aplicação foi desenvolvida em Python, exclusivamente pelo terminal e sem banco de dados.</p>
+<p align="justify">Desenvolvido no segundo semestre de 2022 (1° semestre do curso), este <a href="https://github.com/pontopython/api-bd1">projeto</a> teve como cliente a própria FATEC São José dos Campos. O objetivo era criar uma aplicação que permitisse que um time ágil de desenvolvimento dentro da instituição pudesse avaliar o desempenho de seus membros em um processo de avaliação 360º. A aplicação foi desenvolvida em Python, exclusivamente pelo terminal e sem banco de dados.</p>
 
 <p align="justify">O sistema era composto por três categorias de usuários: adminitradores, instrutores e alunos. Além disso, o sistema era divido em turmas, que eram formadas por alunos e instrutores. Para cada turma, um instrutor poderia atuar como Fake Client ou como Group Leader. Dentro de uma mesma turma, os alunos eram divididos em times, que eram formados por um Líder Técnico, um Product Owner e membros do time.</p>
 
@@ -1047,7 +1048,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 
 <h3>Descrição</h3>
 
-<p align="justify">Desenvolvido no primeiro semestre de 2023 (2° semestre do curso), este projeto teve como parceria a empresa <a href="https://www.2rpnet.com.br/">2RP Net</a>. O objetivo era criar uma aplicação desktop que permitisse o lançamento de horas-extras e sobreavisos dos colaboradores, para facilitar a gestão e o controle das horas trabalhadas. A aplicação foi desenvolvida em Java, juntamente com JavaFX para o front-end e banco de dados MySQL.</p>
+<p align="justify">Desenvolvido no primeiro semestre de 2023 (2° semestre do curso), este <a href="https://github.com/codecatss/API-BD2">projeto</a> teve parceria com a empresa <a href="https://www.2rpnet.com.br/">2RP Net</a>. O objetivo era criar uma aplicação desktop que permitisse o lançamento de horas-extras e sobreavisos dos colaboradores, para facilitar a gestão e o controle das horas trabalhadas. A aplicação foi desenvolvida em Java, juntamente com JavaFX para o front-end e banco de dados MySQL.</p>
 
 <p align="justify">A empresa parceira possuía dificuldades na gestão de horas extras e sobreavisos dos colaboradores, uma vez que o processo era manual e demandava muito tempo. A aplicação desenvolvida permitiu a automatização do processo, facilitando a gestão e o controle das horas lançadas.</p>
 
@@ -1778,7 +1779,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 
 <h3>Descrição</h3>
 
-<p align="justify">Desenvolvido no segundo semestre de 2023 (3° semestre do curso), este projeto teve parceria com a empresa <a href="https://www.2rpnet.com.br/">2RP Net</a>. O objetivo era criar uma aplicação web que permitisse a gestão de horas extras e sobreavisos dos colaboradores. A aplicação foi desenvolvida em Java, utilizando o framework Spring Boot e o banco de dados PostgreSQL. No front-end, foram utilizadas as tecnologias HTML, CSS e JavaScript.</p>
+<p align="justify">Desenvolvido no segundo semestre de 2023 (3° semestre do curso), este <a href="https://github.com/codecatss/API-BD3">projeto</a> teve parceria com a empresa <a href="https://www.2rpnet.com.br/">2RP Net</a>. O objetivo era criar uma aplicação web que permitisse a gestão de horas extras e sobreavisos dos colaboradores. A aplicação foi desenvolvida em Java, utilizando o framework Spring Boot e o banco de dados PostgreSQL. No front-end, foram utilizadas as tecnologias HTML, CSS e JavaScript.</p>
 
 <p align="justify">A empresa parceira possuía dificuldades na gestão de horas extras e sobreavisos dos colaboradores, uma vez que o processo era manual e demandava muito tempo. A aplicação desenvolvida permitiu a automatização do processo, facilitando a gestão e o controle das horas lançadas.</p>
 
@@ -2088,7 +2089,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 
 <h3>Descrição</h3>
 
-<p align="justify">Desenvolvido no primeiro semestre de 2024 (4° semestre do curso), este projeto teve parceria com a empresa <a href="https://www.oracle.com/br/">Oracle Brasil</a>. O objetivo era criar uma aplicação web que permitisse cadastrar e gerenciar empresas parceiras da Oracle. A aplicação foi desenvolvida em Java, utilizando o framework Spring Boot e o banco de dados Mysql. Para o front-end, foi utilizado o Vue.js, com HTML e CSS.</p>
+<p align="justify">Desenvolvido no primeiro semestre de 2024 (4° semestre do curso), este <a href="https://github.com/codecatss/API-BD4">projeto</a> teve parceria com a empresa <a href="https://www.oracle.com/br/">Oracle Brasil</a>. O objetivo era criar uma aplicação web que permitisse cadastrar e gerenciar empresas parceiras da Oracle. A aplicação foi desenvolvida em Java, utilizando o framework Spring Boot e o banco de dados Mysql. Para o front-end, foi utilizado o Vue.js, com HTML e CSS.</p>
 
 <p align="justify">A empresa parceira possuía dificuldades no controle e gestão das empresas parceiras, possuindo pouca visibilidade dos dados e processos relacionados a essas empresas. A aplicação desenvolvida permitiu a centralização das informações, facilitando o cadastro, atualização e consulta das empresas parceiras, além da visualização gráfica dessas informações.</p>
 
@@ -2556,9 +2557,11 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 </p>
 
 <h2 id="api5">Projeto 5: Sistema de análise de dados de recrutamento e seleção de candidatos</h2>
+
 <h3>Descrição</h3>
+
 <p align="justify">
-    Desenvolvido no segundo semestre de 2024 (5° semestre do curso), este projeto teve parceria com a empresa <a href="https://pro4tech.com.br/" target="_blank">Pro4Tech</a>. 
+    Desenvolvido no segundo semestre de 2024 (5° semestre do curso), este <a href="https://github.com/bytelabss/ByteLabss-API5sem">projeto</a> teve parceria com a empresa <a href="https://pro4tech.com.br/">Pro4Tech</a>. 
     O objetivo era criar uma aplicação web que permitisse a análise de dados de recrutamento e seleção de candidatos a partir de várias bases de dados já existentes, centralizando todos eles. 
     Além disso, a ideia principal era gerar insights a partir dessas informações, como: 
 </p>
@@ -2812,4 +2815,29 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     Diria que minha maior contribuição foi a de conseguir manter a equipe unida e motivada, mesmo diante dos desafios técnicos que enfrentamos.
     Aprendi ainda mais sobre a importância de ter um bom relacionamento interpessoal e de ser um facilitador para a equipe, ajudando a remover impedimentos e garantindo que todos estivessem alinhados com os objetivos do projeto.
     No geral, este projeto foi uma experiência muito enriquecedora, tanto do ponto de vista técnico quanto do ponto de vista humano e o maior desafio que enfrentei foi o de conseguir ajustar a agenda da equipe, já que todos os membros tinham outras atividades e compromissos, o que exigiu uma boa dose de flexibilidade e adaptação.
+</p>
+
+<h2 id="api6">Projeto 6: DataForest - Sistema de análise inteligente de reflorestamento de áreas</h2>
+
+<h3>Descrição</h3>
+
+<p align="justify">
+    Desenvolvido no primeiro semestre de 2025 (6° semestre do curso), este <a href="https://github.com/bytelabss/ByteLabs-API6Sem">projeto</a> teve parceria com a empresa <a href="https://www.kersys.com.br/">Kersys</a>.
+    O objetivo era criar uma aplicação web que permitisse o cadastro, a visualização e a análise de áreas de reflorestamento, utilizando técnicas de inteligência artificial para identificar a melhor espécie e técnicas de manejo.
+</p>
+
+<p align="justify">
+    Além da aplicação de técnicas de Machine Learning, este projeto teve como diferenciais a aplicação dos conceitos da Lei Geral de Proteção de Dados (LGPD) e a utilização de banco de dados noSQL.
+</p>
+
+<p align="justify">
+    Desta vez, a aplicação foi desenvolvida em Python, utilizando o framework Flask e tivemos uma modelagem de banco de dados híbrida: utilizando MongoDB para armazenar os dados das áreas de reflorestamento e PostgreSQL para armazenar os dados dos usuários, dos termos de consentimento e os dados para calibrar o modelo de Machine Learning.
+    No front-end, foram utilizadas as tecnologias Vue.js com Typescript, Tailwind CSS e HTML.
+</p>
+
+<h3>Contribuições Individuais</h3>
+
+<p align="justify">
+    Desta vez, atuei exclusivamente como desenvolvedora, contribuindo para o desenvolvimento do back-end e do front-end da aplicação.
+    A seguir, estão listadas as minhas contribuições para o projeto:
 </p>
