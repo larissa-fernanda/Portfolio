@@ -2074,6 +2074,16 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     </tr>
 </table>
 
+<h3>Lições Aprendidas</h3>
+
+<p align="justify">
+    Este projeto foi um misto de sentimentos: ao mesmo tempo em que nos frustramos com a repetição da proposta do produto, tivemos que fazer ele de uma perspectiva diferente, uma vez que a proposta do semestre anterior era para uma aplicação Desktop. Com isso, aprendi a importância de não me apegar a uma única ideia e estar aberta a novas abordagens e soluções.
+</p>
+
+<p align="justify">
+    Já como Scrum Master, me senti um pouco frustrada com a falta de comunicação entre os membros da equipe, o que dificultou o progresso do projeto. Além disso, alguns membros da equipe começaram a entrar em conflito e não consegui resolver a situação de forma eficaz. Diante disso, aprendi que a comunicação é fundamental para o sucesso de um projeto e que é importante estar atenta às dinâmicas da equipe, mas que também é importante saber quando devo intervir e quando devo deixar que a equipe resolva seus próprios conflitos.
+</p>
+
 <h2 id="api4">Projeto 4: Sistema de cadastro e atualização de parceiros</h2>
 
 <h3>Descrição</h3>
