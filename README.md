@@ -9,6 +9,11 @@
 </p>
 
 <h2 id="sobre_mim">Sobre mim</h2>
+
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/06d48fd0-ccf9-4863-9a9d-b1d5a1c8c106" alt="Imagem do WhatsApp" width="20%">
+</p>
+
 <p align="justify">
     Concluí o Ensino Médio em 2018 e me vi diante do gigante desafio de escolher uma profissão.
     Sempre fui apaixonada por animais e, por muito tempo, pensei em seguir a carreira de veterinária, mas era economicamente inviável para mim.
