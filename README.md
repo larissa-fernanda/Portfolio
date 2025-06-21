@@ -2766,7 +2766,6 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    A habilidade de conseguir transmitir informações de forma clara e eficaz, tanto verbalmente quanto por escrito.
                     Como Scrum Master, fui responsável por facilitar a comunicação entre os membros da equipe, garantindo que todos estivessem alinhados e informados sobre o progresso do projeto.
                     Além disso, fui responsável por tentar facilitar o entendimento das necessidades do Product Owner e da empresa parceira, garantindo que as expectativas fossem atendidas.
                 </p>
@@ -2780,7 +2779,6 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
                     Como Scrum Master, trabalhei em estreita colaboração com os desenvolvedores e com o Product Owner, garantindo que todos estivessem alinhados e trabalhando em conjunto para o sucesso do projeto.
                     Durante este projeto, senti que a equipe estava quase em perfeita harmonia, o que facilitou a comunicação e colaboração entre os membros da equipe.
                 </p>
@@ -2794,8 +2792,8 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    A habilidade de se adaptar a mudanças e ajustar planos conforme necessário.
-                    Durante o projeto, enfrentei desafios técnicos e mudanças de escopo, mas consegui me adaptar rapidamente e encontrar soluções eficazes.
+                    Durante o projeto, enfrentei desafios técnicos e mudanças de escopo, mas consegui me adaptar rapidamente e encontrar soluções eficazes. 
+                    Um exemplo disso foi na primeira sprint, onde o Product Owner não conseguiu definir claramente o escopo do projeto, o que exigiu que parássemos para reavaliar as prioridades e ajustar o backlog. 
                     Como Scrum Master, fui responsável por garantir que a equipe estivesse alinhada com as mudanças e que todos estivessem focados nas metas do projeto.
                     Além disso, tive que ser flexível para ajustar a agenda da equipe, já que todos os membros tinham outras atividades e compromissos, o que exigiu uma boa dose de adaptação.
                 </p>
@@ -2832,7 +2830,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 
 <p align="justify">
     Desta vez, a aplicação foi desenvolvida em Python, utilizando o framework Flask e tivemos uma modelagem de banco de dados híbrida: utilizando MongoDB para armazenar os dados das áreas de reflorestamento e PostgreSQL para armazenar os dados dos usuários, dos termos de consentimento e os dados para calibrar o modelo de Machine Learning.
-    No front-end, foram utilizadas as tecnologias Vue.js com Typescript, Tailwind CSS e HTML.
+    No front-end, foram utilizadas as tecnologias React, TypeScript, Tailwind CSS.
 </p>
 
 <h3>Contribuições Individuais</h3>
@@ -2841,3 +2839,76 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     Desta vez, atuei exclusivamente como desenvolvedora, contribuindo para o desenvolvimento do back-end e do front-end da aplicação.
     A seguir, estão listadas as minhas contribuições para o projeto:
 </p>
+
+<ul>
+    <details>
+        <summary>Procurei uma base de dados com informações sobre as áreas do Brasil</summary>
+        <p align="justify">
+            Nós queríamos uma base de dados real para calibrar o modelo de Machine Learning o mais próximo possível da realidade, então procurei uma base de dados com informações sobre as áreas do Brasil. No fim, acabei optando pela base de dados do AMBDATA, órgão do governo brasileiro que disponibiliza dados sobre o meio ambiente, como temperatura, precipitação, tipo de solo, entre outros.
+        </p>
+    </details>
+    <details>
+        <summary>Desenvolvi o repositório de ETL para receber os dados da base de dados externa</summary>
+        <p align="justify">
+            Desenvolvi um repositório de ETL (Extract, Transform, Load) para receber os dados da base de dados externa do AMBDATA, que estavam em formato .asc e .shp, e transformá-los usando Python com GeoPandas, para que pudessem ser colocados no PostgreSQL com PostGIS.
+        </p>
+        <p align="justify">
+            A ideia inicial era colocar esses dados no MongoDB, mas como a base de dados era muito grande e estávamos usando a versão gratuita do banco online do Atlas, decidimos colocar os dados no PostgreSQL com PostGIS, que é uma extensão do PostgreSQL para trabalhar com dados geoespaciais.
+        </p>
+    </details>
+    <details>
+        <summary>Ajustei a lógica para enviar os dados das áreas de reflorestamento para o MongoDB</summary>
+        <p align="justify">
+            Mudei a lógica que enviava os dados das áreas cadastradas para o PostgreSQL, para que os dados fossem enviados para o MongoDB, que seria mais eficiente para o uso da equipe, já que ele estava na nuvem e o PostgreSQL estava localmente.
+            A lógica foi ajustada para que os dados fossem enviados para o MongoDB, utilizando a biblioteca PyMongo para conectar ao banco de dados e enviar os dados das áreas de reflorestamento.
+        </p>
+        <p align="justify">
+            Além disso, também implementei a lógica para buscar os dados das áreas de reflorestamento no MongoDB, utilizando a biblioteca PyMongo buscar os dados das áreas cadastradas.
+        </p>
+    </details>
+    <details>
+        <summary>No repositório de back-end principal, desenvolvi rotas e serviços para recuperar os dados da base de dados externa que foram colocados no PostgreSQL</summary>
+        <p align="justify">
+            No repositório de back-end principal, desenvolvi rotas e serviços para recuperar os dados da base de dados externa que foram colocados no PostgreSQL. Para isso, eu utilizei um recurso do Postgis que permite fazer consultas geoespaciais com base na aproximação de um ponto e retornar as áreas que estão dentro de um raio específico.
+        </p>
+        <p align="justify">
+            Desenvolvi duas rotas para isso: uma que retorna os dados geográficos de uma área específica, e outra que retorna os dados geográficos de várias áreas passadas como parâmetro, evitando assim os riscos de excesso de sessões e consultas ao banco de dados ao mesmo tempo.
+        </p>
+    </details>
+    <details>
+        <summary>Desenvolvi a lógica de edição de usuários de acordo com a criptografia dos dados implementada</summary>
+        <p align="justify">
+            No repositório de back-end principal, desenvolvi a lógica de edição de usuários de acordo com a criptografia dos dados implementada.
+            Para isso, precisei capturar a chave de criptografia do usuário no banco que continha as chaves de criptografia, e utilizar essa chave para criptografar os dados do usuário antes de enviá-los para o banco de dados.
+            Além disso, também precisei enviar os dados descriptografados para o Redis, que seria utilizado para armazenar os dados dos usuários de forma temporária, para que eles pudessem ser utilizados no front-end da aplicação.
+        </p>
+    </details>
+    <details>
+        <summary>Na parte do front-end, fui eu que implementei a chamada dos modelos de machine learning</summary>
+        <p align="justify">
+            Na parte do front-end, fui eu que implementei a chamada dos modelos de machine learning.
+            Para isso, precisei utilizar as rotas que eu desenvolvi para capturar os dados de amostras das áreas de reflorestamento e enviar esses dados para o modelo de machine learning.
+            Tendo esses dados, enviei para o modelo de machine learning, que retornou as melhores espécies e técnicas de manejo para a área de reflorestamento.
+        </p>
+    </details>
+    <details>
+        <summary>Desenvolvi a tela de dados do usuário logado</summary>
+        <p align="justify">
+            Desenvolvi a tela que exibe os dados do usuário logado, utilizando os dados que foram enviados para o Redis.
+        </p>
+    </details>
+    <details>
+        <summary>Desenvolvi a parte de edição do usuário logado</summary>
+        <p align="justify">
+            Ainda na tela de dados do usuário logado, desenvolvi a parte de edição do usuário logado.
+        </p>
+    </details>
+    <details>
+        <summary>Desenvolvi a tela de dashboard que lista as áreas de reflorestamento que correm algum risco</summary>
+        <p align="justify">
+            Com base nos dados de amostra do AMBDATA para cada área cadastrada conseguidos no endpoint que criei, desenvolvi a tela de dashboard que lista as áreas de reflorestamento que correm algum risco, utilizando lógica simples de comparação.
+            A tela exibe somente as áreas que correm algum risco e, ao clicar em uma área, uma seção lateral é aberta com os seguintes dados da área: a espécie recomendada, técnicas de manejo recomendadas, dados geoambientais aproximados, a explicação de por que a área foi enquadrada no risco e recomendações de ações a serem tomadas.
+        </p>
+    </details>
+</ul>
+
