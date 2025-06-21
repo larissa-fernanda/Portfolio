@@ -2503,7 +2503,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    Durante o desenvolvimento do projeto, enfrentei todo tipo de dificuldade, pessoal, profissional e de saúde. Tive diversos altos e baixos, pensando diariamente em desistir do projeto. No final, consegui aprender a lidar com as dificuldades que me cercavam no grupo, e com isso, aprendi a ser mais resiliente e a não desistir facilmente diante dos desafios.
+                    Durante o desenvolvimento do projeto, enfrentei todo tipo de dificuldade: pessoal, profissional e de saúde. Tive diversos altos e baixos, pensando diariamente em desistir do projeto. No final, consegui aprender a lidar com as dificuldades que me cercavam no grupo, e com isso, aprendi a ser mais resiliente e a não desistir facilmente diante dos desafios.
                 </p>
             </details>
         </td>
@@ -2771,7 +2771,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 
 <p align="justify">
     Diria que minha maior contribuição foi a de conseguir manter a equipe unida e motivada, mesmo diante dos desafios técnicos que enfrentamos.
-    Aprendi ainda mais sobre a importância de ter um bom relacionamento interpessoal e de ser um facilitador para a equipe, ajudando a remover impedimentos e garantindo que todos estivessem alinhados com os objetivos do projeto.
+    Aprendi ainda mais sobre a importância de ter um bom relacionamento interpessoal e de ser uma facilitadora para a equipe, ajudando a remover impedimentos e garantindo que todos estivessem alinhados com os objetivos do projeto.
     No geral, este projeto foi uma experiência muito enriquecedora, tanto do ponto de vista técnico quanto do ponto de vista humano e o maior desafio que enfrentei foi o de conseguir ajustar a agenda da equipe, já que todos os membros tinham outras atividades e compromissos, o que exigiu uma boa dose de flexibilidade e adaptação.
 </p>
 
@@ -2872,3 +2872,275 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     </details>
 </ul>
 
+<h3>Hard Skills</h3>
+
+<table align="center">
+    <tr>
+        <th width="300px">Tecnologia ou metodologia</th>
+        <th width="300px">Classificação</th>
+        <th width="300px">Explicação</th>
+    </tr>
+    <tr>
+        <td>ETL (Extract, Transform, Load)</td>
+        <td>★★★★★★★★★★</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    ETL é um processo de extração, transformação e carregamento de dados, utilizado para integrar dados de diferentes fontes em um único repositório.
+                    No projeto, foi utilizado para receber os dados da base de dados externa do AMBDATA, que estavam em formato .asc e .shp, e transformá-los usando Python com GeoPandas, para que pudessem ser colocados no PostgreSQL com PostGIS.
+                    Pessoalmente, fui responsável por desenvolver o repositório de ETL, garantindo que os dados fossem transformados corretamente e pudessem ser utilizados na aplicação.
+                    No meu dia a dia, eu faço ETL com frequência para integrar dados de diferentes fontes e diferentes clientes, mas foi a primeira vez que desenvolvi um ETL voltado para dados geoespaciais.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Python</td>
+        <td>★★★★★★★★★★</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Python é uma linguagem de programação de alto nível, amplamente utilizada para desenvolvimento web, engenharia de dados, automação e ciência de dados, devido à sua simplicidade e vasta biblioteca de pacotes. Além disso, é uma das linguagens mais populares para Machine Learning, com bibliotecas como Scikit-learn.
+                    No projeto, foi utilizado como a linguagem principal para o desenvolvimento do back-end da aplicação, utilizando o framework Flask.
+                    Além disso, foi utilizado para desenvolver o repositório de ETL e para implementar a lógica de Machine Learning.
+                    Pessoalmente, fui responsável por desenvolver o repositório de ETL para receber os dados da base de dados externa do AMBDATA, que estavam em formato .asc e .shp, e transformá-los usando Python com GeoPandas, para que pudessem ser colocados no PostgreSQL com PostGIS.
+                    Junto a isso, também participei do desenvolvimento do back-end da aplicação, implementando rotas e serviços para recuperar os dados geoambientais e enviar os dados das áreas de reflorestamento para o MongoDB, além de desenvolver a lógica de edição de usuários, garantindo que os dados fossem criptografados corretamente antes de serem enviados para o banco de dados.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Lei Geral de Proteção de Dados (LGPD)</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A Lei Geral de Proteção de Dados (LGPD) é a parte da legislação brasileira que regula o tratamento de dados pessoais, garantindo a privacidade e proteção dos dados dos usuários no meio digital.
+                    No projeto, foram aplicados os conceitos da LGPD para garantir que os dados dos usuários fossem tratados de forma segura e transparente, incluindo a implementação de consentimento explícito para o tratamento dos dados, direito à acesso, correção e exclusão dos dados pessoais, portabilidade dos dados e segurança no armazenamento e transmissão dos dados.
+                    Pessoalmente, participei ativamente na implementação da criptografia dos dados dos usuários durante a edição, garantindo que os dados ainda fossem protegidos mesmo quando editados.
+                    Apesar de ter participado ativamente somente nesta parte, ajudei a definir como implementaríamos todas as outras partes da LGPD no projeto também, como o consentimento explícito para o tratamento dos dados, direito à acesso, correção e exclusão dos dados pessoais, portabilidade dos dados e notificação de incidentes de segurança.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Banco de dados noSQL (MongoDB)</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Bancos de dados noSQL são sistemas de gerenciamento de banco de dados que não utilizam o modelo relacional tradicional, permitindo maior flexibilidade na modelagem dos dados e escalabilidade horizontal. O MongoDB é um dos bancos de dados noSQL mais populares, que armazena dados em formato JSON-like (BSON), facilitando a consulta e manipulação dos dados.
+                    No projeto, foi utilizado para armazenar os dados das áreas de reflorestamento cadastradas, permitindo consultas eficientes e flexíveis.
+                    Pessoalmente, fui responsável por ajustar a lógica de envio e recuperação dos dados das áreas de reflorestamento, garantindo que os dados fossem enviados e recuperados corretamente do MongoDB, o que me permitiu compreender melhor como funciona o MongoDB e suas operações de CRUD, principalmente dentro do Pymongo (biblioteca Python para conectar ao MongoDB).
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Banco de dados relacional (PostgreSQL com PostGIS)</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    PostgreSQL é um sistema de gerenciamento de banco de dados relacional avançado, conhecido por sua robustez, escalabilidade e suporte a dados geoespaciais através da extensão PostGIS.
+                    No projeto, foi utilizado para armazenar os dados dos usuários, dos termos de consentimento e os dados geoambientais de amostra para calibrar o modelo de Machine Learning.
+                    A escolha do PostgreSQL foi feita devido à sua capacidade de lidar com dados relacionais e geoespaciais, além de sua compatibilidade com a extensão PostGIS.
+                    Pessoalmente, fui responsável por desenvolver tanto a entrada dos dados geoambientais do AMBDATA no PostgreSQL com PostGIS, quanto as rotas e serviços para recuperar esses dados, utilizando consultas geoespaciais para obter as áreas de reflorestamento dentro de um raio específico. Além disso, também implementei a lógica de edição de usuários, garantindo que os dados fossem criptografados corretamente antes de serem enviados para o banco de dados.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Flask</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Flask é um microframework para Python, leve e flexível, que permite o desenvolvimento rápido de aplicações web.
+                    No projeto, foi utilizado para desenvolver o back-end da aplicação, facilitando a criação de rotas, serviços e integração com o banco de dados.
+                    Pessoalmente, fui responsável por desenvolver algumas rotas e serviços já citadas.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>React</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    React é uma biblioteca JavaScript para construção de interfaces de usuário, que permite criar componentes reutilizáveis e gerenciar o estado da aplicação de forma eficiente.
+                    No projeto, foi utilizado para desenvolver o front-end da aplicação, permitindo a criação de uma interface interativa e responsiva.
+                    Pessoalmente, fui responsável por desenvolver a tela de dados do usuário logado, a parte de edição do usuário logado, a tela de dashboard que lista as áreas de reflorestamento que correm algum risco e a lógica de chamada dos modelos de Machine Learning, garantindo que os dados fossem enviados corretamente para o modelo e que as informações retornadas fossem exibidas na interface.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>TypeScript</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    TypeScript é uma linguagem de programação que é um superconjunto do JavaScript, adicionando tipagem estática e outros recursos avançados.
+                    No projeto, foi utilizado para desenvolver o front-end da aplicação, permitindo uma melhor organização do código e maior segurança na detecção de erros em tempo de compilação.
+                    Pessoalmente, utilizei ao desenvolver o front-end da aplicação, garantindo que o código fosse mais robusto e fácil de manter.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Tailwind CSS</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Tailwind CSS é um framework CSS utilitário que permite criar interfaces de usuário de forma rápida e eficiente, utilizando classes pré-definidas.
+                    No projeto, foi utilizado para estilizar o front-end da aplicação, permitindo uma personalização rápida e consistente do layout e dos componentes.
+                    Pessoalmente, utilizei para estilizar as telas desenvolvidas, garantindo que a interface seguisse uma mesma linha visual.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>GeoPandas</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    GeoPandas é uma biblioteca Python que usa o Pandas para permitir o trabalho com dados geoespaciais, facilitando a manipulação e análise de dados geográficos.
+                    No projeto, foi utilizado para transformar os dados da base de dados externa do AMBDATA, que estavam em formato .asc e .shp, para que pudessem ser colocados no PostgreSQL com PostGIS.
+                    Utilizei para desenvolver o repositório de ETL, garantindo que os dados fossem transformados corretamente e pudessem ser utilizados na aplicação. Foi uma experiência muito especial, pois nunca tinha trabalhado com dados geoespaciais antes.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>PostGIS</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    PostGIS é uma extensão do PostgreSQL que permite trabalhar com dados geoespaciais, adicionando suporte a tipos de dados geográficos e funções para consultas espaciais.
+                    No projeto, foi utilizado para armazenar os dados geoespaciais das áreas de reflorestamento, permitindo consultas eficientes e flexíveis.
+                    Precisei utilizar o PostGIS para armazenar e consultar os dados geoambientais das áreas de reflorestamento, utilizando consultas geoespaciais para obter as áreas dentro de um raio específico.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Redis</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Redis é um banco de dados em memória, chave-valor, que permite armazenar dados temporários de forma rápida e eficiente.
+                    No projeto, foi utilizado para armazenar os dados dos usuários de forma temporária, permitindo que eles fossem utilizados no front-end da aplicação.
+                    Utilizei ao armazenar os novos dados do usuário logado, após a edição, garantindo que os dados fossem enviados para o front-end de forma rápida e eficiente.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Git</td>
+        <td>★★★★★★★★★★</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Git é um sistema de controle de versão distribuído que permite rastrear alterações no código, colaborar com outros desenvolvedores e gerenciar o histórico de desenvolvimento do projeto.
+                    No projeto, foi utilizado para controle de versão do código-fonte, facilitando a colaboração entre os membros da equipe.
+                    Utilizamos o Git no dia a dia do desenvolvimento, criando branches para cada task e realizando pull requests para revisão de código.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Metodologia ágil e Scrum</td>
+        <td>★★★★★★★★★★</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A metodologia ágil é um conjunto de práticas e princípios que visa promover a flexibilidade, colaboração e entrega contínua de valor em projetos de software.
+                    No projeto, foi utilizada a metodologia Scrum para organizar o trabalho da equipe, com sprints, reuniões diárias e retrospectivas.
+                    Utilizei a metodologia ágil ao seguir o processo de ir entregando as tarefas aos poucos, sempre alinhando com a equipe e o Product Owner e, ao acabar, já pegando novas tarefas para desenvolver.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Quadro para controle de tarefas</td>
+        <td>★★★★★★★★★★</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    O quadro para controle de tarefas é uma ferramenta visual que permite organizar e acompanhar o progresso das atividades da equipe.
+                    No projeto, foi utilizado um quadro Kanban dividido em sprints para visualizar as tarefas abertas, em andamento, para revisão e concluídas, facilitando a colaboração e o acompanhamento do progresso.
+                    Desta vez, como desenvolvedora, utilizei o quadro para pegar as tarefas que estavam disponíveis e acompanhar o progresso das minhas atividades, garantindo que as entregas fossem feitas dentro do prazo e com a qualidade esperada. Mas, apesar de não atuar como Scrum Master, também ajudei a equipe a manter o quadro atualizado e organizado, considerando que eu já tinha experiência com o uso do quadro Kanban.
+                </p>
+            </details>
+        </td>
+    </tr>
+</table>
+
+<h3>Soft Skills</h3>
+
+<table align="center">
+    <tr>
+        <th width="300px">Habilidade</th>
+        <th width="300px">Explicação</th>
+    </tr>
+    <tr>
+        <td>Comunicação</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    Durante o projeto, precisei exercitar minha comunicação ao manter a equipe alinhada e informada sobre o progresso das minhas tarefas, além de colaborar com a Product Owner para entender melhor as necessidades do projeto e garantir que as entregas estivessem de acordo com as expectativas.
+                    Além disso, também exercitei essa habilidade ao trabalhar em conjunto o resto da equipe, ajudando a esclarecer dúvidas e a encontrar soluções para os desafios técnicos que enfrentamos.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Trabalho em equipe</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    O trabalho em equipe foi ainda mais essencial desta vez, uma vez que a equipe estava menor, com apenas quatro pessoas, e todos precisavam colaborar ativamente para o sucesso do projeto.
+                    Em diversos momentos, discutimos juntos as melhores abordagens para resolver os problemas técnicos e garantir que todos estivessem alinhados com os mesmos objetivos.
+                </p>
+            </details>
+        </td>
+    </tr>
+</table>
+
+<h3>Lições Aprendidas</h3>
+
+<p align="justify">
+    Este talvez tenha sido o projeto mais tranquilo do qual participei: a equipe estava muito unida e colaborativa. Apesar de estarmos apenas em 4 pessoas, todos tinham um bom relacionamento e se ajudavam mutuamente. Foi muito bom ver como a equipe se organizou e trabalhou em conjunto para alcançar os objetivos do projeto e agradeço muito a oportunidade de ter trabalhado com pessoas tão competentes e dedicadas.
+</p>
+<p align="justify">
+    Desta vez, exclusivamente como desenvolvedora, pude me aprofundar mais nas tecnologias utilizadas e no projeto em si, sendo útil para minha equipe de uma maneira diferente da que eu vinha sendo há alguns semestres. Python é o que eu chamo de "minha linguagem de programação materna", já que foi a primeira linguagem que aprendi e com a qual me identifiquei, então foi muito bom poder voltar a trabalhar com ela e me aprofundar mais no desenvolvimento de aplicações web com Flask. Somado a isso, foi extremamente gratificante poder ajudar minha equipe com meus conhecimentos em ETL, pois lido com isso no meu dia a dia, mesmo que tenha quebrado a cabeça para desenvolver o repositório de ETL para dados geoespaciais, algo que eu nunca tinha feito antes. Além disso, gostei de ter participado do desenvolvimento do front-end da aplicação da forma que foi, pois achei que consegui contribuir bastante e que foi bem agradável.
+</p>
+<p align="justify">
+    Do ponto de vista técnico, aprendi muito sobre os conceitos da Lei Geral de Proteção de Dados (LGPD) e como aplicá-los na prática, que os tão temidos bancos de dados noSQL são mais simples do que parecem e que dificilmente as máquinas vão dominar o mundo, já que o trabalho de Machine Learning depende muito de humanos para serem treinados e calibrados corretamente. Além disso, descobri também que existe um vasto mundo de tipos de arquivos que eu ainda preciso explorar, como os arquivos .asc e .shp que eu nunca tinha visto antes, e de extensões de bancos de dados que valem a pena conhecer, como o PostGIS.
+</p>
+<p align="justify">
+    Por fim, aprendi também que, às vezes, é das menores equipes que surgem os melhores projetos, já que isso exige uma colaboração e comunicação ainda maior entre os membros, além de uma maior eficácia por parte de todos na hora de executar as tarefas. Mas, apesar disso, não posso deixar de registrar a importância de ter um Product Owner que saiba se comunicar bem com a equipe e que esteja disposto a ouvir as sugestões e opiniões dos desenvolvedores, pois isso faz toda a diferença no andamento do projeto e na qualidade do produto final, além de uma equipe que saiba trabalhar em conjunto e de forma empática, ajudando uns aos outros.
+</p>
