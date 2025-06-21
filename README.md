@@ -1005,31 +1005,28 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 <table align="center">
     <tr>
         <th width="300px">Habilidade</th>
-        <th width="300px">Classificação</th>
         <th width="300px">Explicação</th>
     </tr>
     <tr>
         <td>Trabalho em equipe</td>
-        <td>★★★★★★★★☆☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
-                Trabalhei efetivamente em equipe ao ajudar meus colegas a desenvolverem suas próprias tarefas.
+                Essa habilidade foi bem desenvolvida durante o projeto ao ajudar meus colegas a desenvolverem suas próprias tarefas.
+                Dessa forma, pude colaborar efetivamente com a equipe, compartilhando conhecimentos e experiências, além de ajudar a atingir os objetivos do projeto.
                 </p>
             </details>
         </td>
     </tr>
     <tr>
         <td>Comunicação</td>
-        <td>★★★★★★★★☆☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                A capacidade de transmitir informações de forma clara e eficaz, tanto verbalmente quanto por escrito.
-                Utilizei essa habilidade para explicar conceitos técnicos complexos de forma acessível aos membros da equipe que ainda não tinham experiência com Python.
+                Utilizei essa habilidade sempre que precisei explicar os conceitos técnicos de Python ou lógica de programação para os membros da equipe que estavam começando na área.
+                A principal dificuldade foi conseguir explicar de forma clara e acessível, conseguindo fazer analogias e simplificações sem perder a essência do que estava explicando.
                 </p>
             </details>
         </td>
@@ -1730,32 +1727,26 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 <table align="center">
     <tr>
         <th width="300px">Habilidade</th>
-        <th width="300px">Classificação</th>
         <th width="300px">Explicação</th>
     </tr>
     <tr>
         <td>Trabalho em equipe</td>
-        <td>★★★★★★★★☆☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
-                    Trabalhei em colaboração com outros membros da equipe, compartilhando conhecimentos e experiências para alcançar os objetivos do projeto.
+                    Essa habilidade foi desenvolvida ao longo do projeto ao colaborar com outros membros da equipe, compartilhando conhecimentos e experiências para alcançar os objetivos do projeto. Por diversas vezes, trabalhei em dupla com outros membros da equipe, desenvolvendo as funcionalidades do projeto em conjunto.
                 </p>
             </details>
         </td>
     </tr>
     <tr>
         <td>Comunicação Empática</td>
-        <td>★★★★☆☆☆☆☆☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    A habilidade de ouvir e compreender as necessidades dos outros, demonstrando empatia e compreensão.
-                    Durante o projeto, em diversos momentos, estive muito focada na entrega de valor para a empresa parceira, me esquecendo de ouvir as necessidades dos outros membros da equipe.
-                    Aprendi a importância de ouvir e compreender as necessidades dos outros, demonstrando empatia e compreensão.
+                    Esta habilidade foi desenvolvida somente do meio para o final do projeto, quando percebi que estava muito focada na entrega de valor para a empresa parceira e me esquecendo de ouvir as necessidades dos outros membros da equipe. Eu tinha a ideia de que tínhamos que entregar tudo o que foi prometido para a sprint, então, quando algum membro da equipe não conseguia entregar o que havia prometido, eu ficava frustrada e não me expressava da melhor forma possível. Ao final, aprendi a importância de ouvir e compreender as necessidades dos outros, demonstrando empatia e compreensão.
                 </p>
             </details>
         </td>
@@ -1765,8 +1756,8 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 <h3>Lições Aprendidas</h3>
 
 <p align="justify">
-    Este projeto foi uma experiência valiosa: estive tão focada na entrega de valor para a empresa parceira que, em alguns momentos, me esqueci de ouvir as necessidades dos outros membros da equipe e as minhas próprias.
-    Ao final dele, aprendi a importância de colocar o pé no freio e ouvir as necessidades dos outros, demonstrando empatia e compreensão.
+    Este projeto foi uma experiência valiosa: estive tão focada na entrega de valor para a empresa parceira que, em diversos momentos, me esqueci de ouvir as necessidades dos outros membros da equipe e as minhas próprias.
+    Ao final dele, aprendi a importância de colocar o pé no freio, refletir sobre o que está sendo feito e ouvir as necessidades dos outros, demonstrando empatia e compreensão.
 </p>
 
 <p align="justify">
@@ -2030,45 +2021,27 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 <table align="center">
     <tr>
         <th width="300px">Habilidade</th>
-        <th width="300px">Classificação</th>
         <th width="300px">Explicação</th>
     </tr>
     <tr>
         <td>Comunicação</td>
-        <td>★★★★★★★★★☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    A habilidade de conseguir transmitir informações de forma clara e eficaz, tanto verbalmente quanto por escrito.
-                    Como Scrum Master, fui responsável por facilitar a comunicação entre os membros da equipe, garantindo que todos estivessem alinhados e informados sobre o progresso do projeto.
-                    Além disso, fui responsável por facilitar o entendimento das necessidades do Product Owner e da empresa parceira, garantindo que as expectativas fossem atendidas.
-                </p>
-            </details>
-        </td>
-    </tr>
-    <tr>
-        <td>Trabalho em equipe</td>
-        <td>★★★★★★★☆☆☆</td>
-        <td>
-            <details>
-                <summary>Explicação: </summary>
-                <p>
-                    A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
-                    Como Scrum Master, trabalhei em estreita colaboração com os desenvolvedores, tentando sempre garantir que todos estivessem alinhados e trabalhando em conjunto para o sucesso do projeto.
+                    No meu primeiro semestre como Scrum Master, comecei a desenvolver uma faceta nova na comunicação: a de ser uma ponte entre todos os membros da equipe (desenvolvedores ou Product Owner). Isto foi exercitado ao realizar as reuniões diárias com os membros da equipe, onde sempre perguntava como estavam as tarefas, se havia algum impedimento e se precisavam de ajuda. Além disso, quando percebia que havia alguma dúvida ou falta de clareza sobre as expectativas do Product Owner, eu pedia para que ele explicasse novamente as prioridades e objetivos do projeto, mesmo que para mim, assim eu poderia ajudar a esclarecer as dúvidas dos membros da equipe.
                 </p>
             </details>
         </td>
     </tr>
     <tr>
         <td>Resolução de problemas</td>
-        <td>★★★★★★☆☆☆☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    A habilidade de identificar e resolver problemas de forma eficaz e eficiente.
-                    Durante o desenvolvimento do projeto, enfrentei diversos desafios técnicos e funcionais, mas as maiores dificuldades que enfrentei foram relacionadas à integração da equipe.
+                    Durante o desenvolvimento do projeto, o grupo passou por uma série de ideias divergentes entre os membros, o que dificultou o progresso do projeto.
+                    Como Scrum Master, tentei intervir para resolver os conflitos, mas infelizmente não consegui resolver a situação de forma eficaz e um dos membros da equipe acabou se desligando do projeto. Foi bastante frustrante.
                 </p>
             </details>
         </td>
@@ -2082,7 +2055,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 </p>
 
 <p align="justify">
-    Já como Scrum Master, me senti um pouco frustrada com a falta de comunicação entre os membros da equipe, o que dificultou o progresso do projeto. Além disso, alguns membros da equipe começaram a entrar em conflito e não consegui resolver a situação de forma eficaz. Diante disso, aprendi que a comunicação é fundamental para o sucesso de um projeto e que é importante estar atenta às dinâmicas da equipe, mas que também é importante saber quando devo intervir e quando devo deixar que a equipe resolva seus próprios conflitos.
+    Em meu primeiro semestre como Scrum Master, me senti um pouco frustrada com a falta de comunicação entre os membros da equipe, o que dificultou o progresso do projeto. Além disso, alguns membros da equipe começaram a entrar em conflito e não consegui resolver a situação de forma eficaz. Diante disso, aprendi que a comunicação é fundamental para o sucesso de um projeto e que é importante estar atenta às dinâmicas da equipe, mas que também é importante saber quando devo intervir e quando devo deixar que a equipe resolva seus próprios conflitos.
 </p>
 
 <h2 id="api4">Projeto 4: Sistema de cadastro e atualização de parceiros</h2>
@@ -2487,60 +2460,50 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 <table align="center">
     <tr>
         <th width="300px">Habilidade</th>
-        <th width="300px">Classificação</th>
         <th width="300px">Explicação</th>
     </tr>
     <tr>
         <td>Comunicação</td>
-        <td>★★★★★★★☆☆☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    A habilidade de conseguir transmitir informações de forma clara e eficaz, tanto verbalmente quanto por escrito.
-                    Como Scrum Master, fui responsável por facilitar a comunicação entre os membros da equipe, tentando garantir que todos estivessem alinhados e informados sobre o progresso do projeto.
-                    Além disso, fui responsável por tentar facilitar o entendimento das necessidades do Product Owner e da empresa parceira, garantindo que as expectativas fossem atendidas.
+                    Em meu segundo semestre como Scrum Master, precisei exercitar ainda mais minha habilidade de comunicação, uma vez que o Product Owner não conseguia se comunicar corretamente com a equipe de desenvolvimento. Por diversos momentos, tive que intervir, pedindo para que ele nos explicasse o que ele queria que fizéssemos, quais eram as prioridades e objetivos do projeto, e como deveríamos proceder, uma vez que ele se recusava a nos enviar o backlog do projeto. 
                 </p>
             </details>
         </td>
     </tr>
     <tr>
         <td>Trabalho em equipe</td>
-        <td>★★★★★★★★★☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    A habilidade de colaborar efetivamente com outros membros da equipe para alcançar objetivos comuns.
-                    Como Scrum Master, trabalhei em estreita colaboração com os desenvolvedores, tentando sempre garantir que todos estivessem alinhados e trabalhando em conjunto para o sucesso do projeto.
-                    Durante este projeto, aprendi a importância de ter um bom relacionamento interpessoal, podendo contar com o apoio da equipe em momentos difíceis.
+                    Desta vez, o trabalho em equipe foi exercitado ao perceber que não estava conseguindo exercer minha função de Scrum Master de forma eficaz sozinha.
+                    Estava com a saúde bastante comprometida, então precisei contar com a ajuda dos meus colegas de equipe para conseguir conduzir a função de Scrum Master corretamente.
+                    Essa foi uma situação bem difícil, pois não estou acostumada a pedir ajuda, mas percebi que eu ia deixar a equipe na mão se não pedisse ajuda em alguns momentos.
                 </p>
             </details>
         </td>
     </tr>
     <tr>
         <td>Resolução de problemas</td>
-        <td>★★★★★★☆☆☆☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    A habilidade de identificar e resolver problemas de forma eficaz e eficiente.
-                    Durante o desenvolvimento do projeto, enfrentei diversos desafios técnicos e funcionais, mas as maiores dificuldades que enfrentei foram aquelas relacionadas à falta de clareza no escopo.
-                    Aprendi a importância de ter um bom relacionamento interpessoal, podendo contar com o apoio da equipe em momentos difíceis.
+                    A resolução de problemas foi exercitada ao perceber que o Product Owner não conseguia se comunicar corretamente com a equipe de desenvolvimento, o que dificultou o progresso do projeto. Em diversos momentos, acabei tendo conflitos com ele, pois ele não queria fazer o detalhamento das histórias de usuário para nos enviar. A melhor forma que encontrei em alguns momentos, já que a equipe não ia trocar ele, foi pegar e escrever os detalhes que ele falava.
                 </p>
             </details>
         </td>
     </tr>
     <tr>
         <td>Resiliência</td>
-        <td>★★★★★★☆☆☆☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    A habilidade de se recuperar rapidamente de dificuldades e manter a motivação mesmo diante de desafios.
-                    Durante este projeto, enfrentei momentos difíceis, tanto pessoais quanto profissionais, mas consegui superar esses desafios junto com a equipe, aprendendo muito sobre resiliência e adaptação.
+                    Durante o desenvolvimento do projeto, enfrentei todo tipo de dificuldade, pessoal, profissional e de saúde. Tive diversos altos e baixos, pensando diariamente em desistir do projeto. No final, consegui aprender a lidar com as dificuldades que me cercavam no grupo, e com isso, aprendi a ser mais resiliente e a não desistir facilmente diante dos desafios.
                 </p>
             </details>
         </td>
@@ -2553,7 +2516,8 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     Este talvez tenha sido o projeto mais desafiador que já participei: o cliente não nos forneceu um escopo claro, o Product Owner não conseguia se comunicar corretamente com a equipe de desenvolvimento e eu estava passando por um momento pessoal muito difícil, com anemia e depressão profundas, o que afetou minha capacidade de concentração e foco.
 </p>
 <p align="justify">
-    Em diversos momentos, pensei em desistir do projeto, mas consegui superar esses desafios junto com a equipe, aprendendo muito sobre resiliência e adaptação.
+    Foi minha segunda experiência como Scrum Master, e acabou sendo ainda mais desafiadora do que a primeira, pois tive que lidar não só com o mesmo Product Owner, mas também com as minhas próprias dificuldades pessoais.
+    Em diversos momentos, pensei em desistir do projeto, mas graças ao apoio dos meus colegas de equipe, consegui superar as dificuldades e concluir o projeto.
 </p>
 
 <h2 id="api5">Projeto 5: Sistema de análise de dados de recrutamento e seleção de candidatos</h2>
@@ -2756,38 +2720,34 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 <table align="center">
     <tr>
         <th width="300px">Habilidade</th>
-        <th width="300px">Classificação</th>
         <th width="300px">Explicação</th>
     </tr>
     <tr>
         <td>Comunicação</td>
-        <td>★★★★★★★★★☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    Como Scrum Master, fui responsável por facilitar a comunicação entre os membros da equipe, garantindo que todos estivessem alinhados e informados sobre o progresso do projeto.
-                    Além disso, fui responsável por tentar facilitar o entendimento das necessidades do Product Owner e da empresa parceira, garantindo que as expectativas fossem atendidas.
+                    Em meu terceiro semestre como Scrum Master, precisei exercitar minha habilidade de comunicação ao garantir que todos os membros da equipe estivessem alinhados e informados sobre o progresso do projeto. Além disso, com um Product Owner novo, auxiliei na comunicação entre ele e a equipe de desenvolvimento, garantindo que as expectativas fossem atendidas e que o backlog fosse atualizado corretamente.
                 </p>
             </details>
         </td>
     </tr>
     <tr>
         <td>Trabalho em equipe</td>
-        <td>★★★★★★★★★☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
                 <p>
-                    Como Scrum Master, trabalhei em estreita colaboração com os desenvolvedores e com o Product Owner, garantindo que todos estivessem alinhados e trabalhando em conjunto para o sucesso do projeto.
-                    Durante este projeto, senti que a equipe estava quase em perfeita harmonia, o que facilitou a comunicação e colaboração entre os membros da equipe.
+                    Desta vez, o trabalho em equipe foi extremamente agradável, pois a equipe estava muito unida e colaborativa. 
+                    Por diversos momentos, trabalhei principalmente com o Product Owner, ajudando-o a se expressar melhor e a entender as necessidades da equipe de desenvolvimento.
+                    Além disso, precisei trabalhar em equipe durante o desenvolvimento do DevOps, pois quem iria utilizar o versionamento do banco de dados na prática seriam os desenvolvedores, então eu tinha que facilitar a vida deles.
                 </p>
             </details>
         </td>
     </tr>
     <tr>
         <td>Flexibilidade</td>
-        <td>★★★★★★★★★☆</td>
         <td>
             <details>
                 <summary>Explicação: </summary>
@@ -2795,7 +2755,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
                     Durante o projeto, enfrentei desafios técnicos e mudanças de escopo, mas consegui me adaptar rapidamente e encontrar soluções eficazes. 
                     Um exemplo disso foi na primeira sprint, onde o Product Owner não conseguiu definir claramente o escopo do projeto, o que exigiu que parássemos para reavaliar as prioridades e ajustar o backlog. 
                     Como Scrum Master, fui responsável por garantir que a equipe estivesse alinhada com as mudanças e que todos estivessem focados nas metas do projeto.
-                    Além disso, tive que ser flexível para ajustar a agenda da equipe, já que todos os membros tinham outras atividades e compromissos, o que exigiu uma boa dose de adaptação.
+                    Além disso, outra situação que exigiu bastante flexibilidade foi em relação a agenda da equipe, já que todos os membros tinham outras atividades e compromissos, o que exigiu uma boa dose de adaptação.
                 </p>
             </details>
         </td>
@@ -2806,7 +2766,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 
 <p align="justify">
     Durante esse projeto, fui me reencontrando: me recuperei da anemia e me estabilizei emocionalmente, o que me permitiu atuar como Scrum Master e DevOps de forma mais efetiva. 
-    Além disso, formei minha própria equipe, com pessoas que já conhecia e confiava, o que facilitou a comunicação e colaboração entre os membros da equipe. 
+    Além disso, formei minha própria equipe, com pessoas que já conhecia e confiava, o que facilitou a comunicação e colaboração entre os membros. 
 </p>
 
 <p align="justify">
