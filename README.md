@@ -2604,6 +2604,9 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
                 <p align="justify">
                 Em meu terceiro semestre como Scrum Master, percebi que é muito mais comum precisar ajudar a equipe a manter o foco nas metas da sprint do que remover impedimentos, ainda mais quando o escopo passado pelo cliente não está tão definido. Além disso, ao ajudar a equipe a manter o foco nas metas da sprint, acabei ajudando a remover muitos impedimentos que surgiam desnecessariamente, pois estavam indo pelo caminho errado.
                 </p>
+                <p align="justify">
+                Aqui, eu também consigo destacar as discussões de brainstorming das quais participei com a equipe ou parte dela, onde discutíamos as melhores formas de implementar as histórias de usuário e as tarefas do projeto. Essas discussões foram muito importantes para que a equipe pudesse entender melhor o que deveria ser feito e como deveríamos proceder. Um exemplo disso foi a discussão que tivemos sobre a modelação do banco de dados no modelo estrela, que foi uma das principais características do projeto.
+                </p>
             </details>
             <details>
                 <summary>Colaborei com o Product Owner para priorizar o backlog e definir as histórias de usuário.</summary>
@@ -2650,9 +2653,31 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
             <li>Implementei o versionamento do banco de dados, utilizando o Flyway para gerenciar as migrações do banco de dados.</li>
             <li>Como o DevOps começou a ser implementado no meio do projeto, eu realizei a migração do banco de dados existente para o Flyway, criando os scripts de migração necessários para manter o histórico das alterações.</li>
             <li>Criei os scripts de migração do banco de dados, garantindo que as alterações fossem aplicadas de forma controlada e rastreável.</li>
-            <li>Documentei o processo de versionamento do banco de dados, incluindo instruções sobre como criar novas migrações e aplicar as alterações no ambiente de produção.</li>
-            <li>Coloquei os scripts de migração dentro de um diretório que aponta para um repositório no GitHub, mesmo dentro do Java, para garantir que as alterações fossem sempre versionadas e rastreáveis.</li>
+            <li><a href="https://github.com/bytelabss/ByteLabss-API5sem/wiki/%5BDevOps%5D-Versionamento-de-Banco-de-Dados">Documentei</a> o processo de versionamento do banco de dados, incluindo instruções sobre como criar novas migrações e aplicar as alterações no ambiente de produção.</li>
+            <li>Coloquei os scripts de migração dentro de um <a href="https://github.com/bytelabss/backend-spring-API5/tree/776f09b60de5258d83d8eb7e4a86062dd1f88e28/src/main/resources/db">diretório que aponta para um repositório no GitHub</a>, mesmo dentro do Java, para garantir que as alterações fossem sempre versionadas e rastreáveis.</li>
         </ul>
+        <p align="justify">
+            A seguir, estão alguns exemplos de como foi implementado o versionamento do banco de dados:
+        </p>
+        <ul>
+            <details>
+                <summary>Execução do projeto utilizando perfis:</summary>
+                <p align="justify">
+                    Eu deixei o perfil de Produção como o padrão do projeto, então ele podia ser executado tanto com <code>mvn clean install</code> + <code>mvn spring-boot:run</code> quanto com <code>mvn clean install</code> + <code>mvn spring-boot:run -Pproduction</code>. Isso garantia que somente as migrações da pasta commons fossem executadas.
+                </p>
+                <p align="justify">
+                    Além do perfil de Produção, também criei o perfil de Teste, que poderia ser executado com <code>mvn clean install -Dspring.profiles.active=test</code> + <code>mvn spring-boot:run -Ptest</code>. Nesse perfil, todas as migrações seriam executadas, incluindo as migrações da pasta commons.
+                </p>
+            </details>
+            <details>
+                <summary>Recuperar versões específicas do banco de dados:</summary>
+                <p align="justify">
+                    Como eu coloquei os scripts de migração dentro de um submódulo do Git, eu poderia recuperar versões específicas do banco de dados utilizando o comando <code>git checkout</code>, sejam elas versões em commits anteriores, tags específicas ou branches de desenvolvimento. Isso permitia uma maior flexibilidade no gerenciamento das migrações do banco de dados.
+                </p>
+                <p align="center">
+                    <img src="assets/tags.png" alt="Tags do repositório" width="600px">
+                </p>
+            </details>
     </details>
 </ul>
 
@@ -2777,6 +2802,20 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
         </td>
     </tr>
     <tr>
+        <td>Modelagem de dados em formato estrela</td>
+        <td>★★★★★★★★★☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    A modelagem de dados em formato estrela é uma técnica de modelagem de dados utilizada em data warehouses para facilitar a análise e consulta de grandes volumes de dados.
+                    No projeto, foi utilizada para organizar os dados em tabelas de fatos e tabelas de dimensões, permitindo consultas eficientes e relatórios analíticos.
+                    Participei da modelagem inicial, da formulação das perguntas e da definição das tabelas de fatos e dimensões, garantindo que a modelagem atendesse às necessidades do projeto no início. Foi meu primeiro contato com a modelagem de dados em formato estrela, então aprendi bastante sobre o assunto.
+                </p>
+            </details>
+        </td>
+    </tr>
+    <tr>
         <td>Git</td>
         <td>★★★★★★★★★☆</td>
         <td>
@@ -2846,7 +2885,12 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     Durante esse projeto, fui me reencontrando: me recuperei da anemia e me estabilizei emocionalmente, o que me permitiu atuar como Scrum Master e DevOps de forma mais efetiva. 
     Além disso, formei minha própria equipe, com pessoas que já conhecia e confiava, o que facilitou a comunicação e colaboração entre os membros. 
 </p>
-
+<p align="justify">
+    Do ponto de vista técnico, foi o semestre em que mais aprendi sobre a função de Scrum Master, pois consegui focar completamente na função, sem me preocupar com o desenvolvimento do back-end ou front-end. 
+    O comprometimento e harmonia da equipe também foram fundamentais para o meu aprendizado, pois pude me dedicar mais às práticas ágeis e ao gerenciamento do projeto. 
+    Sobre o DevOps, em especial sobre o versionamento do banco de dados, vi como ele pode facilitar a vida dos desenvolvedores e confesso que foi uma pena não ter conseguido implementar antes, pois o projeto poderia ter sido ainda mais produtivo.
+    Este projeto me proporcionou meu primeiro contato com a modelagem de dados em formato estrela, o que foi extremamente útil para o meu aprendizado, pois é ums técnica que eu venho tendo que aplicar em diversos projetos desde então.
+</p>
 <p align="justify">
     Diria que minha maior contribuição foi a de conseguir manter a equipe unida e motivada, mesmo diante dos desafios técnicos que enfrentamos.
     Aprendi ainda mais sobre a importância de ter um bom relacionamento interpessoal e de ser uma facilitadora para a equipe, ajudando a remover impedimentos e garantindo que todos estivessem alinhados com os objetivos do projeto.
