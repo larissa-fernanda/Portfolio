@@ -2557,13 +2557,91 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     <details>
         <summary>Como Scrum Master:</summary>
         <ul>
-            <li>Coordenei a equipe de desenvolvimento, garantindo que as práticas ágeis fossem seguidas.</li>
-            <li>Organizei e conduzi as reuniões diárias e retrospectivas.</li>
-            <li>Facilitei a comunicação entre os membros da equipe e com o Product Owner.</li>
-            <li>Ajudei a remover impedimentos e garantir que a equipe estivesse focada nas metas da sprint.</li>
-            <li>Colaborei com o Product Owner para priorizar o backlog e definir as histórias de usuário.</li>
-            <li>Monitorei o progresso da equipe, com o auxílio do gráfico de Burndown, garantindo que as entregas fossem feitas dentro do prazo.</li>
-            <li>Documentei o README do projeto.</li>
+            <details>
+                <summary>Criei e configurei o quadro de tarefas no Jira.</summary>
+                <p align="justify">
+                Para organizar as tarefas do projeto, criei um quadro de tarefas no Jira, onde cada tarefa era representada por um cartão. Essas tarefas eram divididas em histórias, que representavam as histórias de usuário do projeto em sua maioria, mas também algumas tarefas técnicas que precisavam ser realizadas.
+                </p>
+                <p align="justify">
+                No começo, nós estávamos pontuando as tarefas e as histórias de usuário, mas depois percebemos que isso não estava funcionando muito bem, então passamos a pontuar apenas as tarefas.
+                </p>
+                <p align="justify">
+                Para facilitar a rotina da equipe, criei também algumas automações no Jira, como a transição das tarefas entre os status ao criar uma branch no GitHub, criar um pull request ou ao fazer o merge de uma branch.
+                </p>
+                <p align="center">
+                    <img src="assets/tasks.png" alt="Quadro de tarefas no Jira" width="600px">
+                </p>
+                <p align="center">
+                    <img src="assets/automacoes.png" alt="Automação no Jira" width="600px">
+                </p>
+            </details>
+            <details>
+                <summary>Coordenei a equipe de desenvolvimento, garantindo que as práticas ágeis fossem seguidas.</summary>
+                <p align="justify">
+                Por mais que, dessa vez, eu não tenha sido a responsável por criar as regras de branches e commits, eu estava sempre de olho, juntamente com a pessoa do DevOps encarregada, para garantir que as regras fossem seguidas corretamente. Para isso, mandava avisos e alertas sempre que necessário.
+                </p>
+                <p align="center">
+                    <img src="assets/regras_req_track.jpeg" alt="Regras de branches e commits" width="600px">
+                </p>
+            </details>
+            <details>
+                <summary>Organizei e conduzi as reuniões diárias e retrospectivas.</summary>
+                <p align="justify">
+                De segunda a sexta, eu mandava mensagens no grupo do WhatsApp da equipe, perguntando como estava o andamento do projeto e se havia algum impedimento. Geralmente era uma mensagem padronizada, mas sempre que necessário, eu adaptava a mensagem para o contexto do dia. Quando alguma pessoa não respondia, eu remarcava ela, avisando que ainda não tinha respondido.
+                </p>
+                <p align="center">
+                    <img src="assets/daily.png" alt="Mensagem de daily" width="600px">
+                </p>
+            </details>
+            <details>
+                <summary>Facilitei a comunicação entre os membros da equipe e com o Product Owner.</summary>
+                <p align="justify">
+                Durante o projeto, em alguns momentos, especialmente durante as reuniões de planejamento das sprints, percebi que o Product Owner não estava conseguindo expressar exatamente o que ele queria que fizéssemos. Então, eu tentava intervir, fazendo perguntas para que ele pudesse explicar melhor o que ele queria. Em alguns momentos, eu escrevia ou até reescrevia o que ele falava no cartão do Jira, para que a equipe pudesse entender melhor o que ele queria.
+                </p>
+            </details>
+            <details>
+                <summary>Ajudei a remover impedimentos e garantir que a equipe estivesse focada nas metas da sprint.</summary>
+                <p align="justify">
+                Em meu terceiro semestre como Scrum Master, percebi que é muito mais comum precisar ajudar a equipe a manter o foco nas metas da sprint do que remover impedimentos, ainda mais quando o escopo passado pelo cliente não está tão definido. Além disso, ao ajudar a equipe a manter o foco nas metas da sprint, acabei ajudando a remover muitos impedimentos que surgiam desnecessariamente, pois estavam indo pelo caminho errado.
+                </p>
+            </details>
+            <details>
+                <summary>Colaborei com o Product Owner para priorizar o backlog e definir as histórias de usuário.</summary>
+                <p align="justify">
+                Outra coisa que percebi em meu terceiro semestre como Scrum Master é que, muitas vezes, o Product Owner não consegue priorizar o backlog e definir as histórias de usuário corretamente e que, quanto mais eu ajudasse ele a definir as histórias de usuário, mais fácil seria para a equipe entender o que deveria ser feito. Então, sempre que possível, eu tentava ajudar o Product Owner a definir as histórias de usuário, escrevendo os detalhes que ele falava e ajudando a priorizar o backlog. Somado a isso, também ajudei ele a desenvolver a proposta de solução para o cliente.
+                </p>
+            </details>
+            <details>
+                <summary>Monitorei o progresso da equipe, com o auxílio do gráfico de Burndown, garantindo que as entregas fossem feitas dentro do prazo.</summary>
+                <p align="justify">
+                Durante o projeto, utilizei o gráfico de Burndown gerado pelo Jira para monitorar o progresso da equipe na sprint. 
+                Diariamente, eu enviava o gráfico atualizado no grupo do WhatsApp da equipe junto com a mensagem de daily, para que todos pudessem acompanhar o progresso da equipe e ver se estávamos dentro do prazo ou não. 
+                Além disso, sempre que necessário, eu fazia comentários na imagem do gráfico, como "O burndown não está descendo, pessoal", para alertar a equipe sobre o progresso da sprint.
+                </p>
+                <p align="center">
+                    <img src="assets/burndown.png" alt="Gráfico de Burndown" width="600px">
+                </p>
+            </details>
+            <details>
+                <summary>Documentei o README.md do projeto.</summary>
+                <p align="justify">
+                Fui responsável por documentar o README.md do projeto, garantindo que as informações fossem claras e acessíveis para outros desenvolvedores e usuários. Para isso, utilizei links de referência para seções do próprio README.md, links para documentos no wiki do GitHub e uma estrutura com títulos e subtítulos para organizar as informações. A documentação incluiu detalhes sobre: 
+                </p>
+                <ul>
+                    <li>O problema apresentado pelo cliente,</li>
+                    <li>O objetivo do projeto,</li>
+                    <li>Os requisitos funcionais e não funcionais,</li>
+                    <li>As tecnologias utilizadas,</li>
+                    <li>As regras de desenvolvimento estabelecidas,</li>
+                    <li>As regras de DevOps.</li>
+                    <li>O backlog do produto,</li>
+                    <li>O cronograma de entrega,</li>
+                    <li>A equipe</li>
+                </ul>
+                <p align="center">
+                    <img src="assets/readme.png" alt="README.md do projeto" width="600px">
+                </p>
+            </details>
         </ul>
     </details>
     <details>
