@@ -66,915 +66,802 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 <ul>
     <details>
         <summary>Desenvolvimento de funções para validação do nome de usuário e nome de time</summary>
-        <p align="justify">Criei as funções iniciais de validação do nome de usuário e nome de time, garantindo que o nome informado pelo usuário atendesse aos critérios estabelecidos. As funções verificavam se o nome era válido, ou seja, se continha apenas letras e underlines, se não começava com números e se tinha mais de dois caracteres. Para isso, usei expressões regulares.</p>
+        <p align="justify">
+        Criei as funções iniciais de validação do nome de usuário e nome de time, garantindo que o nome informado pelo usuário atendesse aos critérios estabelecidos. As funções verificavam se o nome era válido, ou seja, se continha apenas letras e underlines, se não começava com números e se tinha mais de dois caracteres. Para isso, usei expressões regulares.
+        </p>
         <pre>
         <code>
-        def has_name_valid_characters(name):
-            "Verifica se tem caracteres especiais."
-            return re.match("^[a-zA-Z0-9_-]+$", name)
-
-        def is_name_valid(name, show=False):
-            """
-            Retorna True ou False. Verifica se o nome é valido ou não.
-            Validações:
-                - deve conter mais de 2 caracteres
-                - não pode começar com número
-                - não pode conter caracteres especiais, exceto underline "_"
-            """
-            if len(name) <= 2:
-                if show == True:
-                    print('O nome deve ter mais de 2 caracteres. Tente novamente!')
-                return False
-            elif not has_name_valid_characters(name):
-                if show == True:
-                    print('Formato inválido. Tente novamente!')
-                return False
-            elif re.match('\d', name[0]):
-                if show == True:
-                    print('Nomes não podem começar com número')
-                return False
-            else:
-                return True
-
-        def prompt_for_valid_username():
-            """
-            Loop pedindo para o usuário inserir o nome caso
-            o nome seja inválido.
-            """
-            input_name = input('Digite o nome:')
-
-            while not is_name_valid(input_name):
-                input_name = input('Digite um nome válido:')
-
-            return input_name
-
-        def prompt_for_valid_team_name():
-            input_team_name = input('Digite o nome do time: ')
-
-            while not is_name_valid(input_team_name):
-                input_team_name = input('Digite um nome válido para o time: ')
-
-            return input_team_name
-
-</code></pre> 
+def has_name_valid_characters(name):
+    "Verifica se tem caracteres especiais."
+    return re.match("^[a-zA-Z0-9_-]+$", name)
+def is_name_valid(name, show=False):
+    """
+    Retorna True ou False. Verifica se o nome é valido ou não.
+    Validações:
+        - deve conter mais de 2 caracteres
+        - não pode começar com número
+        - não pode conter caracteres especiais, exceto underline "_"
+    """
+    if len(name) <= 2:
+        if show == True:
+            print('O nome deve ter mais de 2 caracteres. Tente novamente!')
+        return False
+    elif not has_name_valid_characters(name):
+        if show == True:
+            print('Formato inválido. Tente novamente!')
+        return False
+    elif re.match('\d', name[0]):
+        if show == True:
+            print('Nomes não podem começar com número')
+        return False
+    else:
+        return True
+def prompt_for_valid_username():
+    """
+    Loop pedindo para o usuário inserir o nome caso
+    o nome seja inválido.
+    """
+    input_name = input('Digite o nome:')
+    while not is_name_valid(input_name):
+        input_name = input('Digite um nome válido:')
+    return input_name
+def prompt_for_valid_team_name():
+    input_team_name = input('Digite o nome do time: ')
+    while not is_name_valid(input_team_name):
+        input_team_name = input('Digite um nome válido para o time: ')
+    return input_team_name
+        </code>
+        </pre>
     </details>
     <details>
         <summary>Desenvolvimento de funções para validação do email</summary>
-        <p align="justify">Criei as funções iniciais de validação do email, garantindo que o email informado pelo usuário atendesse aos critérios estabelecidos. As funções verificavam se o email era válido, ou seja, se continha um "@" e um ".". Para isso, usei expressões regulares.</p>
+        <p align="justify">
+        Criei as funções iniciais de validação do email, garantindo que o email informado pelo usuário atendesse aos critérios estabelecidos. As funções verificavam se o email era válido, ou seja, se continha um "@" e um ".". Para isso, usei expressões regulares.
+        </p>
         <pre>
         <code>
-        def is_email_valid(email):
-            return re.match('^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$', email)
-
-
-        def prompt_for_valid_email():
-            input_email = input('Digite o email: ')
-
-            while not is_email_valid(input_email):
-                print('E-mail inválido. Digite novamente!')
-                input_email = input('Digite o e-mail: ')
-
-            return input_email
-</code></pre>
+def is_email_valid(email):
+    return re.match('^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$', email)
+def prompt_for_valid_email():
+    input_email = input('Digite o email: ')
+    while not is_email_valid(input_email):
+        print('E-mail inválido. Digite novamente!')
+        input_email = input('Digite o e-mail: ')
+    return input_email
+        </code>
+        </pre>
     </details>
     <details>
         <summary>Desenvolvimento de funções para validação da senha</summary>
-        <p align="justify">Criei as funções iniciais de validação da senha, garantindo que a senha informada pelo usuário atendesse aos critérios estabelecidos. As funções verificavam se a senha era válida, ou seja, se continha pelo menos 8 caracteres, um número, uma letra maiúscula, uma letra minúscula e um caracter especial. Para isso, usei expressões regulares.</p>
+        <p align="justify">
+        Criei as funções iniciais de validação da senha, garantindo que a senha informada pelo usuário atendesse aos critérios estabelecidos. As funções verificavam se a senha era válida, ou seja, se continha pelo menos 8 caracteres, um número, uma letra maiúscula, uma letra minúscula e um caracter especial. Para isso, usei expressões regulares.
+        </p>
         <pre>
         <code>
-        def is_password_valid(password, show=False):
-            """
-            Retorna True ou False. Verifica se a senha é valida ou não.
-            Validações:
-                - deve conter mais de 8 caracteres
-                - deve conter pelo menos 1 letra maiúscula
-                - deve conter pelo menos 1 letra minúscula
-                - deve conter pelo menos 1 número
-                - deve conter pelo menos 1 carácter especial (@!%*?&)    
-            """
-            if len(password) < 8:
-                if show == True:
-                    print('A senha deve ter mais de 8 caracteres.')
-                return False
-            elif not has_password_valid_characters(password):
-                if show == True:
-                    print('Formato inválido!')
-                return False
-            else:
-                return True
-
-        def prompt_for_valid_password(show = False):
-            """
-            Loop pedindo para o usuário inserir a senha caso
-            ela seja inválida.
-            """
-            if show == True:
-                print('Sua senha deve conter:\n- No mínimo 8 caracteres\n- No mínimo 1 letra maiúscula\n- No mínimo 1 letra minúscula\n- No mínimo 1 número\n- No mínimo 1 carácter especial (@!%*?&) ')
-            input_password = stdiomask.getpass(prompt="Digite a senha: ", mask="*")
-
-            while not is_password_valid(input_password, show):
-                input_password = stdiomask.getpass(prompt="Digite uma senha válida: ", mask="*")
-
-            return input_password
-</code></pre>
+def is_password_valid(password, show=False):
+    """
+    Retorna True ou False. Verifica se a senha é valida ou não.
+    Validações:
+        - deve conter mais de 8 caracteres
+        - deve conter pelo menos 1 letra maiúscula
+        - deve conter pelo menos 1 letra minúscula
+        - deve conter pelo menos 1 número
+        - deve conter pelo menos 1 carácter especial (@!%*?&)    
+    """
+    if len(password) < 8:
+        if show == True:
+            print('A senha deve ter mais de 8 caracteres.')
+        return False
+    elif not has_password_valid_characters(password):
+        if show == True:
+            print('Formato inválido!')
+        return False
+    else:
+        return True
+def prompt_for_valid_password(show = False):
+    """
+    Loop pedindo para o usuário inserir a senha caso
+    ela seja inválida.
+    """
+    if show == True:
+        print('Sua senha deve conter:\n- No mínimo 8 caracteres\n- No mínimo 1 letra maiúscula\n- No mínimo 1 letra minúscula\n- No mínimo 1 número\n- No mínimo 1 carácter especial (@!%*?&) ')
+    input_password = stdiomask.getpass(prompt="Digite a senha: ", mask="*")
+    while not is_password_valid(input_password, show):
+        input_password = stdiomask.getpass(prompt="Digite uma senha válida: ", mask="*")
+    return input_password
+        </code>
+        </pre>
     </details>
     <details>
         <summary>Desenvolvimento de funções para criação do time</summary>
-        <p align="justify">Criei as funções iniciais para a criação do time, permitindo que o usuário informasse o nome do time e os membros que fariam parte dele. As funções solicitavam ao usuário o nome do time e os dados dos membros, como nome, email e função. Os membros eram validados de acordo com as regras estabelecidas e, caso fossem válidos, eram adicionados ao time.</p>
-        <p align="justify">Os times eram formados por pelo menos um Líder Técnico e um Product Owner. Caso o time não atendesse a esses critérios, o usuário era informado e solicitado a informar os membros novamente. Ao informar um time válido, ele era salvo no arquivo de times.</p>
+        <p align="justify">
+        Criei as funções iniciais para a criação do time, permitindo que o usuário informasse o nome do time e os membros que fariam parte dele. As funções solicitavam ao usuário o nome do time e os dados dos membros, como nome, email e função. Os membros eram validados de acordo com as regras estabelecidas e, caso fossem válidos, eram adicionados ao time.
+        </p>
+        <p align="justify">
+        Os times eram formados por pelo menos um Líder Técnico e um Product Owner. Caso o time não atendesse a esses critérios, o usuário era informado e solicitado a informar os membros novamente. Ao informar um time válido, ele era salvo no arquivo de times.
+        </p>
         <pre>
         <code>
-        def create_team_dict(id, team_name, members): #members = [{"nome": "nome do membro", "funcao": "funcao do membro"},...]
-            return {
-                "id": id,
-                "team_name": team_name,
-                "members": members
-            }
-
-        def prompt_for_team_members():
-            members = []
-            while True:
-                with open('users.txt', 'r') as file:
-                    category = prompt_for_valid_category()
-                    name = prompt_for_valid_username()
-                    email = prompt_for_valid_email()
-                    member = None
-                    for line in file:
-                        user = line_to_user_dict(line)
-                        if user["name"] == name and user["email"] == email and user["category"] == category:
-                            member = {
-                                "id" : user["id"],
-                                "category": category,
-                                "name": name,
-                                "email": email,
-                            }
-                            members.append(member)
-                            break
-                    if not member:
-                        print('Usuário não encontrado.')
-
-                    asking = input('Deseja continuar?').lower()
-                    if asking == 'n'or asking == 'nao' or asking == 'não':
-                        break
-            return members
-
-        def create_team_interactively():
-            print("\nFormulário de Criação de Time\n")
-
-            team_name = prompt_for_valid_team_name()
-            members = prompt_for_team_members()
-            if not has_team_valid_members(members):
-                print("O time precisa ter pelo menos um Líder técnico e um Product Owner")
-                return create_team_interactively()
-            team_dict = create_team_dict(uuid.uuid4(), team_name, members)
-            save_team_to_file(team_dict)
-
-        def has_team_valid_members(members):
-            """
-            Verifica se o time tem pelo menos 1 Líder Técnico e 1 PO
-            """
-            needed_categories = set(['LT', 'PO'])
-            category_of_members = set([member['category'] for member in members])
-            return needed_categories.issubset(category_of_members)
-
-        def save_team_to_file(team):
-            file = open("data/teams.txt", "a")
-            line = team_dict_to_line(team)
-            file.write(line)
-            file.write("\n")
-            file.close()
-            print("Time salvo com sucesso!")
-
-        def print_team_members(team_name):
-            found_team = None
-            with open('data/teams.txt', 'r') as file:
-                for line in file:
-                    team_dict = line_to_team_dict(line.rstrip())
-
-                    if team_name == team_dict["team_name"]:
-                        found_team = team_dict
-                        break
-
-                if not found_team:
-                    print("Time não encontrado")
-                    return
-
-            members = []
-
-            with open("data/users.txt", "r") as file:
-                for line in file:
-                    user_dict = line_to_user_dict(line)
-                    if user_dict["id"] in found_team["members_id"]:
-                        members.append({**user_dict, "password": "****"})
-
-            print("Time: ", found_team["team_name"])
-            for member in members:
-                print(member["name"], member["category"])
-
-        def team_dict_to_line(team):
-            team_id = team["id"]
-            team_name = team["team_name"]
-            members = [member["id"] for member in team["members"]]
-            members_id = ','.join(members)
-            return f"{team_id};{team_name};{members_id}"
-
-        def line_to_team_dict(line):
-            splited_line = line.split(";")
-            team_id = splited_line[0]
-            team_name = splited_line[1]
-            members_id = splited_line[2].split(',')
-            team_dict = {
-                "team_id": team_id,
-                "team_name": team_name,
-                "members_id": members_id
-            }
-            return team_dict
+def create_team_dict(id, team_name, members): #members = [{"nome": "nome do membro", "funcao": "funcao do membro"},...]
+    return {
+        "id": id,
+        "team_name": team_name,
+        "members": members
+    }
+def prompt_for_team_members():
+    members = []
+    while True:
+        with open('users.txt', 'r') as file:
+            category = prompt_for_valid_category()
+            name = prompt_for_valid_username()
+            email = prompt_for_valid_email()
+            member = None
+            for line in file:
+                user = line_to_user_dict(line)
+                if user["name"] == name and user["email"] == email and user["category"] == category:
+                    member = {
+                        "id" : user["id"],
+                        "category": category,
+                        "name": name,
+                        "email": email,
+                    }
+                    members.append(member)
+                    break
+            if not member:
+                print('Usuário não encontrado.')
+            asking = input('Deseja continuar?').lower()
+            if asking == 'n'or asking == 'nao' or asking == 'não':
+                break
+    return members
+def create_team_interactively():
+    print("\nFormulário de Criação de Time\n")
+    team_name = prompt_for_valid_team_name()
+    members = prompt_for_team_members()
+    if not has_team_valid_members(members):
+        print("O time precisa ter pelo menos um Líder técnico e um Product Owner")
+        return create_team_interactively()
+    team_dict = create_team_dict(uuid.uuid4(), team_name, members)
+    save_team_to_file(team_dict)
+def has_team_valid_members(members):
+    """
+    Verifica se o time tem pelo menos 1 Líder Técnico e 1 PO
+    """
+    needed_categories = set(['LT', 'PO'])
+    category_of_members = set([member['category'] for member in members])
+    return needed_categories.issubset(category_of_members)
+def save_team_to_file(team):
+    file = open("data/teams.txt", "a")
+    line = team_dict_to_line(team)
+    file.write(line)
+    file.write("\n")
+    file.close()
+    print("Time salvo com sucesso!")
+def print_team_members(team_name):
+    found_team = None
+    with open('data/teams.txt', 'r') as file:
+        for line in file:
+            team_dict = line_to_team_dict(line.rstrip())
+            if team_name == team_dict["team_name"]:
+                found_team = team_dict
+                break
+        if not found_team:
+            print("Time não encontrado")
+            return
+    members = []
+    with open("data/users.txt", "r") as file:
+        for line in file:
+            user_dict = line_to_user_dict(line)
+            if user_dict["id"] in found_team["members_id"]:
+                members.append({**user_dict, "password": "****"})
+    print("Time: ", found_team["team_name"])
+    for member in members:
+        print(member["name"], member["category"])
+def team_dict_to_line(team):
+    team_id = team["id"]
+    team_name = team["team_name"]
+    members = [member["id"] for member in team["members"]]
+    members_id = ','.join(members)
+    return f"{team_id};{team_name};{members_id}"
+def line_to_team_dict(line):
+    splited_line = line.split(";")
+    team_id = splited_line[0]
+    team_name = splited_line[1]
+    members_id = splited_line[2].split(',')
+    team_dict = {
+        "team_id": team_id,
+        "team_name": team_name,
+        "members_id": members_id
+    }
+    return team_dict
 </code></pre>
     </details>
     <details>
         <summary>Desenvolvimento da lógica para a avaliação 360º</summary>
-        <p align="justify">Criei a lógica para a avaliação 360º, permitindo que um membro do time avaliasse os outros membros. A avaliação era composta por cinco perguntas, cada uma com cinco opções de resposta. As respostas eram armazenadas em um arquivo de texto, permitindo a geração de relatórios com base nas avaliações realizadas.</p>
-        <p align="justify">Como o sistema era composto por diferentes categorias de usuários, um instrutor 
+        <p align="justify">
+        Criei a lógica para a avaliação 360º, permitindo que um membro do time avaliasse os outros membros. A avaliação era composta por cinco perguntas, cada uma com cinco opções de resposta. As respostas eram armazenadas em um arquivo de texto, permitindo a geração de relatórios com base nas avaliações realizadas.
+        </p>
         <pre>
         <code>
-        categories = {
-            'PO': 'Product Owner',
-            'LT': 'Líder Técnico',
-            'MT':  'Membro do time',
+categories = {
+    'PO': 'Product Owner',
+    'LT': 'Líder Técnico',
+    'MT':  'Membro do time',
+}
+def search_teams_on_file_by_user(user,select_member=True, show=True):
+    teams = []
+    with open('data/teams.txt', "r") as file:
+        for line in file:
+            team = line_to_team_dict(line)
+            if user in team["members"]:
+                teams.append(team)
+    if show:
+        if len(teams) > 0:
+            blue_bright_print('\n          Seus times:') 
+            for indice, team in enumerate(teams):
+                print(f'     {indice+1}. {team["name"]}')
+            input_team = int(bright_input('\nQual time deseja selecionar? '))
+            if input_team > 0 and input_team <= len(teams):
+                team = teams[input_team - 1]
+                if select_member:
+                    return select_team_member(user, team), team['id']
+                else:
+                    return None, team['id']
+            else:
+                red_print('\nOpção inválida. Tente novamente!\n')
+                return search_teams_on_file_by_user(user, select_member)
+        else:
+            green_print('Você não está inserido em nenhum time ainda.')
+            return None
+    else:
+        return teams
+def select_team_member(user ,team):
+    print()
+    blue_bright_print(f'     Membros de {team["name"]}:')
+    valid_members = []
+    for member in team['members']:
+        if user['category'] == 'PO' or user['category'] == 'LT' or user['category'] == 'MT':
+            if member['category'] == 'PO' or member['category'] == 'LT' or member['category'] == 'MT':
+                valid_members.append(member)
+        elif user['category'] == 'LG':
+            if member['category'] == 'LT':
+                valid_members.append(member)
+        elif user['category'] == 'FC':
+            if member['category'] == 'PO':
+                valid_members.append(member)
+    for indice, member in enumerate(valid_members):
+        print(f'{indice+1}. {categories[member["category"]].ljust(20," ")}{member["name"]}')
+    input_member = int(bright_input('\nQual membro deseja avaliar? '))
+    if input_member > 0 and input_member <= len(valid_members):
+        return valid_members[input_member-1]
+    else:
+        red_print('Usuário inválido. Tente novamente!')
+        return select_team_member(team)
+def evaluation_form(user=None, team=None, show=True):
+    questions = {
+        '1': {
+            'question': "Trabalho em equipe, cooperação e descentralização de conhecimento:",
+            'answers': {'0': 'Muito Ruim', '1': 'Ruim', '2': 'Regular', '3': 'Bom', '4': 'Muito Bom'},
+        },
+        '2': {
+            'question': "Iniciativa e proatividade:",
+            'answers': {'0': 'Muito Ruim', '1': 'Ruim', '2': 'Regular', '3': 'Bom', '4': 'Muito Bom'},
+        },
+        '3': {
+            'question': "Autodidaxia e agregação de conhecimento ao grupo:",
+            'answers': {'0': 'Muito Ruim', '1': 'Ruim', '2': 'Regular', '3': 'Bom', '4': 'Muito Bom'},
+        },
+        '4': {
+            'question': "Entrega de resultados e participação efetiva no projeto:",
+            'answers': {'0': 'Muito Ruim', '1': 'Ruim', '2': 'Regular', '3': 'Bom', '4': 'Muito Bom'},
+        },
+        '5': {
+            'question': "Competência técnica:",
+            'answers': {'0': 'Muito Ruim', '1': 'Ruim', '2': 'Regular', '3': 'Bom', '4': 'Muito Bom'},
         }
-
-
-        def search_teams_on_file_by_user(user,select_member=True, show=True):
-            teams = []
-            with open('data/teams.txt', "r") as file:
-                for line in file:
-                    team = line_to_team_dict(line)
-                    if user in team["members"]:
-                        teams.append(team)
-
-            if show:
-                if len(teams) > 0:
-                    blue_bright_print('\n          Seus times:') 
-                    for indice, team in enumerate(teams):
-                        print(f'     {indice+1}. {team["name"]}')
-
-                    input_team = int(bright_input('\nQual time deseja selecionar? '))
-
-                    if input_team > 0 and input_team <= len(teams):
-                        team = teams[input_team - 1]
-                        if select_member:
-                            return select_team_member(user, team), team['id']
-                        else:
-                            return None, team['id']
-
-                    else:
-                        red_print('\nOpção inválida. Tente novamente!\n')
-                        return search_teams_on_file_by_user(user, select_member)
-                else:
-                    green_print('Você não está inserido em nenhum time ainda.')
-                    return None
-            else:
-                return teams
-
-
-        def select_team_member(user ,team):
+    }
+    if show:
+        blue_bright_print(f"\n           Avaliação de {user['name']}\n")
+        lista = []
+        for qk, qv in questions.items():
+            green_print(f'\n{qk}. {qv["question"]}')
+            print('\nEscolha entre as opções indicadas:\n')
+            for ak, av in qv['answers'].items():
+                print(f'[{ak}]: {av}')
+            answers_user = int(bright_input('\nOpção: '))
             print()
-            blue_bright_print(f'     Membros de {team["name"]}:')
-            valid_members = []
-            for member in team['members']:
-                if user['category'] == 'PO' or user['category'] == 'LT' or user['category'] == 'MT':
-                    if member['category'] == 'PO' or member['category'] == 'LT' or member['category'] == 'MT':
-                        valid_members.append(member)
-                elif user['category'] == 'LG':
-                    if member['category'] == 'LT':
-                        valid_members.append(member)
-                elif user['category'] == 'FC':
-                    if member['category'] == 'PO':
-                        valid_members.append(member)
-            for indice, member in enumerate(valid_members):
-                print(f'{indice+1}. {categories[member["category"]].ljust(20," ")}{member["name"]}')
-
-            input_member = int(bright_input('\nQual membro deseja avaliar? '))
-            if input_member > 0 and input_member <= len(valid_members):
-                return valid_members[input_member-1]
-
-            else:
-                red_print('Usuário inválido. Tente novamente!')
-                return select_team_member(team)
-
-
-        def evaluation_form(user=None, team=None, show=True):
-            questions = {
-                '1': {
-                    'question': "Trabalho em equipe, cooperação e descentralização de conhecimento:",
-                    'answers': {'0': 'Muito Ruim', '1': 'Ruim', '2': 'Regular', '3': 'Bom', '4': 'Muito Bom'},
-                },
-                '2': {
-                    'question': "Iniciativa e proatividade:",
-                    'answers': {'0': 'Muito Ruim', '1': 'Ruim', '2': 'Regular', '3': 'Bom', '4': 'Muito Bom'},
-                },
-                '3': {
-                    'question': "Autodidaxia e agregação de conhecimento ao grupo:",
-                    'answers': {'0': 'Muito Ruim', '1': 'Ruim', '2': 'Regular', '3': 'Bom', '4': 'Muito Bom'},
-                },
-                '4': {
-                    'question': "Entrega de resultados e participação efetiva no projeto:",
-                    'answers': {'0': 'Muito Ruim', '1': 'Ruim', '2': 'Regular', '3': 'Bom', '4': 'Muito Bom'},
-                },
-                '5': {
-                    'question': "Competência técnica:",
-                    'answers': {'0': 'Muito Ruim', '1': 'Ruim', '2': 'Regular', '3': 'Bom', '4': 'Muito Bom'},
-                }
+            while answers_user < 0 or answers_user > 4:
+                red_print('\nOpção inválida! Tente novamente.\n')
+                answers_user = int(bright_input('\nOpção: '))
+            lista.append(answers_user)
+        return evaluation(lista, user, team)
+    else:
+        return questions
+def evaluation(lista, user, team):
+    evaluation = {'skill_1': lista[0], 'skill_2':lista[1], 'skill_3':lista[2], 'skill_4':lista[3], 'skill_5':lista[4]}
+    id_sprint = 1
+    id_team = team
+    id_user_log = get_logged_user()['id']
+    category_user_log = get_logged_user()['category']
+    id_av_user = user['id']
+    category_av_user = user['category']
+    name_av_user = user['name']
+    skill_1 = evaluation["skill_1"]
+    skill_2 = evaluation["skill_2"]
+    skill_3 = evaluation["skill_3"]
+    skill_4 = evaluation["skill_4"]
+    skill_5 = evaluation["skill_5"]
+    line = f"{id_sprint};{id_team};{id_user_log};{category_user_log};{id_av_user};{category_av_user};{name_av_user};{skill_1};{skill_2};{skill_3};{skill_4};{skill_5}"
+    return save_evaluation(line)
+def save_evaluation(line):
+    file = open('data/evaluations.txt', "a")
+    file.write(line)
+    file.write("\n")
+    file.close()
+def line_to_evaluation_dict(line):
+    splitted_line = line.rstrip("\n").split(";")
+    id_sprint = splitted_line[0]
+    id_team = splitted_line[1]
+    id_user_log = splitted_line[2]
+    category_user_log = splitted_line[3]
+    id_av_user = splitted_line[4]
+    category_av_user = splitted_line[5]
+    name_av_user = splitted_line[6]
+    skill_1 = splitted_line[7]
+    skill_2 = splitted_line[8]
+    skill_3 = splitted_line[9]
+    skill_4 = splitted_line[10]
+    skill_5 = splitted_line[11]
+    dict = {
+            "id_sprint": id_sprint,
+            "id_team": id_team,
+            "id_user_log": id_user_log,
+            "category_user_log": category_user_log,
+            "id_av_user": id_av_user,
+            "category_av_user": category_av_user,
+            "name_av_user": name_av_user,
+            "skill_1": skill_1,
+            "skill_2": skill_2,
+            "skill_3": skill_3,
+            "skill_4": skill_4,
+            "skill_5": skill_5 
             }
-            if show:
-                blue_bright_print(f"\n           Avaliação de {user['name']}\n")
-                lista = []
-                for qk, qv in questions.items():
-                    green_print(f'\n{qk}. {qv["question"]}')
-
-                    print('\nEscolha entre as opções indicadas:\n')
-                    for ak, av in qv['answers'].items():
-                        print(f'[{ak}]: {av}')
-
-                    answers_user = int(bright_input('\nOpção: '))
-                    print()
-                    while answers_user < 0 or answers_user > 4:
-                        red_print('\nOpção inválida! Tente novamente.\n')
-                        answers_user = int(bright_input('\nOpção: '))
-                    lista.append(answers_user)
-
-                return evaluation(lista, user, team)
-
-            else:
-                return questions
-
-
-        def evaluation(lista, user, team):
-            evaluation = {'skill_1': lista[0], 'skill_2':lista[1], 'skill_3':lista[2], 'skill_4':lista[3], 'skill_5':lista[4]}
-            id_sprint = 1
-            id_team = team
-            id_user_log = get_logged_user()['id']
-            category_user_log = get_logged_user()['category']
-            id_av_user = user['id']
-            category_av_user = user['category']
-            name_av_user = user['name']
-            skill_1 = evaluation["skill_1"]
-            skill_2 = evaluation["skill_2"]
-            skill_3 = evaluation["skill_3"]
-            skill_4 = evaluation["skill_4"]
-            skill_5 = evaluation["skill_5"]
-
-            line = f"{id_sprint};{id_team};{id_user_log};{category_user_log};{id_av_user};{category_av_user};{name_av_user};{skill_1};{skill_2};{skill_3};{skill_4};{skill_5}"
-
-            return save_evaluation(line)
-
-
-        def save_evaluation(line):
-            file = open('data/evaluations.txt', "a")
-            file.write(line)
-            file.write("\n")
-            file.close()
-
-
-        def line_to_evaluation_dict(line):
+    return dict
+def mean_grades(team, user):
+    skills = [[],[],[],[],[]]
+    with open ('data/evaluations.txt', "r") as file:
+        for line in file:
             splitted_line = line.rstrip("\n").split(";")
-            id_sprint = splitted_line[0]
-            id_team = splitted_line[1]
-            id_user_log = splitted_line[2]
-            category_user_log = splitted_line[3]
-            id_av_user = splitted_line[4]
-            category_av_user = splitted_line[5]
-            name_av_user = splitted_line[6]
-            skill_1 = splitted_line[7]
-            skill_2 = splitted_line[8]
-            skill_3 = splitted_line[9]
-            skill_4 = splitted_line[10]
-            skill_5 = splitted_line[11]
-            dict = {
-                    "id_sprint": id_sprint,
-                    "id_team": id_team,
-                    "id_user_log": id_user_log,
-                    "category_user_log": category_user_log,
-                    "id_av_user": id_av_user,
-                    "category_av_user": category_av_user,
-                    "name_av_user": name_av_user,
-                    "skill_1": skill_1,
-                    "skill_2": skill_2,
-                    "skill_3": skill_3,
-                    "skill_4": skill_4,
-                    "skill_5": skill_5 
-                    }
-            return dict
-
-
-        def mean_grades(team, user):
-            skills = [[],[],[],[],[]]
-
-            with open ('data/evaluations.txt', "r") as file:
-                for line in file:
-                    splitted_line = line.rstrip("\n").split(";")
-                    if team == splitted_line[1] and user == splitted_line[4]:
-                        skills[0].append(int(splitted_line[7]))
-                        skills[1].append(int(splitted_line[8]))
-                        skills[2].append(int(splitted_line[9]))
-                        skills[3].append(int(splitted_line[10]))
-                        skills[4].append(int(splitted_line[11]))
-
-            if len(skills[0]) > 0:    
-                mean = [
-                    round(statistics.mean(skills[0]), 1),
-                    round(statistics.mean(skills[1]), 1),
-                    round(statistics.mean(skills[2]), 1),
-                    round(statistics.mean(skills[3]), 1),
-                    round(statistics.mean(skills[4]), 1),
-                ]
-
-                total_mean = round(statistics.mean(mean), 1)
-
-                return [mean, total_mean]
+            if team == splitted_line[1] and user == splitted_line[4]:
+                skills[0].append(int(splitted_line[7]))
+                skills[1].append(int(splitted_line[8]))
+                skills[2].append(int(splitted_line[9]))
+                skills[3].append(int(splitted_line[10]))
+                skills[4].append(int(splitted_line[11]))
+    if len(skills[0]) > 0:    
+        mean = [
+            round(statistics.mean(skills[0]), 1),
+            round(statistics.mean(skills[1]), 1),
+            round(statistics.mean(skills[2]), 1),
+            round(statistics.mean(skills[3]), 1),
+            round(statistics.mean(skills[4]), 1),
+        ]
+        total_mean = round(statistics.mean(mean), 1)
+        return [mean, total_mean]
+    else:
+        return None
+def print_mean_grades(team, user):
+    mean = mean_grades(team,user['id'])
+    questions = evaluation_form(user, team, show=False)
+    if mean is None:
+        magenta_print('\nVocê ainda não foi avaliado.')
+        return
+    blue_bright_print(f"\n          Médias de {user['name']}\n")    
+    for n, question in enumerate(questions):
+        bright_print(f'{questions[question]["question"]}')
+        if mean[0][n] > 2:
+            green_print(f'{mean[0][n]}')
+        elif mean[0][n] == 2:
+            magenta_print(f'{mean[0][n]}')
+        else:
+            red_print(f'{mean[0][n]}')
+    if mean[1] >= 2:
+        green_print(f'\nMédia total: {mean[1]}\n')
+    elif mean[1] == 2:
+        magenta_print(f'\nMédia total: {mean[1]}\n')
+    else:
+        red_print(f'\nMédia total: {mean[1]}\n')
+def print_mean_grades_LG(team_id, LT = False):
+    with open('data/teams.txt', 'r') as file:
+        for line in file:
+            team_dict = line_to_team_dict(line)
+            if team_id == team_dict['id']:
+                team = team_dict
+                break
+    team_member_mean = {member['id']: {'name': member['name'], 'category': member['category']} for member in team['members']}
+    with open ('data/evaluations.txt', "r") as file:
+        for line in file:
+            dict_line = line_to_evaluation_dict(line)
+            if team_id == dict_line['id_team']:
+                if team_member_mean[dict_line['id_av_user']].get('mean', None) is None:
+                    member_mean = mean_grades(team_id, dict_line['id_av_user'])
+                    team_member_mean[dict_line['id_av_user']]['mean'] = member_mean
+    questions = evaluation_form(show=False)
+    members_to_list = team_member_mean
+    if LT:
+        members_to_list = {id: item for id, item in team_member_mean.items() if item['category'] == 'LT'}
+    for item in members_to_list.values():
+        if 'mean' not in item:
+            if item['category'] not in ['FC', 'LG']:
+                magenta_print(f'\n{item["name"]} ({categories[item["category"]]}) ainda não foi avaliado.')
+            continue
+        blue_bright_print(f"\n          Médias de {item['name']} - {categories[item['category']]}\n")
+        for n, question in enumerate(questions):
+            bright_print(f'{questions[question]["question"]}', end = ' ')
+            if item["mean"][0][n] > 2:
+                green_print(f'{item["mean"][0][n]}')
+            elif item["mean"][0][n] == 2:
+                magenta_print(f'{item["mean"][0][n]}')
             else:
-                return None
-
-
-        def print_mean_grades(team, user):
-            mean = mean_grades(team,user['id'])
-            questions = evaluation_form(user, team, show=False)
-
-            if mean is None:
-                magenta_print('\nVocê ainda não foi avaliado.')
-                return
-
-            blue_bright_print(f"\n          Médias de {user['name']}\n")    
-            for n, question in enumerate(questions):
-                bright_print(f'{questions[question]["question"]}')
-                if mean[0][n] > 2:
-                    green_print(f'{mean[0][n]}')
-                elif mean[0][n] == 2:
-                    magenta_print(f'{mean[0][n]}')
-                else:
-                    red_print(f'{mean[0][n]}')
-            if mean[1] >= 2:
-                green_print(f'\nMédia total: {mean[1]}\n')
-            elif mean[1] == 2:
-                magenta_print(f'\nMédia total: {mean[1]}\n')
+                red_print(f'{item["mean"][0][n]}')
+        if item["mean"][1] >= 2:
+            green_print(f'\nMédia total: {item["mean"][1]}\n')
+        elif item["mean"][1] == 2:
+            magenta_print(f'\nMédia total: {item["mean"][1]}\n')
+        else:
+            red_print(f'\nMédia total: {item["mean"][1]}\n')
+def print_mean_grades_FC(team):
+    lista = []
+    with open ('data/evaluations.txt', "r") as file:
+        for line in file:
+            dict_line = line_to_evaluation_dict(line)
+            if team == dict_line['id_team']:
+                if dict_line['category_av_user'] == 'PO':
+                    if dict_line['id_av_user'] not in [item[0] for item in lista]:
+                        po_mean = mean_grades(team, dict_line['id_av_user'])
+                        lista.append((dict_line['id_av_user'], dict_line['name_av_user'], po_mean))
+    if len(lista) < 1:
+        magenta_print('\nO PO desse time ainda não foi avaliado.')
+    questions = evaluation_form(show=False)
+    for item in lista:
+        blue_bright_print(f"\n          Médias de {item[1]}\n")    
+        for n, question in enumerate(questions):
+            bright_print(f'{questions[question]["question"]}', end = ' ')
+            if item[2][0][n] > 2:
+                green_print(f'{item[2][0][n]}')
+            elif item[2][0][n] == 2:
+                magenta_print(f'{item[2][0][n]}')
             else:
-                red_print(f'\nMédia total: {mean[1]}\n')
-
-        def print_mean_grades_LG(team_id, LT = False):
-            with open('data/teams.txt', 'r') as file:
-                for line in file:
-                    team_dict = line_to_team_dict(line)
-                    if team_id == team_dict['id']:
-                        team = team_dict
-                        break
-
-            team_member_mean = {member['id']: {'name': member['name'], 'category': member['category']} for member in team['members']}
-
-            with open ('data/evaluations.txt', "r") as file:
-                for line in file:
-                    dict_line = line_to_evaluation_dict(line)
-                    if team_id == dict_line['id_team']:
-                        if team_member_mean[dict_line['id_av_user']].get('mean', None) is None:
-                            member_mean = mean_grades(team_id, dict_line['id_av_user'])
-                            team_member_mean[dict_line['id_av_user']]['mean'] = member_mean
-
-            questions = evaluation_form(show=False)
-            members_to_list = team_member_mean
-
-            if LT:
-                members_to_list = {id: item for id, item in team_member_mean.items() if item['category'] == 'LT'}
-            for item in members_to_list.values():
-                if 'mean' not in item:
-                    if item['category'] not in ['FC', 'LG']:
-                        magenta_print(f'\n{item["name"]} ({categories[item["category"]]}) ainda não foi avaliado.')
-                    continue
-                blue_bright_print(f"\n          Médias de {item['name']} - {categories[item['category']]}\n")
-                for n, question in enumerate(questions):
-                    bright_print(f'{questions[question]["question"]}', end = ' ')
-                    if item["mean"][0][n] > 2:
-                        green_print(f'{item["mean"][0][n]}')
-                    elif item["mean"][0][n] == 2:
-                        magenta_print(f'{item["mean"][0][n]}')
-                    else:
-                        red_print(f'{item["mean"][0][n]}')
-                if item["mean"][1] >= 2:
-                    green_print(f'\nMédia total: {item["mean"][1]}\n')
-                elif item["mean"][1] == 2:
-                    magenta_print(f'\nMédia total: {item["mean"][1]}\n')
-                else:
-                    red_print(f'\nMédia total: {item["mean"][1]}\n')
-
-        def print_mean_grades_FC(team):
-            lista = []
-            with open ('data/evaluations.txt', "r") as file:
-                for line in file:
-                    dict_line = line_to_evaluation_dict(line)
-                    if team == dict_line['id_team']:
-                        if dict_line['category_av_user'] == 'PO':
-                            if dict_line['id_av_user'] not in [item[0] for item in lista]:
-                                po_mean = mean_grades(team, dict_line['id_av_user'])
-                                lista.append((dict_line['id_av_user'], dict_line['name_av_user'], po_mean))
-
-            if len(lista) < 1:
-                magenta_print('\nO PO desse time ainda não foi avaliado.')
-
-            questions = evaluation_form(show=False)
-            for item in lista:
-                blue_bright_print(f"\n          Médias de {item[1]}\n")    
-                for n, question in enumerate(questions):
-                    bright_print(f'{questions[question]["question"]}', end = ' ')
-                    if item[2][0][n] > 2:
-                        green_print(f'{item[2][0][n]}')
-                    elif item[2][0][n] == 2:
-                        magenta_print(f'{item[2][0][n]}')
-                    else:
-                        red_print(f'{item[2][0][n]}')
-                if item[2][1] >= 2:
-                    green_print(f'\nMédia total: {item[2][1]}\n')
-                elif item[2][1] == 2:
-                    magenta_print(f'\nMédia total: {item[2][1]}\n')
-                else:
-                    red_print(f'\nMédia total: {item[2][1]}\n')
-
-        def run_evaluation():
-            user_log = get_logged_user()
-            if user_log['category']!= 'LG' and user_log['category']!= 'FC':
-                av_user, id_team = search_teams_on_file_by_user(user_log)
-                evaluation_form(av_user, id_team)
-            elif user_log['category'] == 'LG':
-                av_user, id_team = search_teams_on_file_by_user(user_log)
-                evaluation_form(av_user, id_team)
-            else:
-                av_user, id_team = search_teams_on_file_by_user(user_log)
-                evaluation_form(av_user, id_team)
-
-        def run_mean_grades():
-            user_log = get_logged_user()
-
-            if user_log['category']!= 'LG' and user_log['category']!= 'FC':
-                av_user, id_team = search_teams_on_file_by_user(user_log, select_member=False)
-                print_mean_grades(id_team, user_log)
-
-
-            elif user_log['category'] == 'LG':
-                av_user, id_team = search_teams_on_file_by_user(user_log, select_member=False)
-                only_LT = ['Ver somente as médias dos Líderes Técnicos', 'Ver as notas de todo o time']
-                blue_bright_print('\n       Selecione uma opção:'.center(60))
-                for indice, item in enumerate(only_LT):
-                    print(f'     {indice+1}. {item}')
-                awnser = int(input('\n   Opção: '))
-                while awnser != 1 and awnser != 2:
-                    awnser = int(input('\n   Opção: '))
-                if awnser == 1:
-                    print_mean_grades_LG(id_team, LT=True)
-                elif awnser == 2:
-                    print_mean_grades_LG(id_team)
-
-
-            elif user_log['category'] == 'FC':   
-                av_user, id_team = search_teams_on_file_by_user(user_log, select_member=False)
-                print_mean_grades_FC(id_team)
-</pre></code>
+                red_print(f'{item[2][0][n]}')
+        if item[2][1] >= 2:
+            green_print(f'\nMédia total: {item[2][1]}\n')
+        elif item[2][1] == 2:
+            magenta_print(f'\nMédia total: {item[2][1]}\n')
+        else:
+            red_print(f'\nMédia total: {item[2][1]}\n')
+def run_evaluation():
+    user_log = get_logged_user()
+    if user_log['category']!= 'LG' and user_log['category']!= 'FC':
+        av_user, id_team = search_teams_on_file_by_user(user_log)
+        evaluation_form(av_user, id_team)
+    elif user_log['category'] == 'LG':
+        av_user, id_team = search_teams_on_file_by_user(user_log)
+        evaluation_form(av_user, id_team)
+    else:
+        av_user, id_team = search_teams_on_file_by_user(user_log)
+        evaluation_form(av_user, id_team)
+def run_mean_grades():
+    user_log = get_logged_user()
+    if user_log['category']!= 'LG' and user_log['category']!= 'FC':
+        av_user, id_team = search_teams_on_file_by_user(user_log, select_member=False)
+        print_mean_grades(id_team, user_log)
+    elif user_log['category'] == 'LG':
+        av_user, id_team = search_teams_on_file_by_user(user_log, select_member=False)
+        only_LT = ['Ver somente as médias dos Líderes Técnicos', 'Ver as notas de todo o time']
+        blue_bright_print('\n       Selecione uma opção:'.center(60))
+        for indice, item in enumerate(only_LT):
+            print(f'     {indice+1}. {item}')
+        awnser = int(input('\n   Opção: '))
+        while awnser != 1 and awnser != 2:
+            awnser = int(input('\n   Opção: '))
+        if awnser == 1:
+            print_mean_grades_LG(id_team, LT=True)
+        elif awnser == 2:
+            print_mean_grades_LG(id_team)
+    elif user_log['category'] == 'FC':   
+        av_user, id_team = search_teams_on_file_by_user(user_log, select_member=False)
+        print_mean_grades_FC(id_team)
+        </pre></code>
     </details>
     <details>
         <summary>Desenvolvimento da lógica de sprints</summary>
-        <p align="justify">Criei a lógica para a criação e fechamento de sprints, permitindo que um instrutor do tipo Group Leader pudesse criar uma sprint e fechá-la. Além disso, criei a lógica para a seleção de uma sprint, permitindo que um instrutor pudesse selecionar uma sprint para avaliar os membros do time</p>
-        <p align="justify">Para a criação de uma sprint, era necessário fechar a sprint anterior, caso houvesse uma sprint aberta. Para isso, criei a função <code>get_opened_sprint</code>, que retornava a sprint aberta, caso houvesse uma, e a função <code>has_opened_sprint</code>, que verificava se havia uma sprint aberta. Além disso, criei a função <code>select_sprint_tui</code>, que permitia a seleção de uma sprint, e a função <code>close_sprint_tui</code>, que fechava a sprint selecionada.</p>
-        <p align="justify">A criação de uma sprint se dava por turma, ou seja, um instrutor do tipo Group Leader podia criar uma sprint para uma turma específico.</p>
+        <p align="justify">
+        Criei a lógica para a criação e fechamento de sprints, permitindo que um instrutor do tipo Group Leader pudesse criar uma sprint e fechá-la. Além disso, criei a lógica para a seleção de uma sprint, permitindo que um instrutor pudesse selecionar uma sprint para avaliar os membros do time
+        </p>
+        <p align="justify">
+        Para a criação de uma sprint, era necessário fechar a sprint anterior, caso houvesse uma sprint aberta. Para isso, criei a função <code>get_opened_sprint</code>, que retornava a sprint aberta, caso houvesse uma, e a função <code>has_opened_sprint</code>, que verificava se havia uma sprint aberta. Além disso, criei a função <code>select_sprint_tui</code>, que permitia a seleção de uma sprint, e a função <code>close_sprint_tui</code>, que fechava a sprint selecionada.
+        </p>
+        <p align="justify"
+        >A criação de uma sprint se dava por turma, ou seja, um instrutor do tipo Group Leader podia criar uma sprint para uma turma específico.
+        </p>
         <pre>
         <code>
-        def summary_sprint(sprint):
-            name = sprint["name"]
-            id = sprint["id"]
-            status = sprint["status"]
-            return f"{name} #{id} ({status})"
-
-
-        def show_sprints_from_group(group):
-            sprints = get_all_sprints_from_group(group)
-            print("Sprints")
-            for sprint in sprints:
-                print(f"    - {summary_sprint(sprint)}")
-
-
-        def has_group_opened_sprint(group):
-            opened_sprints = get_opened_sprint_from_group(group)
-            return opened_sprints is not None
-
-
-        def open_sprint_for_group(group):
-            if has_group_opened_sprint(group):
-                print("Já existe uma sprint aberta.")
-                return
-            sprint_name = input('Qual o nome da sprint? ')
-            create_sprint(group, sprint_name)
-
-
-        def close_sprint_from_group(group):
-            if not has_group_opened_sprint(group):
-                print("Não existe sprint aberta.")
-                return
-            sprint = get_opened_sprint_from_group(group)
-            print(summary_sprint(sprint))
-            answer = input("Tem certeza que deseja fechar essa sprint (S/N)? ")
-            if answer != "S" and answer != "s":
-                return
-            sprint["status"] = "fechada"
-            update_sprints()    
-
-
-        def select_sprint_from_group(group, closed=False):
-            sprints = get_all_sprints_from_group(group)
-            if not closed:
-                valid_sprints = sprints
-            if closed:
-                valid_sprints = []
-                for sprint in sprints:
-                    if sprint['status'] == 'fechada':
-                        valid_sprints.append(sprint)
-
-            if len(valid_sprints) == 0:
-                print("Nenhuma sprint encontrada.")
-                return None
-
-            for index, sprint in enumerate(valid_sprints):
-                print(f"{index+1} - {summary_sprint(sprint)}")
-
-            while True:
-                option = safe_int_input("Opção: ")
-                if option > 0 and option <= len(sprints):
-                    return valid_sprints[option - 1]
-                print("Opção inválida.")
-
-
-        def reopen_sprint_from_group(group):
-            if has_group_opened_sprint(group):
-                print("Já existe uma sprint aberta.")
-                return
-            sprint = select_sprint_from_group(group)
-
-            if sprint is None:
-                return
-            
-            print(summary_sprint(sprint))
-            answer = input("Tem certeza que deseja reabrir essa sprint (S/N)? ")
-            if answer != "S" and answer != "s":
-                return
-            sprint["status"] = "aberta"
-            update_sprints()    
-
-
-        def admin_sprints_menu():
-            print("Selecione a Turma")
-            turma = search_and_select_turma()
-            if turma is None:
-                return
-            
-            while True:
-                print("Menu Sprints (Administrador)")
-                print(f"Turma: {turma['name']}")
-                print("1 - Listar")
-                print("2 - Abrir Nova")
-                print("3 - Fechar")
-                print("4 - Reabrir")
-                print("5 - Voltar")
-                
-                while True:
-                    option = safe_int_input("Opção: ")
-                    if option >= 1 and option <= 6:
-                        break
-                    print("Opção inválida.")
-                
-                if option == 1:
-                    show_sprints_from_group(turma)
-                elif option == 2:
-                    open_sprint_for_group(turma)
-                elif option == 3:
-                    close_sprint_from_group(turma)
-                elif option == 4:
-                    reopen_sprint_from_group(turma)
-                else:
-                    return
-</code></pre>
+def summary_sprint(sprint):
+    name = sprint["name"]
+    id = sprint["id"]
+    status = sprint["status"]
+    return f"{name} #{id} ({status})"
+def show_sprints_from_group(group):
+    sprints = get_all_sprints_from_group(group)
+    print("Sprints")
+    for sprint in sprints:
+        print(f"    - {summary_sprint(sprint)}")
+def has_group_opened_sprint(group):
+    opened_sprints = get_opened_sprint_from_group(group)
+    return opened_sprints is not None
+def open_sprint_for_group(group):
+    if has_group_opened_sprint(group):
+        print("Já existe uma sprint aberta.")
+        return
+    sprint_name = input('Qual o nome da sprint? ')
+    create_sprint(group, sprint_name)
+def close_sprint_from_group(group):
+    if not has_group_opened_sprint(group):
+        print("Não existe sprint aberta.")
+        return
+    sprint = get_opened_sprint_from_group(group)
+    print(summary_sprint(sprint))
+    answer = input("Tem certeza que deseja fechar essa sprint (S/N)? ")
+    if answer != "S" and answer != "s":
+        return
+    sprint["status"] = "fechada"
+    update_sprints()
+def select_sprint_from_group(group, closed=False):
+    sprints = get_all_sprints_from_group(group)
+    if not closed:
+        valid_sprints = sprints
+    if closed:
+        valid_sprints = []
+        for sprint in sprints:
+            if sprint['status'] == 'fechada':
+                valid_sprints.append(sprint)
+    if len(valid_sprints) == 0:
+        print("Nenhuma sprint encontrada.")
+        return None
+    for index, sprint in enumerate(valid_sprints):
+        print(f"{index+1} - {summary_sprint(sprint)}")
+    while True:
+        option = safe_int_input("Opção: ")
+        if option > 0 and option <= len(sprints):
+            return valid_sprints[option - 1]
+        print("Opção inválida.")
+def reopen_sprint_from_group(group):
+    if has_group_opened_sprint(group):
+        print("Já existe uma sprint aberta.")
+        return
+    sprint = select_sprint_from_group(group)
+    if sprint is None:
+        return
+    print(summary_sprint(sprint))
+    answer = input("Tem certeza que deseja reabrir essa sprint (S/N)? ")
+    if answer != "S" and answer != "s":
+        return
+    sprint["status"] = "aberta"
+    update_sprints()    
+def admin_sprints_menu():
+    print("Selecione a Turma")
+    turma = search_and_select_turma()
+    if turma is None:
+        return
+    while True:
+        print("Menu Sprints (Administrador)")
+        print(f"Turma: {turma['name']}")
+        print("1 - Listar")
+        print("2 - Abrir Nova")
+        print("3 - Fechar")
+        print("4 - Reabrir")
+        print("5 - Voltar")
+        while True:
+            option = safe_int_input("Opção: ")
+            if option >= 1 and option <= 6:
+                break
+            print("Opção inválida.")
+        if option == 1:
+            show_sprints_from_group(turma)
+        elif option == 2:
+            open_sprint_for_group(turma)
+        elif option == 3:
+            close_sprint_from_group(turma)
+        elif option == 4:
+            reopen_sprint_from_group(turma)
+        else:
+            return
+        </code></pre>
     </details>
     <details>
         <summary>Desenvolvimento da lógica de geração de relatórios</summary>
-        <p align="justify">Criei a lógica para a geração de relatórios, permitindo que o administrador pudesse ver todas as médias no geral ou por sprint, um aluno pudesse ver todas as suas médias no geral ou por sprint, um instrutor do tipo Group Leader pudesse ver as médias de todos os membros do time ou somente dos Líderes Técnicos e um instrutor do tipo Fake Client pudesse ver somente as médias dos Product Owners.</p>
+        <p align="justify">
+        Criei a lógica para a geração de relatórios, permitindo que o administrador pudesse ver todas as médias no geral ou por sprint, um aluno pudesse ver todas as suas médias no geral ou por sprint, um instrutor do tipo Group Leader pudesse ver as médias de todos os membros do time ou somente dos Líderes Técnicos e um instrutor do tipo Fake Client pudesse ver somente as médias dos Product Owners.
+        </p>
         <pre>
         <code>
-        EVALUATIONS_TXT_FILE =  "data/evaluations.txt"
-
-        CATEGORIES = {
-            "PRODU": "Product Owner",
-            "LIDER": "Líder Técnico",
-            "COMUM": "Membro do time",
+EVALUATIONS_TXT_FILE =  "data/evaluations.txt"
+CATEGORIES = {
+    "PRODU": "Product Owner",
+    "LIDER": "Líder Técnico",
+    "COMUM": "Membro do time",
+}
+def average_grades(team_id, user_id, sprint=None):
+    skills = [[], [], [], [], []]
+    with open(EVALUATIONS_TXT_FILE, "r") as file:
+        for line in file:
+            evaluation = line_to_evaluation_dict(line)
+            if sprint is not None:
+                if team_id == evaluation["id_team"] and user_id == evaluation["evaluated_id"] and sprint['id'] == evaluation['id_sprint']:
+                    skills[0].append(int(evaluation["skill_1"]))
+                    skills[1].append(int(evaluation["skill_2"]))
+                    skills[2].append(int(evaluation["skill_3"]))
+                    skills[3].append(int(evaluation["skill_4"]))
+                    skills[4].append(int(evaluation["skill_5"]))
+            else:
+                if team_id == evaluation["id_team"] and user_id == evaluation["evaluated_id"]:
+                    skills[0].append(int(evaluation["skill_1"]))
+                    skills[1].append(int(evaluation["skill_2"]))
+                    skills[2].append(int(evaluation["skill_3"]))
+                    skills[3].append(int(evaluation["skill_4"]))
+                    skills[4].append(int(evaluation["skill_5"]))
+    if len(skills[0]) > 0:
+        mean = [
+            round(statistics.mean(skills[0]), 1),
+            round(statistics.mean(skills[1]), 1),
+            round(statistics.mean(skills[2]), 1),
+            round(statistics.mean(skills[3]), 1),
+            round(statistics.mean(skills[4]), 1),
+        ]
+        total_mean = round(statistics.mean(mean), 1)
+        return [mean, total_mean]
+    else:
+        return None
+def print_average_grades(team, user, sprint=None):
+    average = average_grades(team['id'], user["id"], sprint)
+    questions = evaluation_form(show=False)
+    if average is None:
+        magenta_print("\nVocê ainda não foi avaliado.")
+        return
+    blue_bright_print(f"\n          Médias de {user['name']}\n")
+    for n, question in enumerate(questions):
+        bright_print(f'{questions[question]["question"]}')
+        if average[0][n] > 2:
+            green_print(f"{average[0][n]}")
+        elif average[0][n] == 2:
+            magenta_print(f"{average[0][n]}")
+        else:
+            red_print(f"{average[0][n]}")
+    if average[1] >= 2:
+        green_print(f"\nMédia total: {average[1]}\n")
+    elif average[1] == 2:
+        magenta_print(f"\nMédia total: {average[1]}\n")
+    else:
+        red_print(f"\nMédia total: {average[1]}\n")
+def print_average_grades_LG(team, sprint=None, LT=False):
+    team_member_average = {
+        member["id"]: {"name": member["name"], "category": member["category"]}
+        for member in team["members"]
+    }
+    with open(EVALUATIONS_TXT_FILE, "r") as file:
+        for line in file:
+            dict_line = line_to_evaluation_dict(line)
+            if team['id'] == dict_line["id_team"]:
+                if team_member_average[dict_line["evaluated_id"]].get("average", None) is None:
+                    member_average = average_grades(team['id'], dict_line["evaluated_id"], sprint)
+                    team_member_average[dict_line["evaluated_id"]]["average"] = member_average
+    questions = evaluation_form(show=False)
+    members_to_list = team_member_average
+    if LT:
+        members_to_list = {
+            id: item
+            for id, item in team_member_average.items()
+            if item["category"] == "LIDER"
         }
-
-
-        def average_grades(team_id, user_id, sprint=None):
-            skills = [[], [], [], [], []]
-
-            with open(EVALUATIONS_TXT_FILE, "r") as file:
-                for line in file:
-                    evaluation = line_to_evaluation_dict(line)
-                    if sprint is not None:
-                        if team_id == evaluation["id_team"] and user_id == evaluation["evaluated_id"] and sprint['id'] == evaluation['id_sprint']:
-                            skills[0].append(int(evaluation["skill_1"]))
-                            skills[1].append(int(evaluation["skill_2"]))
-                            skills[2].append(int(evaluation["skill_3"]))
-                            skills[3].append(int(evaluation["skill_4"]))
-                            skills[4].append(int(evaluation["skill_5"]))
-                    else:
-                        if team_id == evaluation["id_team"] and user_id == evaluation["evaluated_id"]:
-                            skills[0].append(int(evaluation["skill_1"]))
-                            skills[1].append(int(evaluation["skill_2"]))
-                            skills[2].append(int(evaluation["skill_3"]))
-                            skills[3].append(int(evaluation["skill_4"]))
-                            skills[4].append(int(evaluation["skill_5"]))
-
-
-            if len(skills[0]) > 0:
-                mean = [
-                    round(statistics.mean(skills[0]), 1),
-                    round(statistics.mean(skills[1]), 1),
-                    round(statistics.mean(skills[2]), 1),
-                    round(statistics.mean(skills[3]), 1),
-                    round(statistics.mean(skills[4]), 1),
-                ]
-
-                total_mean = round(statistics.mean(mean), 1)
-
-                return [mean, total_mean]
+    for item in members_to_list.values():
+        if "average" not in item:
+            magenta_print(
+                f'\n{item["name"]} ({CATEGORIES[item["category"]]}) ainda não foi avaliado.'
+            )
+            continue
+        blue_bright_print(
+            f"\n          Médias de {item['name']} - {CATEGORIES[item['category']]}\n"
+        )
+        for n, question in enumerate(questions):
+            bright_print(f'{questions[question]["question"]}', end=" ")
+            if item["average"][0][n] > 2:
+                green_print(f'{item["average"][0][n]}')
+            elif item["average"][0][n] == 2:
+                magenta_print(f'{item["average"][0][n]}')
             else:
-                return None
-
-
-        def print_average_grades(team, user, sprint=None):
-            average = average_grades(team['id'], user["id"], sprint)
-            questions = evaluation_form(show=False)
-
-            if average is None:
-                magenta_print("\nVocê ainda não foi avaliado.")
-                return
-
-            blue_bright_print(f"\n          Médias de {user['name']}\n")
-            for n, question in enumerate(questions):
-                bright_print(f'{questions[question]["question"]}')
-                if average[0][n] > 2:
-                    green_print(f"{average[0][n]}")
-                elif average[0][n] == 2:
-                    magenta_print(f"{average[0][n]}")
-                else:
-                    red_print(f"{average[0][n]}")
-            if average[1] >= 2:
-                green_print(f"\nMédia total: {average[1]}\n")
-            elif average[1] == 2:
-                magenta_print(f"\nMédia total: {average[1]}\n")
+                red_print(f'{item["average"][0][n]}')
+        if item["average"][1] >= 2:
+            green_print(f'\nMédia total: {item["average"][1]}\n')
+        elif item["average"][1] == 2:
+            magenta_print(f'\nMédia total: {item["average"][1]}\n')
+        else:
+            red_print(f'\nMédia total: {item["average"][1]}\n')
+def print_average_grades_FC(team, sprint):
+    lista = []
+    with open(EVALUATIONS_TXT_FILE, "r") as file:
+        for line in file:
+            dict_line = line_to_evaluation_dict(line)
+            if team["id"] == dict_line["id_team"]:
+                if dict_line["evaluated_category"] == "PRODU":
+                    if dict_line["evaluated_id"] not in [item[0] for item in lista]:
+                        po_average = average_grades(team["id"], dict_line["evaluated_id"], sprint)
+                        lista.append(
+                            (
+                                dict_line["evaluated_id"],
+                                dict_line["evaluated_name"],
+                                po_average,
+                            )
+                        )
+    if len(lista) < 1:
+        magenta_print("\nO Product Owner desse time ainda não foi avaliado.")
+    questions = evaluation_form(show=False)
+    for item in lista:
+        blue_bright_print(f"\n          Médias de {item[1]}\n")
+        for n, question in enumerate(questions):
+            bright_print(f'{questions[question]["question"]}', end=" ")
+            if item[2][0][n] > 2:
+                green_print(f"{item[2][0][n]}")
+            elif item[2][0][n] == 2:
+                magenta_print(f"{item[2][0][n]}")
             else:
-                red_print(f"\nMédia total: {average[1]}\n")
-
-
-        def print_average_grades_LG(team, sprint=None, LT=False):
-
-            team_member_average = {
-                member["id"]: {"name": member["name"], "category": member["category"]}
-                for member in team["members"]
-            }
-
-            with open(EVALUATIONS_TXT_FILE, "r") as file:
-                for line in file:
-                    dict_line = line_to_evaluation_dict(line)
-                    if team['id'] == dict_line["id_team"]:
-                        if team_member_average[dict_line["evaluated_id"]].get("average", None) is None:
-                            member_average = average_grades(team['id'], dict_line["evaluated_id"], sprint)
-                            team_member_average[dict_line["evaluated_id"]]["average"] = member_average
-
-            questions = evaluation_form(show=False)
-            members_to_list = team_member_average
-
-            if LT:
-                members_to_list = {
-                    id: item
-                    for id, item in team_member_average.items()
-                    if item["category"] == "LIDER"
-                }
-            for item in members_to_list.values():
-                if "average" not in item:
-                    magenta_print(
-                        f'\n{item["name"]} ({CATEGORIES[item["category"]]}) ainda não foi avaliado.'
-                    )
-                    continue
-                blue_bright_print(
-                    f"\n          Médias de {item['name']} - {CATEGORIES[item['category']]}\n"
-                )
-                for n, question in enumerate(questions):
-                    bright_print(f'{questions[question]["question"]}', end=" ")
-                    if item["average"][0][n] > 2:
-                        green_print(f'{item["average"][0][n]}')
-                    elif item["average"][0][n] == 2:
-                        magenta_print(f'{item["average"][0][n]}')
-                    else:
-                        red_print(f'{item["average"][0][n]}')
-                if item["average"][1] >= 2:
-                    green_print(f'\nMédia total: {item["average"][1]}\n')
-                elif item["average"][1] == 2:
-                    magenta_print(f'\nMédia total: {item["average"][1]}\n')
-                else:
-                    red_print(f'\nMédia total: {item["average"][1]}\n')
-
-
-        def print_average_grades_FC(team, sprint):
-            lista = []
-            with open(EVALUATIONS_TXT_FILE, "r") as file:
-                for line in file:
-                    dict_line = line_to_evaluation_dict(line)
-                    if team["id"] == dict_line["id_team"]:
-                        if dict_line["evaluated_category"] == "PRODU":
-                            if dict_line["evaluated_id"] not in [item[0] for item in lista]:
-                                po_average = average_grades(team["id"], dict_line["evaluated_id"], sprint)
-                                lista.append(
-                                    (
-                                        dict_line["evaluated_id"],
-                                        dict_line["evaluated_name"],
-                                        po_average,
-                                    )
-                                )
-
-            if len(lista) < 1:
-                magenta_print("\nO Product Owner desse time ainda não foi avaliado.")
-
-            questions = evaluation_form(show=False)
-            for item in lista:
-                blue_bright_print(f"\n          Médias de {item[1]}\n")
-                for n, question in enumerate(questions):
-                    bright_print(f'{questions[question]["question"]}', end=" ")
-                    if item[2][0][n] > 2:
-                        green_print(f"{item[2][0][n]}")
-                    elif item[2][0][n] == 2:
-                        magenta_print(f"{item[2][0][n]}")
-                    else:
-                        red_print(f"{item[2][0][n]}")
-                if item[2][1] >= 2:
-                    green_print(f"\nMédia total: {item[2][1]}\n")
-                elif item[2][1] == 2:
-                    magenta_print(f"\nMédia total: {item[2][1]}\n")
-                else:
-                    red_print(f"\nMédia total: {item[2][1]}\n")
-
-
-        def by_sprint_question(team):
-            by_sprint = [
-                "Ver as médias por sprint",
-                "Ver as médias de todas as sprints"
-            ]
-            blue_bright_print("\n       Ver médias por sprint?".center(60))
-
-            for indice, item in enumerate(by_sprint):
-                print(f"     {indice+1}. {item}")
-            awnser_sprint = int(bright_input("\n   Opção: "))
-
-            while awnser_sprint != 1 and awnser_sprint != 2:
-                awnser_sprint = int(bright_input("\n   Opção: "))
-
-            if awnser_sprint == 1:
-                sprint = select_sprint_tui(team['id'], closed=True)
-
-            elif awnser_sprint == 2:
-                sprint = None
-
-            return sprint
-
-
-        def run_average_grades():
-            user, groups = search_groups()
-            av_user, team = select_group(user, groups, select_member=False)
-            sprint = by_sprint_question(team)
-
-            if user["type"] == 'COMUM':
-                print_average_grades(team, user, sprint)
-
-            elif user["type"] == 'ADMIN':
-                print_average_grades_LG(team, sprint)
-
-            elif user["id"] == team['turma']['group_leader']['id']:
-                only_LT = [
-                    "Ver somente as médias dos Líderes Técnicos",
-                    "Ver as notas de todo o time",
-                ]
-                blue_bright_print("\n       Quais médias quer ver?".center(60))
-                for indice, item in enumerate(only_LT):
-                    print(f"     {indice+1}. {item}")
-                awnser = int(input("\n   Opção: "))
-                while awnser != 1 and awnser != 2:
-                    awnser = int(input("\n   Opção: "))
-                if awnser == 1:
-                    print_average_grades_LG(team, sprint, LT=True)
-                elif awnser == 2:
-                    print_average_grades_LG(team, sprint)
-
-            elif user["id"] == team['turma']['fake_client']['id']:
-                print_average_grades_FC(team, sprint)
-</code></pre>
+                red_print(f"{item[2][0][n]}")
+        if item[2][1] >= 2:
+            green_print(f"\nMédia total: {item[2][1]}\n")
+        elif item[2][1] == 2:
+            magenta_print(f"\nMédia total: {item[2][1]}\n")
+        else:
+            red_print(f"\nMédia total: {item[2][1]}\n")
+def by_sprint_question(team):
+    by_sprint = [
+        "Ver as médias por sprint",
+        "Ver as médias de todas as sprints"
+    ]
+    blue_bright_print("\n       Ver médias por sprint?".center(60))
+    for indice, item in enumerate(by_sprint):
+        print(f"     {indice+1}. {item}")
+    awnser_sprint = int(bright_input("\n   Opção: "))
+    while awnser_sprint != 1 and awnser_sprint != 2:
+        awnser_sprint = int(bright_input("\n   Opção: "))
+    if awnser_sprint == 1:
+        sprint = select_sprint_tui(team['id'], closed=True)
+    elif awnser_sprint == 2:
+        sprint = None
+    return sprint
+def run_average_grades():
+    user, groups = search_groups()
+    av_user, team = select_group(user, groups, select_member=False)
+    sprint = by_sprint_question(team)
+    if user["type"] == 'COMUM':
+        print_average_grades(team, user, sprint)
+    elif user["type"] == 'ADMIN':
+        print_average_grades_LG(team, sprint)
+    elif user["id"] == team['turma']['group_leader']['id']:
+        only_LT = [
+            "Ver somente as médias dos Líderes Técnicos",
+            "Ver as notas de todo o time",
+        ]
+        blue_bright_print("\n       Quais médias quer ver?".center(60))
+        for indice, item in enumerate(only_LT):
+            print(f"     {indice+1}. {item}")
+        awnser = int(input("\n   Opção: "))
+        while awnser != 1 and awnser != 2:
+            awnser = int(input("\n   Opção: "))
+        if awnser == 1:
+            print_average_grades_LG(team, sprint, LT=True)
+        elif awnser == 2:
+            print_average_grades_LG(team, sprint)
+    elif user["id"] == team['turma']['fake_client']['id']:
+        print_average_grades_FC(team, sprint)
+        </code></pre>
     </details>
 </ul>
 
@@ -998,6 +885,18 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
             </details>
         </td>
     </tr>
+    <tr>
+        <td>Manipulação de arquivos</td>
+        <td>★★★★★★★☆☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                A manipulação de arquivos foi a parte final do projeto. Apesar de ter um conhecimento prévio, não tinha experiência prática com a manipulação de arquivos em Python.
+                Aprendi a criar, ler, escrever e atualizar arquivos de texto, o que é essencial para armazenar dados de forma persistente.
+                </p>
+            </details>
+        </td>
 </table>
 
 <h3>Soft Skills</h3>
@@ -1040,6 +939,9 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     Para minha sorte, eu já tinha um prévio conhecimento em Python e lógica de programação, o que me ajudou a me adaptar mais rapidamente.
     Aprendi a importância de ser paciente e didática ao explicar conceitos para pessoas que estão começando na área, além de desenvolver minha capacidade de trabalhar em equipe com pessoas de diferentes níveis de conhecimento. Mas, em contrapartida, também tive alguns conflitos de ideias com colegas, acarretando no desmanche do grupo ao final do semestre.
 </p>
+<p align="justify">
+    Do ponto de vista técnico, aprendi a manipular arquivos em Python, o que eu ainda não tinha experiência prática. Apesar se ser simples, foi um desafio interessante, pois eu não achava que seria tão fácil manipular arquivos de texto e armazenar dados de forma persistente.
+</p>
 
 <h2 id="api2">Projeto 2: Sistema de lançamento de horas-extras e sobreavisos desktop</h2>
 
@@ -1055,609 +957,565 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 <ul>
     <details>
         <summary>Modelagem e criação dos scripts SQL do banco de dados</summary>
-        <p align="justify">Participei da modelagem do banco de dados, utilizando o MySQL. O banco de dados foi modelado de acordo com as necessidades da empresa parceira, contemplando as entidades e relacionamentos necessários para a aplicação.</p>
-        <p align="justify">Além disso, participei da criação dos scripts SQL para a criação das tabelas e relacionamentos no banco de dados.</p>
+        <p align="justify">
+        Participei da modelagem do banco de dados, utilizando o MySQL. O banco de dados foi modelado de acordo com as necessidades da empresa parceira, contemplando as entidades e relacionamentos necessários para a aplicação.
+        </p>
+        <p align="justify">
+        Além disso, participei da criação dos scripts SQL para a criação das tabelas e relacionamentos no banco de dados.
+        </p>
         <pre>
         <code>
-        create table
-            hora(
-                id int not null AUTO_INCREMENT PRIMARY KEY,
-                username_lancador VARCHAR(20) not null,
-                data_hora_inicio DATETIME not NULL,
-                data_hora_fim DATETIME not NULL,
-                tipo VARCHAR(15) NOT NULL,
-                Foreign Key (username_lancador) REFERENCES usuarios(username)
-            );
-
-        create table
-            centro_resultado(
-                nome VARCHAR(30) NOT NULL,
-                status_aprovacao ENUM('ativo', 'inativo') NOT NULL,
-                codigo_cr VARCHAR(10) not NULL PRIMARY KEY,
-                sigla VARCHAR (10) NOT NULL UNIQUE
-            );
-
-        create table
-            cliente (
-                razao_social VARCHAR(70) NOT NULL,
-                status_clientes ENUM('ativo', 'inativo') NOT NULL,
-                cnpj BIGINT PRIMARY KEY NOT NULL
-            );
-
-        create table
-            contrato(
-                id int(10) auto_increment primary key,
-                cod_cr VARCHAR(10) not NULL,
-                cnpj_cliente BIGINT NOT NULL,
-                Foreign Key (cod_cr) REFERENCES centro_resultado(codigo_cr),
-                Foreign KEY (cnpj_cliente) REFERENCES cliente(cnpj)
-            );
-
-        create table
-            integrantes (
-                gestor BOOLEAN NOT NULL,
-                username_integrante VARCHAR(20) not null,
-                cod_cr VARCHAR(10) not NULL,
-                Foreign Key (username_integrante) REFERENCES usuarios(username),
-                Foreign Key (cod_cr) REFERENCES centro_resultado(codigo_cr),
-                PRIMARY KEY (username_integrante, cod_cr)
-            );
-</code></pre>
+create table
+    hora(
+        id int not null AUTO_INCREMENT PRIMARY KEY,
+        username_lancador VARCHAR(20) not null,
+        data_hora_inicio DATETIME not NULL,
+        data_hora_fim DATETIME not NULL,
+        tipo VARCHAR(15) NOT NULL,
+        Foreign Key (username_lancador) REFERENCES usuarios(username)
+    );
+create table
+    centro_resultado(
+        nome VARCHAR(30) NOT NULL,
+        status_aprovacao ENUM('ativo', 'inativo') NOT NULL,
+        codigo_cr VARCHAR(10) not NULL PRIMARY KEY,
+        sigla VARCHAR (10) NOT NULL UNIQUE
+    );
+create table
+    cliente (
+        razao_social VARCHAR(70) NOT NULL,
+        status_clientes ENUM('ativo', 'inativo') NOT NULL,
+        cnpj BIGINT PRIMARY KEY NOT NULL
+    );
+create table
+    contrato(
+        id int(10) auto_increment primary key,
+        cod_cr VARCHAR(10) not NULL,
+        cnpj_cliente BIGINT NOT NULL,
+        Foreign Key (cod_cr) REFERENCES centro_resultado(codigo_cr),
+        Foreign KEY (cnpj_cliente) REFERENCES cliente(cnpj)
+    );
+create table
+    integrantes (
+        gestor BOOLEAN NOT NULL,
+        username_integrante VARCHAR(20) not null,
+        cod_cr VARCHAR(10) not NULL,
+        Foreign Key (username_integrante) REFERENCES usuarios(username),
+        Foreign Key (cod_cr) REFERENCES centro_resultado(codigo_cr),
+        PRIMARY KEY (username_integrante, cod_cr)
+    );
+        </code></pre>
     </details>
     <details>
         <summary>Criação do método getUsuario na classe usuarioDAO</summary>
-        <p align="justify">Criei o método <code>getUsuario</code> na classe <code>usuarioDAO</code>, que era responsável por buscar um usuário no banco de dados com base no nome de usuário e senha informados. O método retornava um objeto do tipo <code>Usuario</code>, que continha as informações do usuário.</p>
+        <p align="justify">
+        Criei o método <code>getUsuario</code> na classe <code>usuarioDAO</code>, que era responsável por buscar um usuário no banco de dados com base no nome de usuário e senha informados. O método retornava um objeto do tipo <code>Usuario</code>, que continha as informações do usuário.
+        </p>
         <pre>
         <code>
-        public Usuario getUsuario(String username, String senha){
-                
-                        String sql = "SELECT * FROM usuario WHERE username = ? AND senha = ?";
-                        
-                Connection conn = null;
-                PreparedStatement pstm = null;
-                //Classe que vai recuperar os dados do banco. ***SELECT****
-                ResultSet rset = null;
-                        Usuario usuario = Usuario.getInstance();
-                
+public Usuario getUsuario(String username, String senha){
+                String sql = "SELECT * FROM usuario WHERE username = ? AND senha = ?";
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        //Classe que vai recuperar os dados do banco. ***SELECT****
+        ResultSet rset = null;
+                Usuario usuario = Usuario.getInstance();
+        try {
+            conn = Conexao.createConnectionToMySQL();
+            pstm = (PreparedStatement) conn.prepareStatement(sql);
+                        pstm.setString(1, username);
+                        pstm.setString(2, senha);			
+            rset = pstm.executeQuery();
+                        if (rset.next()) {
+                usuario.setUsername(rset.getString("username"));
+                usuario.setNome(rset.getString("nome"));
+                                usuario.setSenha(rset.getString("senha"));
+                usuario.setCargo(rset.getString("funcao"));
+                usuario.setStatus(rset.getString("status_user"));                       
+            } else {
+                            return null;
+                        }            
+        }catch (Exception e) {
+                e.printStackTrace();
+            }finally {
                 try {
-                    conn = Conexao.createConnectionToMySQL();
-                    
-                    pstm = (PreparedStatement) conn.prepareStatement(sql);
-                                pstm.setString(1, username);
-                                pstm.setString(2, senha);			
-                    rset = pstm.executeQuery();
-                                
-                    
-                                if (rset.next()) {
-                        
-                        usuario.setUsername(rset.getString("username"));
-                        usuario.setNome(rset.getString("nome"));
-                                        usuario.setSenha(rset.getString("senha"));
-                        usuario.setCargo(rset.getString("funcao"));
-                        usuario.setStatus(rset.getString("status_user"));
-                                                        
-                    } else {
-                                    return null;
-                                }
-                                
-                }catch (Exception e) {
-                        e.printStackTrace();
-                    }finally {
-                        try {
-                            if(rset!=null) {
-                                rset.close();
-                            }
-                            
-                            if(pstm!=null) {
-                                pstm.close();
-                            }
-                            
-                            if(conn!=null) {
-                                conn.close();
-                            }
-                        }catch(Exception e) {
-                            e.printStackTrace();
-                        }
+                    if(rset!=null) {
+                        rset.close();
                     }
-                    return usuario;
+                    if(pstm!=null) {
+                        pstm.close();
+                    }
+                    if(conn!=null) {
+                        conn.close();
+                    }
+                }catch(Exception e) {
+                    e.printStackTrace();
+                }
             }
-</code></pre>
+            return usuario;
+    }
+        </code></pre>
     </details>
     <details>
         <summary>Criação do controller de Login</summary>
-        <p align="justify">Criei o controller de Login, utilizando o JavaFX. O controller era responsável por controlar a tela de login, validando as informações inseridas pelo usuário e realizando a autenticação do usuário.</p>
+        <p align="justify">
+        Criei o controller de Login, utilizando o JavaFX. O controller era responsável por controlar a tela de login, validando as informações inseridas pelo usuário e realizando a autenticação do usuário.
+        </p>
         <pre>
         <code>
-        public class TelaLoginController implements Initializable {
-
-            @FXML
-            private TextField LoginUsuário;
-            @FXML
-            private PasswordField LoginSenha;
-            @FXML
-            private Button LoginBotaoEntrar;
-            @FXML
-            private Button LoginBotaoFechar;
-
-            @Override
-            public void initialize(URL url, ResourceBundle rb) {
-                // TODO
-            }    
-
-            @FXML
-            private void handleLoginButtonAction(ActionEvent event) {
-                    String user = LoginUsuário.getText();
-                    String senha = LoginSenha.getText();
-
-                    try (Connection connection = Conexao.createConnectionToMySQL()) {
-                        Usuario usuario = new usuarioDAO().getUsuario(user, senha);
-                        if (usuario!=null && usuario.getUsername().equals( user) && usuario.getSenha().equals(senha)) {
-                            
-                            System.out.println("Logado");
-                            System.out.println(usuario.getNome());
-                            LoginSenha.setText("");
-                            // Usuário e senha são válidos, exibir próxima tela
-                            App.setRoot("LancamentoColaborador");
-                            
-                        } else {
-                            Alert alert = new Alert(Alert.AlertType.ERROR);
-                            alert.setTitle("Erro");
-                            alert.setHeaderText("Usuário ou senha inválidos");
-                            alert.setContentText("Por favor verifique suas credenciais e tente novamente.");
-                            alert.showAndWait();
-                        }
-                    } catch (SQLException e) {
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Erro");
-                        alert.setHeaderText("Erro de banco de dados");
-                        alert.setContentText("Ocorreu um erro ao se comunicar com o banco de dados. Por favor tente novamente mais tarde.");
-                        alert.showAndWait();
-                        e.printStackTrace();
-                    } catch (Exception e) {
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Erro");
-                        alert.setHeaderText("Erro desconhecido");
-                        alert.setContentText("Ocorreu um erro desconhecido. Por favor tente novamente mais tarde.");
-                        alert.showAndWait();
-                        e.printStackTrace();
-                    } 
+public class TelaLoginController implements Initializable {
+    @FXML
+    private TextField LoginUsuário;
+    @FXML
+    private PasswordField LoginSenha;
+    @FXML
+    private Button LoginBotaoEntrar;
+    @FXML
+    private Button LoginBotaoFechar;
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }
+    @FXML
+    private void handleLoginButtonAction(ActionEvent event) {
+            String user = LoginUsuário.getText();
+            String senha = LoginSenha.getText();
+            try (Connection connection = Conexao.createConnectionToMySQL()) {
+                Usuario usuario = new usuarioDAO().getUsuario(user, senha);
+                if (usuario!=null && usuario.getUsername().equals( user) && usuario.getSenha().equals(senha)) {
+                    System.out.println("Logado");
+                    System.out.println(usuario.getNome());
+                    LoginSenha.setText("");
+                    // Usuário e senha são válidos, exibir próxima tela
+                    App.setRoot("LancamentoColaborador");
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Erro");
+                    alert.setHeaderText("Usuário ou senha inválidos");
+                    alert.setContentText("Por favor verifique suas credenciais e tente novamente.");
+                    alert.showAndWait();
                 }
-
-                @FXML
-                private void handleFecharButtonAction(ActionEvent event) {
-                    // Obtém a janela atual
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-                // Fecha a janela atual
-                stage.close();
-                }
-            }
-</code></pre>
+            } catch (SQLException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erro");
+                alert.setHeaderText("Erro de banco de dados");
+                alert.setContentText("Ocorreu um erro ao se comunicar com o banco de dados. Por favor tente novamente mais tarde.");
+                alert.showAndWait();
+                e.printStackTrace();
+            } catch (Exception e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erro");
+                alert.setHeaderText("Erro desconhecido");
+                alert.setContentText("Ocorreu um erro desconhecido. Por favor tente novamente mais tarde.");
+                alert.showAndWait();
+                e.printStackTrace();
+            } 
+        }
+        @FXML
+        private void handleFecharButtonAction(ActionEvent event) {
+            // Obtém a janela atual
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Fecha a janela atual
+        stage.close();
+        }
+    }
+        </code></pre>
     </details>
     <details>
         <summary>Criação do método para editar Centros de Resultados pelo Administrador</summary>
-        <p align="justify">Criei o método <code>BotaoEditar</code> na classe <code>CadastroCRADMController</code>, que era responsável por editar um Centro de Resultado. O método verificava se alguma linha da tabela de Centros de Resultado estava selecionada, exibia uma mensagem de confirmação para o usuário e, caso o usuário confirmasse, atualizava as informações do Centro de Resultado no banco de dados.</p>
+        <p align="justify">
+        Criei o método <code>BotaoEditar</code> na classe <code>CadastroCRADMController</code>, que era responsável por editar um Centro de Resultado. O método verificava se alguma linha da tabela de Centros de Resultado estava selecionada, exibia uma mensagem de confirmação para o usuário e, caso o usuário confirmasse, atualizava as informações do Centro de Resultado no banco de dados.
+        </p>
         <details>
             <summary>Código do método update dentro de <code>crDAO</code></summary>
             <pre>
             <code>
-            public void update(Centro_resultado cr) {
-                String sql = "UPDATE centro_resultado SET nome=?, status_cr=?, sigla=? WHERE codigo_cr=?";
-                Connection conn = null;
-                PreparedStatement pstm = null;
-
-                try {
-                    conn = Conexao.createConnectionToMySQL();
-
-                    pstm = (PreparedStatement) conn.prepareStatement(sql);
-                    pstm.setString(1, cr.getNome());
-                    pstm.setString(2, cr.getStatus_cr());
-                    pstm.setString(3, cr.getSigla());
-                    pstm.setString(4, cr.getCodigo_cr());
-
-                    pstm.executeUpdate();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                } finally {
-                    try {
-                        if (pstm != null) {
-                            pstm.close();
-                        }
-                        if (conn != null) {
-                            conn.close();
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
+public void update(Centro_resultado cr) {
+    String sql = "UPDATE centro_resultado SET nome=?, status_cr=?, sigla=? WHERE codigo_cr=?";
+    Connection conn = null;
+    PreparedStatement pstm = null;
+    try {
+        conn = Conexao.createConnectionToMySQL();
+        pstm = (PreparedStatement) conn.prepareStatement(sql);
+        pstm.setString(1, cr.getNome());
+        pstm.setString(2, cr.getStatus_cr());
+        pstm.setString(3, cr.getSigla());
+        pstm.setString(4, cr.getCodigo_cr());
+        pstm.executeUpdate();
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            if (pstm != null) {
+                pstm.close();
             }
-</code></pre>
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+        </code></pre>
         </details>
         <details>
             <summary>Código do método BotaoEditar</summary>
                 <pre>
                 <code>
-                @FXML
-                private void BotaoEditar(ActionEvent event) {
-                    // verifica se alguma linha foi selecionada
-                    if (tabelaCadastroCr.getSelectionModel().getSelectedItem() != null) {
-                        // desabilita a edição da coluna de código
-                        tabelaCadastroCr.getColumns().get(0).setEditable(false);
-
-                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                        alert.setTitle("Confirmação");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Tem certeza que deseja atualizar os dados do CR?");
-
-                        Optional<ButtonType> result = alert.showAndWait();
-                        if (result.isPresent() && result.get() == ButtonType.OK) {
-                            // o usuário clicou em "OK", continue com a ação
-                            Centro_resultado crSelecionado = tabelaCadastroCr.getSelectionModel().getSelectedItem();
-
-                            String novoNome = entradaNome.getText();
-                            String novaSigla = entradaSigla.getText();
-                            if (!novoNome.isEmpty()) {
-                                // atualiza o objeto Centro_resultado com o novo nome
-                                crSelecionado.setNome(novoNome);
-                                crSelecionado.setSigla(novaSigla);
-
-                                // salva o objeto atualizado no banco de dados
-                                crDAO crdao = new crDAO();
-                                crdao.update(crSelecionado);
-
-                                // atualiza a tabela com as novas informações
-                                carregarTabelaCr();
-                                limparCampos();
-                            }
-                        } else {
-                            limparCampos();
-                            System.out.println("Cancelado");
-                        }
-
-                    } else {
-                        System.out.println("Nenhuma linha selecionada");
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Nenhuma linha selecionada");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Por favor, selecione uma linha da tabela para editar");
-                        alert.showAndWait();
-                    }
-                }
-</code></pre>
+@FXML
+private void BotaoEditar(ActionEvent event) {
+    // verifica se alguma linha foi selecionada
+    if (tabelaCadastroCr.getSelectionModel().getSelectedItem() != null) {
+        // desabilita a edição da coluna de código
+        tabelaCadastroCr.getColumns().get(0).setEditable(false);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmação");
+        alert.setHeaderText(null);
+        alert.setContentText("Tem certeza que deseja atualizar os dados do CR?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            // o usuário clicou em "OK", continue com a ação
+            Centro_resultado crSelecionado = tabelaCadastroCr.getSelectionModel().getSelectedItem();
+            String novoNome = entradaNome.getText();
+            String novaSigla = entradaSigla.getText();
+            if (!novoNome.isEmpty()) {
+                // atualiza o objeto Centro_resultado com o novo nome
+                crSelecionado.setNome(novoNome);
+                crSelecionado.setSigla(novaSigla);
+                // salva o objeto atualizado no banco de dados
+                crDAO crdao = new crDAO();
+                crdao.update(crSelecionado);
+                // atualiza a tabela com as novas informações
+                carregarTabelaCr();
+                limparCampos();
+            }
+        } else {
+            limparCampos();
+            System.out.println("Cancelado");
+        }
+    } else {
+        System.out.println("Nenhuma linha selecionada");
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Nenhuma linha selecionada");
+        alert.setHeaderText(null);
+        alert.setContentText("Por favor, selecione uma linha da tabela para editar");
+        alert.showAndWait();
+    }
+}
+        </code></pre>
         </details>
     </details>
     <details>
         <summary>Criação do método para ativação do Centro de Resultado pelo Administrador</summary>
-        <p align="justify">Criei o método <code>BotaoInativar</code>, dentro da classe <code>CadastroCRADMController</code>, que era responsável por ativar um Centro de Resultado. O método verificava se alguma linha da tabela de Centros de Resultado estava selecionada, exibia uma mensagem de confirmação para o usuário e, caso o usuário confirmasse, atualizava o status do Centro de Resultado para ativo no banco de dados.</p>
+        <p align="justify">
+        Criei o método <code>BotaoInativar</code>, dentro da classe <code>CadastroCRADMController</code>, que era responsável por ativar um Centro de Resultado. O método verificava se alguma linha da tabela de Centros de Resultado estava selecionada, exibia uma mensagem de confirmação para o usuário e, caso o usuário confirmasse, atualizava o status do Centro de Resultado para ativo no banco de dados.
+        </p>
         <pre>
         <code>
-        @FXML
-        private void BotaoAtivar(ActionEvent event) {
-            // exibe um alerta de confirmação antes de ativar a CR
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirmação");
-            alert.setHeaderText(null);
-            alert.setContentText("Tem certeza que deseja ativar a CR?");
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == ButtonType.OK) {
-                // o usuário clicou em "Ok", então a CR será ativada
-                crDAO crdao = new crDAO();
-                Centro_resultado cr = crdao.getCrByCodigo(valorDoItemSelecionado);
-                cr.setStatus_cr("ativo");
-                crdao.update(cr);
-                carregarTabelaCr();
-                limparCampos();
-
-                Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
-                alert2.setTitle("CR ativado");
-                alert2.setHeaderText(null);
-                alert2.setContentText("O CR foi ativado com sucesso!");
-                alert2.showAndWait();
-            } else {
-                // o usuário clicou em "Cancelar", então nada será feito
-                limparCampos();
-                carregarTabelaCr();
-            }
-        }
-</code></pre>
+@FXML
+private void BotaoAtivar(ActionEvent event) {
+    // exibe um alerta de confirmação antes de ativar a CR
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Confirmação");
+    alert.setHeaderText(null);
+    alert.setContentText("Tem certeza que deseja ativar a CR?");
+    Optional<ButtonType> result = alert.showAndWait();
+    if (result.get() == ButtonType.OK) {
+        // o usuário clicou em "Ok", então a CR será ativada
+        crDAO crdao = new crDAO();
+        Centro_resultado cr = crdao.getCrByCodigo(valorDoItemSelecionado);
+        cr.setStatus_cr("ativo");
+        crdao.update(cr);
+        carregarTabelaCr();
+        limparCampos();
+        Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
+        alert2.setTitle("CR ativado");
+        alert2.setHeaderText(null);
+        alert2.setContentText("O CR foi ativado com sucesso!");
+        alert2.showAndWait();
+    } else {
+        // o usuário clicou em "Cancelar", então nada será feito
+        limparCampos();
+        carregarTabelaCr();
+    }
+}
+        </code></pre>
     </details>
     <details>
         <summary>Criação do método para inativação do Centro de Resultado pelo Administrador</summary>
-        <p align="justify">Criei o método <code>BotaoInativar</code>, dentro da classe <code>CadastroCRADMController</code>, que era responsável por inativar um Centro de Resultado. O método verificava se alguma linha da tabela de Centros de Resultado estava selecionada, exibia uma mensagem de confirmação para o usuário e, caso o usuário confirmasse, atualizava o status do Centro de Resultado para inativo no banco de dados.</p>
+        <p align="justify">
+        Criei o método <code>BotaoInativar</code>, dentro da classe <code>CadastroCRADMController</code>, que era responsável por inativar um Centro de Resultado. O método verificava se alguma linha da tabela de Centros de Resultado estava selecionada, exibia uma mensagem de confirmação para o usuário e, caso o usuário confirmasse, atualizava o status do Centro de Resultado para inativo no banco de dados.
+        </p>
         <pre>
         <code>
-        @FXML
-        private void BotaoInativar(ActionEvent event) {
-            // exibe um alerta de confirmação antes de inativar a CR
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirmação");
-            alert.setHeaderText(null);
-            alert.setContentText("Tem certeza que deseja inativar o CR?");
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == ButtonType.OK) {
-                // o usuário clicou em "Ok", então a CR será inativada
-                crDAO crdao = new crDAO();
-                Centro_resultado cr = crdao.getCrByCodigo(valorDoItemSelecionado);
-                cr.setStatus_cr("inativo");
-                crdao.update(cr);
-
-                carregarTabelaCr();
-                limparCampos();
-
-                Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
-                alert2.setTitle("CR inativado");
-                alert2.setHeaderText(null);
-                alert2.setContentText("O CR foi inativado com sucesso!");
-                alert2.showAndWait();
-            } else {
-                // o usuário clicou em "Cancelar", então nada será feito
-                limparCampos();
-                carregarTabelaCr();
-            }
-        }
-</code></pre>
+@FXML
+private void BotaoInativar(ActionEvent event) {
+    // exibe um alerta de confirmação antes de inativar a CR
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Confirmação");
+    alert.setHeaderText(null);
+    alert.setContentText("Tem certeza que deseja inativar o CR?");
+    Optional<ButtonType> result = alert.showAndWait();
+    if (result.get() == ButtonType.OK) {
+        // o usuário clicou em "Ok", então a CR será inativada
+        crDAO crdao = new crDAO();
+        Centro_resultado cr = crdao.getCrByCodigo(valorDoItemSelecionado);
+        cr.setStatus_cr("inativo");
+        crdao.update(cr);
+        carregarTabelaCr();
+        limparCampos();
+        Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
+        alert2.setTitle("CR inativado");
+        alert2.setHeaderText(null);
+        alert2.setContentText("O CR foi inativado com sucesso!");
+        alert2.showAndWait();
+    } else {
+        // o usuário clicou em "Cancelar", então nada será feito
+        limparCampos();
+        carregarTabelaCr();
+    }
+}
+        </code></pre>
     </details>
     <details>
         <summary>Criação do método validaDataHora na classe LancamentoColaboradorController</summary>
-        <p align="justify">Criei o método que validava a data e hora de início e fim do lançamento de horas, garantindo que a data e hora de início fossem anteriores à data e hora de fim. O método <code>validaDataHora</code> era responsável por realizar essa validação e retornar um valor booleano indicando se a data e hora eram válidas.</p>
+        <p align="justify">
+        Criei o método que validava a data e hora de início e fim do lançamento de horas, garantindo que a data e hora de início fossem anteriores à data e hora de fim. O método <code>validaDataHora</code> era responsável por realizar essa validação e retornar um valor booleano indicando se a data e hora eram válidas.
+        </p>
         <pre>
         <code>
-        public boolean validaDataHora(Hora hora) {
-            boolean valido = false;
-            // Captura data hora inicio e fim
-            Timestamp dtHrInicio = hora.getData_hora_inicio();
-            Timestamp dtHrFim = hora.getData_hora_fim();
-
-            int resultDtHrIniFim = dtHrInicio.compareTo(dtHrFim);
-
-            // Verifica se a dtHrInicio é anterior a dtHrFim
-            if (resultDtHrIniFim < 0) {
-                valido = true;
-            }
-            return valido;
-        }
-</code></pre>
+public boolean validaDataHora(Hora hora) {
+    boolean valido = false;
+    // Captura data hora inicio e fim
+    Timestamp dtHrInicio = hora.getData_hora_inicio();
+    Timestamp dtHrFim = hora.getData_hora_fim();
+    int resultDtHrIniFim = dtHrInicio.compareTo(dtHrFim);
+    // Verifica se a dtHrInicio é anterior a dtHrFim
+    if (resultDtHrIniFim < 0) {
+        valido = true;
+    }
+    return valido;
+}
+        </code></pre>
     </details>
     <details>
         <summary>Criação do método getConflito na classe LancamentoColaboradorController</summary>
-        <p align="justify">Criei o método <code>getConflito</code> na classe <code>LancamentoColaboradorController</code>, que era responsável por verificar se o lançamento de horas entrava em conflito com alguma hora já lançada. O método comparava a data e hora de início e fim do lançamento com as datas e horas de início e fim de todas as horas já lançadas, retornando um valor booleano indicando se havia conflito.</p>
+        <p align="justify">
+        Criei o método <code>getConflito</code> na classe <code>LancamentoColaboradorController</code>, que era responsável por verificar se o lançamento de horas entrava em conflito com alguma hora já lançada. O método comparava a data e hora de início e fim do lançamento com as datas e horas de início e fim de todas as horas já lançadas, retornando um valor booleano indicando se havia conflito.
+        </p>
         <pre>
         <code>
-        public boolean getConflito(Hora hora) {
-            Timestamp dtHrInicio = hora.getData_hora_inicio();
-            Timestamp dtHrFim = hora.getData_hora_fim();
-
-            // Verifica se entra em conflito com alguma hora já lançada
-            boolean conflito = false;
-            for (Hora horaExistente : lishoras) {
-                Timestamp inicio = horaExistente.getData_hora_inicio();
-                Timestamp fim = horaExistente.getData_hora_fim();
-
-                int resultIniIni = dtHrInicio.compareTo(inicio);
-                int resultFimFim = dtHrFim.compareTo(fim);
-                int resultIniFim = dtHrInicio.compareTo(fim);
-                int resultFimIni = dtHrFim.compareTo(inicio);
-
-                if ((resultIniIni > 0 && resultIniFim < 0)
-                        || (resultFimIni > 0 && resultFimFim < 0)
-                        || (resultIniIni < 0 && resultFimFim > 0)
-                        || resultIniIni == 0 || resultFimFim == 0) {
-                    conflito = true;
-                    break;
-                }
-            }
-            return conflito;
+public boolean getConflito(Hora hora) {
+    Timestamp dtHrInicio = hora.getData_hora_inicio();
+    Timestamp dtHrFim = hora.getData_hora_fim();
+    // Verifica se entra em conflito com alguma hora já lançada
+    boolean conflito = false;
+    for (Hora horaExistente : lishoras) {
+        Timestamp inicio = horaExistente.getData_hora_inicio();
+        Timestamp fim = horaExistente.getData_hora_fim();
+        int resultIniIni = dtHrInicio.compareTo(inicio);
+        int resultFimFim = dtHrFim.compareTo(fim);
+        int resultIniFim = dtHrInicio.compareTo(fim);
+        int resultFimIni = dtHrFim.compareTo(inicio);
+        if ((resultIniIni > 0 && resultIniFim < 0)
+                || (resultFimIni > 0 && resultFimFim < 0)
+                || (resultIniIni < 0 && resultFimFim > 0)
+                || resultIniIni == 0 || resultFimFim == 0) {
+            conflito = true;
+            break;
         }
-</code></pre>
+    }
+    return conflito;
+}
+        </code></pre>
     </details>
     <details>
         <summary>Criação da lógica do botaoAcionamento na classe LancamentoColaboradorController</summary>
-        <p align="justify">Criei a lógica do método <code>botaoAcionamento</code> na classe <code>LancamentoColaboradorController</code>, que era responsável por realizar o lançamento de um acionamento dentro de um sobreaviso. O método verificava se todos os campos obrigatórios estavam preenchidos, validava a data e hora de início e fim do lançamento, verificava se havia conflito com outras horas lançadas e, caso tudo estivesse correto, exibia um pop-up de confirmação e realizava o lançamento das horas.</p>
+        <p align="justify">
+        Criei a lógica do método <code>botaoAcionamento</code> na classe <code>LancamentoColaboradorController</code>, que era responsável por realizar o lançamento de um acionamento dentro de um sobreaviso. O método verificava se todos os campos obrigatórios estavam preenchidos, validava a data e hora de início e fim do lançamento, verificava se havia conflito com outras horas lançadas e, caso tudo estivesse correto, exibia um pop-up de confirmação e realizava o lançamento das horas.
+        </p>
         <pre>
         <code>
-        @FXML
-        public void botaoAcionamento(ActionEvent event) throws ParseException {
-            if (getDataInicio().getValue() == null
-                    || getHoraInicio().getValue() == null
-                    || getMinutoInicio().getValue() == null
-                    || getDataFim().getValue() == null
-                    || getHoraFim().getValue() == null
-                    || getMinutoFim().getValue() == null
-                    || entradaProjeto.getText().isEmpty()
-                    || selecaoCliente.getValue() == null
-                    || selecaoCR.getValue() == null
-                    || entradaJustificativa.getText().isEmpty()
-                    || horaTipo.getValue() == null) {
-                System.out.println("Preencha todos os campos - tela de lançamento");
-                Alert alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Preencha todos os campos");
-                alert.setHeaderText(null);
-                alert.setContentText("Alguns dos campos não foram preenchidos");
-                alert.showAndWait();
-            } else {
-                capturaHora();
-                boolean valido = validaDataHora(capturaHora());
-
-                if (valido) {
-                    boolean conflito = getConflito(capturaHora());
-
-                    if (!conflito) {
-                        try {
-                            FXMLLoader loader = new FXMLLoader(getClass().getResource("PopUpAcionamento.fxml"));
-                            Parent root = loader.load();
-                            PopUpAcionamentoController controller = new PopUpAcionamentoController();
-
-                            loader.setController(controller);
-                            Stage popup = new Stage();
-                            popup.initModality(Modality.APPLICATION_MODAL);
-                            popup.initOwner(botaoAcionamento.getScene().getWindow());
-                            popup.setScene(new Scene(root));
-
-                            popup.showAndWait();
-                            carregarTabelaLancamento();
-                            limparCampos();
-
-                        } catch (IOException e) {
-
-                        }
-                    } else {
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Conflito de horas");
-                        alert.setHeaderText(null);
-                        alert.setContentText("A hora informada está em conflito com outro lançamento");
-                        alert.showAndWait();
-                    }
-                } else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Lançamento incompatível");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Data e hora de início devem ser antes do fim");
-                    alert.showAndWait();
+@FXML
+public void botaoAcionamento(ActionEvent event) throws ParseException {
+    if (getDataInicio().getValue() == null
+            || getHoraInicio().getValue() == null
+            || getMinutoInicio().getValue() == null
+            || getDataFim().getValue() == null
+            || getHoraFim().getValue() == null
+            || getMinutoFim().getValue() == null
+            || entradaProjeto.getText().isEmpty()
+            || selecaoCliente.getValue() == null
+            || selecaoCR.getValue() == null
+            || entradaJustificativa.getText().isEmpty()
+            || horaTipo.getValue() == null) {
+        System.out.println("Preencha todos os campos - tela de lançamento");
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Preencha todos os campos");
+        alert.setHeaderText(null);
+        alert.setContentText("Alguns dos campos não foram preenchidos");
+        alert.showAndWait();
+    } else {
+        capturaHora();
+        boolean valido = validaDataHora(capturaHora());
+        if (valido) {
+            boolean conflito = getConflito(capturaHora());
+            if (!conflito) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("PopUpAcionamento.fxml"));
+                    Parent root = loader.load();
+                    PopUpAcionamentoController controller = new PopUpAcionamentoController();
+                    loader.setController(controller);
+                    Stage popup = new Stage();
+                    popup.initModality(Modality.APPLICATION_MODAL);
+                    popup.initOwner(botaoAcionamento.getScene().getWindow());
+                    popup.setScene(new Scene(root));
+                    popup.showAndWait();
+                    carregarTabelaLancamento();
+                    limparCampos();
+                } catch (IOException e) {
                 }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Conflito de horas");
+                alert.setHeaderText(null);
+                alert.setContentText("A hora informada está em conflito com outro lançamento");
+                alert.showAndWait();
             }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lançamento incompatível");
+            alert.setHeaderText(null);
+            alert.setContentText("Data e hora de início devem ser antes do fim");
+            alert.showAndWait();
         }
-</code></pre>
+    }
+}
+        </code></pre>
     </details>
     <details>
         <summary>Criação da lógica do botaoAdicionar na classe PopUpAcionamentoController</summary>
-        <p align="justify">Criei a lógica do método <code>botaoAdicionar</code> na classe <code>PopUpAcionamentoController</code>, que era responsável por realizar o lançamento de um acionamento dentro de um sobreaviso. O método verificava se todos os campos obrigatórios estavam preenchidos, validava a data e hora de início e fim do lançamento, verificava se havia conflito com outras horas lançadas e, caso tudo estivesse correto, exibia um pop-up de confirmação e realizava o lançamento das horas.</p>
+        <p align="justify">
+        Criei a lógica do método <code>botaoAdicionar</code> na classe <code>PopUpAcionamentoController</code>, que era responsável por realizar o lançamento de um acionamento dentro de um sobreaviso. O método verificava se todos os campos obrigatórios estavam preenchidos, validava a data e hora de início e fim do lançamento, verificava se havia conflito com outras horas lançadas e, caso tudo estivesse correto, exibia um pop-up de confirmação e realizava o lançamento das horas.
+        </p>
         <pre>
         <code>
-        private void botaoAdicionar() throws ParseException {
-            // Obtém os valores de data de inicio e de fim (campos de entrada)
-            inicioAcionamento = dataInicioAc.getValue();
-            fimAcionamento = dataFimAc.getValue();
-
-            // Verifica se as datas (NÃO) foram preenchidas
-            if (inicioAcionamento == null || fimAcionamento == null) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Preencha todos os campos");
-                alert.setHeaderText(null);
-                alert.setContentText("Alguns dos campos não foram preenchidos");
-                alert.showAndWait();
-            } else {
-                Hora horaExtra = new Hora();
-
-                // Preenche os dados que vêm do lançamento do sobreaviso
-                horaExtra.setCnpj_cliente(sobreaviso.getCnpj_cliente());
-                horaExtra.setCod_cr(sobreaviso.getCod_cr());
-                horaExtra.setJustificativa_lancamento(sobreaviso.getJustificativa_lancamento());
-                horaExtra.setNome_cliente(sobreaviso.getNome_cliente());
-                horaExtra.setProjeto(sobreaviso.getProjeto());
-                horaExtra.setUsername_aprovador(sobreaviso.getUsername_aprovador());
-                horaExtra.setUsername_lancador(sobreaviso.getUsername_lancador());
-                horaExtra.setTipo(sobreaviso.getTipo());
-                horaExtra.setStatus_aprovacao(sobreaviso.getStatus_aprovacao());
-                horaExtra.setSolicitante(sobreaviso.getSolicitante());
-
-                // Formata as strings de inicioAcionamento e fimAcionamento
-                String dtInicioAc = inicioAcionamento.toString();
-                String dtFimAc = fimAcionamento.toString();
-
-                // Obtém os valores de hora e minuto de inicio (campos de entrada)
-                int hora_inicio = horaInicio.getValue();
-                int min_inicio = minutoInicio.getValue();
-
-                // Formata as strings de hora_inicio e min_inicio
-                String hora_inicioS = Integer.toString(hora_inicio);
-                String min_inicioS = Integer.toString(min_inicio);
-
-                if (min_inicioS.length() < 2) {
-                    min_inicioS = "0" + min_inicioS;
-                }
-                if (hora_inicioS.length() < 2) {
-                    hora_inicioS = "0" + hora_inicioS;
-                }
-
-                // Concatena as strings de hora e minuto iniciais
-                hora_inicioS = hora_inicioS + ":" + min_inicioS + ":00";
-
-                // Concatena as strings de data de inicio e hora de inicio
-                String data_hora_inicio = dtInicioAc + " " + hora_inicioS;
-
-                // Preenche a data e a hora de inicio no objeto horaExtra
-                horaExtra.setData_hora_inicio(data_hora_inicio);
-
-                // Obtém os valores de hora e minuto de fim (campos de entrada)
-                int hora_fim = horaFim.getValue();
-                int min_fim = minutoFim.getValue();
-
-                // Formata as strings de hora_fim e min_fim
-                String hora_fimS = Integer.toString(hora_fim);
-                String min_fimS = Integer.toString(min_fim);
-                if (min_fimS.length() < 2) {
-                    min_fimS = "0" + min_fimS;
-                }
-                if (hora_fimS.length() < 2) {
-                    hora_fimS = "0" + hora_fimS;
-                }
-
-                // Concatena as strings de hora e minuto finais
-                hora_fimS = hora_fimS + ":" + min_fimS + ":00";
-
-                // Concatena as strings de data de inicio e hora finais
-                String data_hora_fim = dtFimAc + " " + hora_fimS;
-
-                // Preenche a data e a hora de fim no objeto horaExtra
-                horaExtra.setData_hora_fim(data_hora_fim);
-
-                int resultInicio = horaExtra.getData_hora_inicio().compareTo(sobreaviso.getData_hora_inicio());
-                int resultFim = horaExtra.getData_hora_fim().compareTo(sobreaviso.getData_hora_fim());
-                int resultHoraExtra = horaExtra.getData_hora_inicio().compareTo(horaExtra.getData_hora_fim());
-
-                // Verifica se a hora-extra informada está dentro do intervalo de sobreaviso
-                if (resultInicio >= 0 && resultFim <= 0) {
-                    if (resultHoraExtra < 0) {
-
-                        boolean conflito = false;
-                        for (Hora horaExistente : lantemp) {
-                            Timestamp inicio = horaExistente.getData_hora_inicio();
-                            Timestamp fim = horaExistente.getData_hora_fim();
-
-                            int resultIniIni = horaExtra.getData_hora_inicio().compareTo(inicio);
-                            int resultFimFim = horaExtra.getData_hora_fim().compareTo(fim);
-                            int resultIniFim = horaExtra.getData_hora_inicio().compareTo(fim);
-                            int resultFimIni = horaExtra.getData_hora_fim().compareTo(inicio);
-
-                            if ((resultIniIni > 0 && resultIniFim < 0)
-                                    || (resultFimIni > 0 && resultFimFim < 0)
-                                    || (resultIniIni < 0 && resultFimFim > 0)
-                                    || resultIniIni == 0 || resultFimFim == 0) {
-                                conflito = true;
-                                break;
-                            }
-                        }
-
-                        if (!conflito) {
-                            horaExtra.setTipo(TipoHora.EXTRA.name());
-                            horaExtra.setId(lantemp.size() + 1);
-                            contagem++;
-                            lantemp.add(horaExtra);
-                            carregarTabelaAcionamento();
-                        } else {
-                            Alert alert = new Alert(Alert.AlertType.ERROR);
-                            alert.setTitle("Conflito de horas");
-                            alert.setHeaderText(null);
-                            alert.setContentText("A hora informada está em conflito com uma hora já adicionada.");
-                            alert.showAndWait();
-                        }
-                    } else {
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Hora-extra incompatível");
-                        alert.setHeaderText(null);
-                        alert.setContentText("O início da hora-extra deve ser antes do fim");
-                        alert.showAndWait();
+private void botaoAdicionar() throws ParseException {
+    // Obtém os valores de data de inicio e de fim (campos de entrada)
+    inicioAcionamento = dataInicioAc.getValue();
+    fimAcionamento = dataFimAc.getValue();
+    // Verifica se as datas (NÃO) foram preenchidas
+    if (inicioAcionamento == null || fimAcionamento == null) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Preencha todos os campos");
+        alert.setHeaderText(null);
+        alert.setContentText("Alguns dos campos não foram preenchidos");
+        alert.showAndWait();
+    } else {
+        Hora horaExtra = new Hora();
+        // Preenche os dados que vêm do lançamento do sobreaviso
+        horaExtra.setCnpj_cliente(sobreaviso.getCnpj_cliente());
+        horaExtra.setCod_cr(sobreaviso.getCod_cr());
+        horaExtra.setJustificativa_lancamento(sobreaviso.getJustificativa_lancamento());
+        horaExtra.setNome_cliente(sobreaviso.getNome_cliente());
+        horaExtra.setProjeto(sobreaviso.getProjeto());
+        horaExtra.setUsername_aprovador(sobreaviso.getUsername_aprovador());
+        horaExtra.setUsername_lancador(sobreaviso.getUsername_lancador());
+        horaExtra.setTipo(sobreaviso.getTipo());
+        horaExtra.setStatus_aprovacao(sobreaviso.getStatus_aprovacao());
+        horaExtra.setSolicitante(sobreaviso.getSolicitante());
+        // Formata as strings de inicioAcionamento e fimAcionamento
+        String dtInicioAc = inicioAcionamento.toString();
+        String dtFimAc = fimAcionamento.toString();
+        // Obtém os valores de hora e minuto de inicio (campos de entrada)
+        int hora_inicio = horaInicio.getValue();
+        int min_inicio = minutoInicio.getValue();
+        // Formata as strings de hora_inicio e min_inicio
+        String hora_inicioS = Integer.toString(hora_inicio);
+        String min_inicioS = Integer.toString(min_inicio);
+        if (min_inicioS.length() < 2) {
+            min_inicioS = "0" + min_inicioS;
+        }
+        if (hora_inicioS.length() < 2) {
+            hora_inicioS = "0" + hora_inicioS;
+        }
+        // Concatena as strings de hora e minuto iniciais
+        hora_inicioS = hora_inicioS + ":" + min_inicioS + ":00";
+        // Concatena as strings de data de inicio e hora de inicio
+        String data_hora_inicio = dtInicioAc + " " + hora_inicioS;
+        // Preenche a data e a hora de inicio no objeto horaExtra
+        horaExtra.setData_hora_inicio(data_hora_inicio);
+        // Obtém os valores de hora e minuto de fim (campos de entrada)
+        int hora_fim = horaFim.getValue();
+        int min_fim = minutoFim.getValue();
+        // Formata as strings de hora_fim e min_fim
+        String hora_fimS = Integer.toString(hora_fim);
+        String min_fimS = Integer.toString(min_fim);
+        if (min_fimS.length() < 2) {
+            min_fimS = "0" + min_fimS;
+        }
+        if (hora_fimS.length() < 2) {
+            hora_fimS = "0" + hora_fimS;
+        }
+        // Concatena as strings de hora e minuto finais
+        hora_fimS = hora_fimS + ":" + min_fimS + ":00";
+        // Concatena as strings de data de inicio e hora finais
+        String data_hora_fim = dtFimAc + " " + hora_fimS;
+        // Preenche a data e a hora de fim no objeto horaExtra
+        horaExtra.setData_hora_fim(data_hora_fim);
+        int resultInicio = horaExtra.getData_hora_inicio().compareTo(sobreaviso.getData_hora_inicio());
+        int resultFim = horaExtra.getData_hora_fim().compareTo(sobreaviso.getData_hora_fim());
+        int resultHoraExtra = horaExtra.getData_hora_inicio().compareTo(horaExtra.getData_hora_fim());
+        // Verifica se a hora-extra informada está dentro do intervalo de sobreaviso
+        if (resultInicio >= 0 && resultFim <= 0) {
+            if (resultHoraExtra < 0) {
+                boolean conflito = false;
+                for (Hora horaExistente : lantemp) {
+                    Timestamp inicio = horaExistente.getData_hora_inicio();
+                    Timestamp fim = horaExistente.getData_hora_fim();
+                    int resultIniIni = horaExtra.getData_hora_inicio().compareTo(inicio);
+                    int resultFimFim = horaExtra.getData_hora_fim().compareTo(fim);
+                    int resultIniFim = horaExtra.getData_hora_inicio().compareTo(fim);
+                    int resultFimIni = horaExtra.getData_hora_fim().compareTo(inicio);
+                    if ((resultIniIni > 0 && resultIniFim < 0)
+                            || (resultFimIni > 0 && resultFimFim < 0)
+                            || (resultIniIni < 0 && resultFimFim > 0)
+                            || resultIniIni == 0 || resultFimFim == 0) {
+                        conflito = true;
+                        break;
                     }
+                }
+                if (!conflito) {
+                    horaExtra.setTipo(TipoHora.EXTRA.name());
+                    horaExtra.setId(lantemp.size() + 1);
+                    contagem++;
+                    lantemp.add(horaExtra);
+                    carregarTabelaAcionamento();
                 } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Hora-extra fora do intervalo");
+                    alert.setTitle("Conflito de horas");
                     alert.setHeaderText(null);
-                    alert.setContentText("A hora-extra informada precisa estar dentro do intervalo de data do sobreaviso.");
+                    alert.setContentText("A hora informada está em conflito com uma hora já adicionada.");
                     alert.showAndWait();
                 }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Hora-extra incompatível");
+                alert.setHeaderText(null);
+                alert.setContentText("O início da hora-extra deve ser antes do fim");
+                alert.showAndWait();
             }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Hora-extra fora do intervalo");
+            alert.setHeaderText(null);
+            alert.setContentText("A hora-extra informada precisa estar dentro do intervalo de data do sobreaviso.");
+            alert.showAndWait();
         }
-</code></pre>
+    }
+}
+        </code></pre>
     </details>
 </ul>
 
@@ -2072,264 +1930,245 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
 <ul>
     <details>
         <summary>Criação da entidade OpnTrack</summary>
-        <p align="justify">Criei a entidade <code>OpnTrack</code> no Java. A entidade representava as informações relacionadas às trilhas de parceiros da Oracle, como nome, status e data de criação. A entidade foi mapeada para uma tabela no banco de dados Mysql, permitindo o armazenamento e consulta dos dados.</p>
+        <p align="justify">
+        Criei a entidade <code>OpnTrack</code> no Java. A entidade representava as informações relacionadas às trilhas de parceiros da Oracle, como nome, status e data de criação. A entidade foi mapeada para uma tabela no banco de dados Mysql, permitindo o armazenamento e consulta dos dados.
+        </p>
         <pre>
         <code>
-        @Entity
-        @Data
-        @NoArgsConstructor
-        @AllArgsConstructor
-        @EqualsAndHashCode
-        @Table(name = "opn_track")
-        public class OpnTrack {
-
-            @Id
-            @GeneratedValue(strategy = GenerationType.IDENTITY)
-            private Long id;
-
-            @Column(name = "name", nullable = true, length = 20)
-            private String name;
-
-            @Column(name = "opn_track_status", nullable = false, length = 20)
-            private Boolean opnTrackStatus;
-
-            @Column(name = "created_at")
-            private LocalDateTime createdAt;
-        }
-</code></pre>
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@Table(name = "opn_track")
+public class OpnTrack {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "name", nullable = true, length = 20)
+    private String name;
+    @Column(name = "opn_track_status", nullable = false, length = 20)
+    private Boolean opnTrackStatus;
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+}
+        </code></pre>
     </details>
     <details>
         <summary>Criação do repository OpnTrackRepository</summary>
-        <p align="justify">Criei o repository responsável pelo acesso aos dados da entidade <code>OpnTrack</code>. O repository permitia a realização de operações de consulta, inserção, atualização e exclusão de dados da entidade, utilizando métodos como <code>findAll</code>, <code>save</code> e <code>deleteById</code>.</p>
+        <p align="justify">
+        Criei o repository responsável pelo acesso aos dados da entidade <code>OpnTrack</code>. O repository permitia a realização de operações de consulta, inserção, atualização e exclusão de dados da entidade, utilizando métodos como <code>findAll</code>, <code>save</code> e <code>deleteById</code>.
+        </p>
         <pre>
         <code>
-        public interface OpnTrackRepository extends JpaRepository <OpnTrack,Long>{
-            OpnTrack findByName(String name);   
-        }
-</code></pre>
+public interface OpnTrackRepository extends JpaRepository <OpnTrack,Long>{
+    OpnTrack findByName(String name);   
+}
+        </code></pre>
     </details>
     <details>
         <summary>Criação do DTO OpnTrackDTO</summary>
-        <p align="justify">Criei o DTO responsável por representar os dados da entidade <code>OpnTrack</code> na camada de apresentação. O DTO continha os atributos da entidade, juntamente com anotações de validação e exemplos de valores. Além disso, o DTO possuía um construtor que recebia uma entidade <code>OpnTrack</code> e preenchia os atributos correspondentes.</p>
+        <p align="justify">
+        Criei o DTO responsável por representar os dados da entidade <code>OpnTrack</code> na camada de apresentação. O DTO continha os atributos da entidade, juntamente com anotações de validação e exemplos de valores. Além disso, o DTO possuía um construtor que recebia uma entidade <code>OpnTrack</code> e preenchia os atributos correspondentes.
+        </p>
         <pre>
         <code>
-        @AllArgsConstructor
-        @NoArgsConstructor
-        @Data
-        public class OpnTrackDTO {
-
-            @Schema(description = "ID da OPN Track", example = "123")
-            private Long id;
-
-            @Schema(description = "Nome da OPN Track", example = "CLOUD BUILD")
-            private String name;
-
-            @Schema(description = "Status da OPN Track", example = "true")
-            private Boolean opnTrackStatus;
-
-            @Schema(description = "Data de criação da OpnTrack", example = "2022-01-01T12:00:00")
-            private LocalDateTime createdAt;
-
-            public OpnTrackDTO(OpnTrack entity){
-                this.id = entity.getId();
-                this.name = entity.getName();
-                this.opnTrackStatus = entity.getOpnTrackStatus();
-                this.createdAt = entity.getCreatedAt();
-            }
-
-        }
-</code></pre>
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class OpnTrackDTO {
+    @Schema(description = "ID da OPN Track", example = "123")
+    private Long id;
+    @Schema(description = "Nome da OPN Track", example = "CLOUD BUILD")
+    private String name;
+    @Schema(description = "Status da OPN Track", example = "true")
+    private Boolean opnTrackStatus;
+    @Schema(description = "Data de criação da OpnTrack", example = "2022-01-01T12:00:00")
+    private LocalDateTime createdAt;
+    public OpnTrackDTO(OpnTrack entity){
+        this.id = entity.getId();
+        this.name = entity.getName();
+        this.opnTrackStatus = entity.getOpnTrackStatus();
+        this.createdAt = entity.getCreatedAt();
+    }
+}
+        </code></pre>
     </details>
     <details>
         <summary>Criação do service OpnTrackService</summary>
-        <p align="justify">Criei o service responsável pela lógica de negócio da entidade <code>OpnTrack</code>. O service continha métodos para realizar operações como consulta, inserção, atualização e exclusão de trilhas de parceiros, utilizando o repository correspondente. Além disso, o service realizava a conversão entre entidades e DTOs, garantindo a separação de responsabilidades.</p>
+        <p align="justify">
+        Criei o service responsável pela lógica de negócio da entidade <code>OpnTrack</code>. O service continha métodos para realizar operações como consulta, inserção, atualização e exclusão de trilhas de parceiros, utilizando o repository correspondente. Além disso, o service realizava a conversão entre entidades e DTOs, garantindo a separação de responsabilidades.
+        </p>
         <pre>
         <code>
-        @Service
-        public class OpnTrackService {
-            @Autowired
-            private OpnTrackRepository opnTrackRepository;
-
-            public OpnTrackDTO findOpnTrackById(Long id){
-                OpnTrack opnTrack = opnTrackRepository.findById(id).get();
-                return new OpnTrackDTO(opnTrack);
-            }
-
-            public Optional<OpnTrackDTO> findOpnTrackByName(String name){
-                OpnTrack opnTrack = opnTrackRepository.findByName(name);
-                return Optional.ofNullable(opnTrack).map(OpnTrackDTO::new);
-            }
-
-            public Page<OpnTrackDTO> findAllOpnTracks(Pageable pageable){
-                Page<OpnTrack> opnTracks = opnTrackRepository.findAll(pageable);
-                return opnTracks.map(OpnTrackDTO::new);
-            }
-
-            public OpnTrackDTO insertOpnTrack(OpnTrackDTO opnTrackDTO){
-                if (opnTrackDTO.getName() == null || opnTrackDTO.getName().isBlank()){
-                    throw new RuntimeException("O nome da OPN Track é obrigatório");
-                }
-
-                OpnTrack opnTrack = new OpnTrack();
-                copyDTOtoEntity(opnTrackDTO, opnTrack);
-
-                opnTrack = opnTrackRepository.save(opnTrack);
-
-                return new OpnTrackDTO(opnTrack);
-
-            }
-
-            public OpnTrackDTO updateOpnTrack(Long id, OpnTrackDTO opnTrackDTO){
-                OpnTrack opnTrack = opnTrackRepository.findById(id).orElseThrow(
-                    () -> new RuntimeException("OPN Track não encontrada com o id: " + id)
-                    );
-                copyDTOtoEntity(opnTrackDTO, opnTrack);
-                opnTrack = opnTrackRepository.save(opnTrack);
-                return new OpnTrackDTO(opnTrack);
-            }
-
-            public void disableOpnTrack(Long id){
-                OpnTrack opnTrack = opnTrackRepository.findById(id).orElseThrow(
-                    () -> new RuntimeException("OPN Track não encontrada com o id: " + id)
-                    );
-                opnTrack.setOpnTrackStatus(false);
-                opnTrackRepository.save(opnTrack);
-            }
-
-            public void enableOpnTrack(Long id){
-                OpnTrack opnTrack = opnTrackRepository.findById(id).orElseThrow(
-                    () -> new RuntimeException("OPN Track não encontrada com o id: " + id)
-                    );
-                opnTrack.setOpnTrackStatus(true);
-                opnTrackRepository.save(opnTrack);
-            }
-
-            private void copyDTOtoEntity(OpnTrackDTO opnTrackDTO, OpnTrack opnTrack){
-                opnTrack.setName(opnTrackDTO.getName());
-                opnTrack.setOpnTrackStatus(opnTrackDTO.getOpnTrackStatus());
-                opnTrack.setCreatedAt(LocalDateTime.now());
-            }
+@Service
+public class OpnTrackService {
+    @Autowired
+    private OpnTrackRepository opnTrackRepository;
+    public OpnTrackDTO findOpnTrackById(Long id){
+        OpnTrack opnTrack = opnTrackRepository.findById(id).get();
+        return new OpnTrackDTO(opnTrack);
+    }
+    public Optional<OpnTrackDTO> findOpnTrackByName(String name){
+        OpnTrack opnTrack = opnTrackRepository.findByName(name);
+        return Optional.ofNullable(opnTrack).map(OpnTrackDTO::new);
+    }
+    public Page<OpnTrackDTO> findAllOpnTracks(Pageable pageable){
+        Page<OpnTrack> opnTracks = opnTrackRepository.findAll(pageable);
+        return opnTracks.map(OpnTrackDTO::new);
+    }
+    public OpnTrackDTO insertOpnTrack(OpnTrackDTO opnTrackDTO){
+        if (opnTrackDTO.getName() == null || opnTrackDTO.getName().isBlank()){
+            throw new RuntimeException("O nome da OPN Track é obrigatório");
         }
-</code></pre>
+        OpnTrack opnTrack = new OpnTrack();
+        copyDTOtoEntity(opnTrackDTO, opnTrack);
+        opnTrack = opnTrackRepository.save(opnTrack);
+        return new OpnTrackDTO(opnTrack);
+    }
+    public OpnTrackDTO updateOpnTrack(Long id, OpnTrackDTO opnTrackDTO){
+        OpnTrack opnTrack = opnTrackRepository.findById(id).orElseThrow(
+            () -> new RuntimeException("OPN Track não encontrada com o id: " + id)
+            );
+        copyDTOtoEntity(opnTrackDTO, opnTrack);
+        opnTrack = opnTrackRepository.save(opnTrack);
+        return new OpnTrackDTO(opnTrack);
+    }
+    public void disableOpnTrack(Long id){
+        OpnTrack opnTrack = opnTrackRepository.findById(id).orElseThrow(
+            () -> new RuntimeException("OPN Track não encontrada com o id: " + id)
+            );
+        opnTrack.setOpnTrackStatus(false);
+        opnTrackRepository.save(opnTrack);
+    }
+    public void enableOpnTrack(Long id){
+        OpnTrack opnTrack = opnTrackRepository.findById(id).orElseThrow(
+            () -> new RuntimeException("OPN Track não encontrada com o id: " + id)
+            );
+        opnTrack.setOpnTrackStatus(true);
+        opnTrackRepository.save(opnTrack);
+    }
+    private void copyDTOtoEntity(OpnTrackDTO opnTrackDTO, OpnTrack opnTrack){
+        opnTrack.setName(opnTrackDTO.getName());
+        opnTrack.setOpnTrackStatus(opnTrackDTO.getOpnTrackStatus());
+        opnTrack.setCreatedAt(LocalDateTime.now());
+    }
+}
+        </code></pre>
     </details>
     <details>
         <summary>Criação do controller OpnTrackController</summary>
-        <p align="justify">Criei o controller responsável por definir as rotas da entidade <code>OpnTrack</code>. O controller continha métodos para realizar operações como consulta, inserção, atualização e exclusão de trilhas de parceiros, utilizando o service correspondente. Além disso, o controller definia as anotações de mapeamento de rotas, operações suportadas e respostas esperadas.</p>
+        <p align="justify">
+        Criei o controller responsável por definir as rotas da entidade <code>OpnTrack</code>. O controller continha métodos para realizar operações como consulta, inserção, atualização e exclusão de trilhas de parceiros, utilizando o service correspondente. Além disso, o controller definia as anotações de mapeamento de rotas, operações suportadas e respostas esperadas.
+        </p>
         <pre>
         <code>
-        @RestController
-        @RequestMapping(value = "/opntrack")
-        public class OpnTrackController {
-
-            @Autowired
-            private OpnTrackService opnTrackService;
-
-            @GetMapping
-            @Operation(summary = "OpnTrack", description = "Get all OpnTracks")
-            @ApiResponses(value = {
-                @ApiResponse(
-                    responseCode = "200",
-                    content = @Content(
-                        array = @ArraySchema(
-                            schema = @Schema(implementation = OpnTrack.class)
-                        )
-                    ),
-                    description = "OpnTracks retrieved"
-                ),
-                @ApiResponse(responseCode = "404", description = "OpnTracks not found")
-            })
-            public ResponseEntity<Page<OpnTrackDTO>> getAllOpnTracks(Pageable pageable) {
-                Page<OpnTrackDTO> opnTracks = opnTrackService.findAllOpnTracks(pageable);
-                return new ResponseEntity<>(opnTracks, HttpStatus.OK);
-            }
-
-            @GetMapping(value = "/{id}")
-            @Operation(summary = "Find OpnTrack by ID", description = "Get an OpnTrack by its ID")
-            @ApiResponses(value = {
-                @ApiResponse(
-                    responseCode = "200",
-                    description = "Successful operation",
-                    content = @Content(
-                        schema = @Schema(implementation = OpnTrack.class)
-                    )
-                ),
-                @ApiResponse(
-                    responseCode = "404",
-                    description = "OpnTrack not found"
+@RestController
+@RequestMapping(value = "/opntrack")
+public class OpnTrackController {
+    @Autowired
+    private OpnTrackService opnTrackService;
+    @GetMapping
+    @Operation(summary = "OpnTrack", description = "Get all OpnTracks")
+    @ApiResponses(value = {
+        @ApiResponse(
+            responseCode = "200",
+            content = @Content(
+                array = @ArraySchema(
+                    schema = @Schema(implementation = OpnTrack.class)
                 )
-            })
-            public ResponseEntity<OpnTrackDTO> getOpnTrackById(@PathVariable Long id){
-                OpnTrackDTO opnTrackDTO = opnTrackService.findOpnTrackById(id);
-                if (opnTrackDTO != null){
-                    return new ResponseEntity<>(opnTrackDTO, HttpStatus.OK);
-                } else {
-                    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-                }
-            }
-
-            @PostMapping
-            @Operation(summary = "Insert OpnTrack", description = "Insert a new OpnTrack")
-            @ApiResponses( value = {
-                @ApiResponse(
-                    responseCode = "201",
-                    description = "OpnTrack inserted",
-                    content = @Content(
-                        schema = @Schema(implementation = OpnTrackDTO.class)
-                    )
-                ),
-                @ApiResponse(
-                    responseCode = "400",
-                    description = "OpnTrack already exists"
-                )
-            })
-            public ResponseEntity<OpnTrackDTO> insertOpnTrack(@RequestBody OpnTrackDTO opnTrackDTO){
-                Optional<OpnTrackDTO> optionalOpnTrack= opnTrackService.findOpnTrackByName(opnTrackDTO.getName());
-                if (optionalOpnTrack.isPresent()){
-                    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-                }
-                opnTrackDTO = opnTrackService.insertOpnTrack(opnTrackDTO);
-                URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-                        .buildAndExpand(opnTrackDTO.getId()).toUri();
-                return ResponseEntity.created(uri).body(opnTrackDTO);
-            }
-
-            @PutMapping(value = "/{id}")
-            @Operation(summary = "Update OpnTrack", description = "Update an existing OpnTrack")
-            @ApiResponse(
-                responseCode = "200",
-                description = "OpnTrack updated",
-                content = @Content(
-                    schema = @Schema(implementation = OpnTrackDTO.class)
-                )
+            ),
+            description = "OpnTracks retrieved"
+        ),
+        @ApiResponse(responseCode = "404", description = "OpnTracks not found")
+    })
+    public ResponseEntity<Page<OpnTrackDTO>> getAllOpnTracks(Pageable pageable) {
+        Page<OpnTrackDTO> opnTracks = opnTrackService.findAllOpnTracks(pageable);
+        return new ResponseEntity<>(opnTracks, HttpStatus.OK);
+    }
+    @GetMapping(value = "/{id}")
+    @Operation(summary = "Find OpnTrack by ID", description = "Get an OpnTrack by its ID")
+    @ApiResponses(value = {
+        @ApiResponse(
+            responseCode = "200",
+            description = "Successful operation",
+            content = @Content(
+                schema = @Schema(implementation = OpnTrack.class)
             )
-            public ResponseEntity<OpnTrackDTO> updateOpnTrack(@PathVariable Long id, @RequestBody OpnTrackDTO opnTrackDTO){
-                opnTrackDTO = opnTrackService.updateOpnTrack(id, opnTrackDTO);
-                return new ResponseEntity<>(opnTrackDTO, HttpStatus.OK);
-            }
-
-            @DeleteMapping(value = "/{id}")
-            @Operation(summary = "Disable OpnTrack", description = "Disable an existing OpnTrack")
-            @ApiResponse(
-                responseCode = "204",
-                description = "OpnTrack disabled"
-            )
-            public ResponseEntity<Void> disableOpnTrack(@PathVariable Long id){
-                opnTrackService.disableOpnTrack(id);
-                return ResponseEntity.noContent().build();
-            }
-
-            @PutMapping(value = "/{id}/enable")
-            @Operation(summary = "Enable OpnTrack", description = "Enable an existing OpnTrack")
-            @ApiResponse(
-                responseCode = "204",
-                description = "OpnTrack enabled"
-            )
-            public ResponseEntity<Void> enableOpnTrack(@PathVariable Long id){
-                opnTrackService.enableOpnTrack(id);
-                return ResponseEntity.noContent().build();
-            }
+        ),
+        @ApiResponse(
+            responseCode = "404",
+            description = "OpnTrack not found"
+        )
+    })
+    public ResponseEntity<OpnTrackDTO> getOpnTrackById(@PathVariable Long id){
+        OpnTrackDTO opnTrackDTO = opnTrackService.findOpnTrackById(id);
+        if (opnTrackDTO != null){
+            return new ResponseEntity<>(opnTrackDTO, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-</code></pre>
+    }
+    @PostMapping
+    @Operation(summary = "Insert OpnTrack", description = "Insert a new OpnTrack")
+    @ApiResponses( value = {
+        @ApiResponse(
+            responseCode = "201",
+            description = "OpnTrack inserted",
+            content = @Content(
+                schema = @Schema(implementation = OpnTrackDTO.class)
+            )
+        ),
+        @ApiResponse(
+            responseCode = "400",
+            description = "OpnTrack already exists"
+        )
+    })
+    public ResponseEntity<OpnTrackDTO> insertOpnTrack(@RequestBody OpnTrackDTO opnTrackDTO){
+        Optional<OpnTrackDTO> optionalOpnTrack= opnTrackService.findOpnTrackByName(opnTrackDTO.getName());
+        if (optionalOpnTrack.isPresent()){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        opnTrackDTO = opnTrackService.insertOpnTrack(opnTrackDTO);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                .buildAndExpand(opnTrackDTO.getId()).toUri();
+        return ResponseEntity.created(uri).body(opnTrackDTO);
+    }
+    @PutMapping(value = "/{id}")
+    @Operation(summary = "Update OpnTrack", description = "Update an existing OpnTrack")
+    @ApiResponse(
+        responseCode = "200",
+        description = "OpnTrack updated",
+        content = @Content(
+            schema = @Schema(implementation = OpnTrackDTO.class)
+        )
+    )
+    public ResponseEntity<OpnTrackDTO> updateOpnTrack(@PathVariable Long id, @RequestBody OpnTrackDTO opnTrackDTO){
+        opnTrackDTO = opnTrackService.updateOpnTrack(id, opnTrackDTO);
+        return new ResponseEntity<>(opnTrackDTO, HttpStatus.OK);
+    }
+    @DeleteMapping(value = "/{id}")
+    @Operation(summary = "Disable OpnTrack", description = "Disable an existing OpnTrack")
+    @ApiResponse(
+        responseCode = "204",
+        description = "OpnTrack disabled"
+    )
+    public ResponseEntity<Void> disableOpnTrack(@PathVariable Long id){
+        opnTrackService.disableOpnTrack(id);
+        return ResponseEntity.noContent().build();
+    }
+    @PutMapping(value = "/{id}/enable")
+    @Operation(summary = "Enable OpnTrack", description = "Enable an existing OpnTrack")
+    @ApiResponse(
+        responseCode = "204",
+        description = "OpnTrack enabled"
+    )
+    public ResponseEntity<Void> enableOpnTrack(@PathVariable Long id){
+        opnTrackService.enableOpnTrack(id);
+        return ResponseEntity.noContent().build();
+    }
+}
+        </code></pre>
     </details>
 </ul>
 <h3>Hard Skills</h3>
