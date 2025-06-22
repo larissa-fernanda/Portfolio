@@ -2804,17 +2804,193 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
     <details>
         <summary>Procurei uma base de dados com informações sobre as áreas do Brasil</summary>
         <p align="justify">
-            Nós queríamos uma base de dados real para calibrar o modelo de Machine Learning o mais próximo possível da realidade, então procurei uma base de dados com informações sobre as áreas do Brasil. No fim, acabei optando pela base de dados do AMBDATA, órgão do governo brasileiro que disponibiliza dados sobre o meio ambiente, como temperatura, precipitação, tipo de solo, entre outros.
+            Nós queríamos uma base de dados real para calibrar o modelo de Machine Learning o mais próximo possível da realidade, então procurei uma base de dados com informações sobre as áreas do Brasil. No fim, acabei optando pela base de dados do <a href="http://www.dpi.inpe.br/Ambdata/download.php">AMBDATA</a>, que é um banco de dados de variáveis ambientais desenvolvido pelo Instituto Nacional de Pesquisas Espaciais (INPE) para estudos de modelagem da distribuição de espécies que disponibiliza dados sobre o meio ambiente, como temperatura, precipitação, tipo de solo, entre outros.
+        </p>
+        <p align="justify">
+            Além dessa base, eu também peguei a <a href="https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html?=&t=downloads">malha de municípios do Brasil</a> disponibilizada pelo IBGE, assim, ao juntar todos eles, conseguiríamos ter uma base com o recorte completo do território brasileiro, o que seria muito interessante para o projeto.
         </p>
     </details>
     <details>
         <summary>Desenvolvi o repositório de ETL para receber os dados da base de dados externa</summary>
         <p align="justify">
-            Desenvolvi um repositório de ETL (Extract, Transform, Load) para receber os dados da base de dados externa do AMBDATA, que estavam em formato .asc e .shp, e transformá-los usando Python com GeoPandas, para que pudessem ser colocados no PostgreSQL com PostGIS.
+            Desenvolvi um <a href="https://github.com/bytelabss/etl-dataforest/tree/main">repositório de ETL (Extract, Transform, Load)</a> para receber os dados da base de dados externa do AMBDATA, que estavam em formato .asc e .shp, e transformá-los usando Python com GeoPandas, para que pudessem ser colocados no PostgreSQL com PostGIS.
         </p>
         <p align="justify">
             A ideia inicial era colocar esses dados no MongoDB, mas como a base de dados era muito grande e estávamos usando a versão gratuita do banco online do Atlas, decidimos colocar os dados no PostgreSQL com PostGIS, que é uma extensão do PostgreSQL para trabalhar com dados geoespaciais.
         </p>
+        <p align="justify">
+            O usuário preenche um arquivo .json com os caminhos dos arquivos .asc e .shp e nomes das variáveis que ele quer extrair, e o repositório de ETL faz a extração, transformação e carga dos dados no PostgreSQL com PostGIS dentro da tabela que ele coloca no arquivo .env.
+        </p>
+        <p align="justify">
+            Achei melhor desenvolver esse repositório de ETL separado do repositório principal e em formato de CLI (Command Line Interface), para que ele pudesse ser utilizado por qualquer pessoa que quisesse extrair, transformar e carregar dados .asc e .shp para o PostgreSQL com PostGIS, sem precisar depender do repositório principal.
+        </p>
+        <p align="justify">
+            No código abaixo, temos um exemplo utilizando o recurso de ThreadPoolExecutor, que executa várias tarefas em paralelo. Lemos os arquivos .asc em blocos usando rasterio, verificamos se os pontos estão dentro dos polígonos da malha de municípios do Brasil e inserimos os dados no PostgreSQL com PostGIS.
+        </p>
+            <pre>
+            <code>
+import os
+import rasterio
+import numpy as np
+import json
+from psycopg2.extras import execute_batch
+from .verify_point_locale import is_point_in_polygon
+from concurrent.futures import ThreadPoolExecutor
+def read_raster_in_blocks(file_path):
+    """
+    Lê um arquivo raster em blocos.
+    :param file_path: Caminho do arquivo raster.
+    :return: Um gerador que produz blocos de dados do raster.
+    """
+    # Verifica se o arquivo existe
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"Arquivo não encontrado: {file_path}")
+    # Abre o arquivo raster e lê os dados em blocos
+    with rasterio.open(file_path) as src:
+        transform = src.transform
+        for window in src.block_windows(1):
+            window_data = src.read(1, window=window[1])
+            yield window_data, transform, window[1]
+def process_chunk(
+        cursor,
+        conn,
+        table_name,
+        values, 
+        transform,
+        window, 
+        name, 
+        scale,
+        measure,
+        execution_date,
+        shp_table,
+        sampling_stride = 10,
+        batch_size=1000,
+        srid=4326
+):
+    """
+    Processa um bloco de dados raster e insere no banco de dados.
+    :param cursor: Cursor do banco de dados.
+    :param conn: Conexão com o banco de dados.
+    :param table_name: Nome da tabela onde os dados serão inseridos.
+    :param values: Dados do bloco raster.
+    :param transform: Transformação do raster.
+    :param window: Janela do raster.
+    :param name: Nome do dado a ser inserido.
+    :param scale: Fator de escala para o valor.
+    :param measure: Unidade de medida do dado.
+    :param execution_date: Data de execução para o registro.
+    :param shp_table: Nome da tabela de polígonos para verificação espacial.
+    :param sampling_stride: Passo de amostragem para os dados.
+    :param batch_size: Tamanho do lote para inserção no banco de dados.
+    :param srid: SRID do sistema de referência espacial (default é 4326).
+    """
+    # Inicializa variáveis
+    rows, cols = values.shape
+    inserts = []
+    for i in range(0, rows, sampling_stride):
+        for j in range(0, cols, sampling_stride):
+            x, y = transform * (j + window.col_off, i + window.row_off)
+            value = values[i, j]
+            if np.isnan(value) or value == -9999:
+                continue
+            if not is_point_in_polygon(cursor, x, y, shp_table):
+                continue
+            value = value * scale
+            doc_id = f"{x},{y}"
+            new_data = {
+                execution_date: {
+                    name: {
+                        "valor": float(value),
+                        "medida": measure
+                    }
+                }
+            }
+            inserts.append((doc_id, f"SRID=4326;POINT({x} {y})", json.dumps(new_data)))
+            if len(inserts) >= batch_size:
+                try:
+                    execute_batch(cursor, f"""
+                        INSERT INTO {table_name} (id, geom, raster)
+                        VALUES (%s, ST_GeomFromText(%s, {srid}), %s)
+                        ON CONFLICT (id) DO UPDATE SET
+                        raster = jsonb_strip_nulls(
+                            jsonb_deep_merge({table_name}.raster, EXCLUDED.raster)
+                        );
+                    """, inserts)
+                    conn.commit()
+                    inserts.clear()
+                except Exception as e:
+                    print(f"Erro ao inserir no PostGIS: {e}")
+                    conn.rollback()
+    if inserts:
+        try:
+            execute_batch(cursor, f"""
+                INSERT INTO {table_name} (id, geom, raster)
+                VALUES (%s, ST_GeomFromText(%s, {srid}), %s)
+                ON CONFLICT (id) DO UPDATE SET
+                raster = jsonb_strip_nulls(
+                    jsonb_deep_merge({table_name}.raster, EXCLUDED.raster)
+                );
+            """, inserts)
+            conn.commit()
+        except Exception as e:
+            print(f"Erro ao inserir final no PostGIS: {e}")
+            conn.rollback()
+def process_raster_in_chunks(
+        name,
+        raster_path,
+        scale,
+        measure,
+        table_name,
+        shp_table,
+        execution_date,
+        conn,
+        cursor,
+        sampling_stride=10,
+        batch_size=1000,
+        srid=4326
+    ):
+    """
+    Processa um arquivo raster em blocos e insere os dados no banco de dados.
+    :param name: Nome do dado a ser inserido.
+    :param raster_path: Caminho do arquivo raster.
+    :param scale: Fator de escala para o valor.
+    :param measure: Unidade de medida do dado.
+    :param table_name: Nome da tabela onde os dados serão inseridos.
+    :param shp_table: Nome da tabela de polígonos para verificação espacial.
+    :param execution_date: Data de execução para o registro.
+    :param conn: Conexão com o banco de dados.
+    :param cursor: Cursor do banco de dados.
+    :param sampling_stride: Passo de amostragem para os dados.
+    :param batch_size: Tamanho do lote para inserção no banco de dados.
+    :param srid: SRID do sistema de referência espacial (default é 4326).
+    """
+    print(f"Iniciando processamento de {name}...")
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = []
+        for values, transform, window in read_raster_in_blocks(raster_path):
+            future = executor.submit(
+                process_chunk,
+                cursor,
+                conn,
+                table_name,
+                values,
+                transform,
+                window,
+                name,
+                scale,
+                measure,
+                execution_date,
+                shp_table,
+                sampling_stride,
+                batch_size,
+                srid
+            )
+            futures.append(future)
+        for future in futures:
+            future.result()
+    print(f"Finalizado processamento de {name}.")
+            </code>
+            </pre>
     </details>
     <details>
         <summary>Ajustei a lógica para enviar os dados das áreas de reflorestamento para o MongoDB</summary>
@@ -2825,15 +3001,147 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
         <p align="justify">
             Além disso, também implementei a lógica para buscar os dados das áreas de reflorestamento no MongoDB, utilizando a biblioteca PyMongo buscar os dados das áreas cadastradas.
         </p>
+        <p align="justify">
+            Abaixo, temos o arquivo repositories.py, que contém a lógica para enviar e buscar os dados das áreas de reflorestamento no MongoDB:
+        </p>
+            <pre>
+            <code>
+from typing import List, Optional
+from uuid import UUID
+from bson import ObjectId
+from ..database import mongo_db
+from .models import ReforestedArea
+class ReforestedAreaRepository:
+    def __init__(self):
+        self.collection = mongo_db["reforested_areas"]
+    def insert(self, area: ReforestedArea) -> ReforestedArea:
+        data = area.to_dict()
+        self.collection.insert_one(data)
+        return area
+    def get_by_id(self, area_id: UUID) -> Optional[ReforestedArea]:
+        data = self.collection.find_one({"id": str(area_id)})
+        return ReforestedArea.from_dict(data) if data else None
+    def list_areas(self, offset=0, limit=10) -> List[ReforestedArea]:
+        cursor = self.collection.find().skip(offset).limit(limit)
+        return [ReforestedArea.from_dict(doc) for doc in cursor]
+    def update(self, area: ReforestedArea) -> Optional[ReforestedArea]:
+        result = self.collection.update_one({"id": str(area.id)}, {"$set": area.to_dict()})
+        if result.modified_count:
+            return area
+        return None
+    def delete(self, area_id: UUID) -> bool:
+        result = self.collection.delete_one({"id": str(area_id)})
+        return result.deleted_count == 1
+            </code>
+            </pre>
     </details>
     <details>
         <summary>No repositório de back-end principal, desenvolvi rotas e serviços para recuperar os dados da base de dados externa que foram colocados no PostgreSQL</summary>
         <p align="justify">
-            No repositório de back-end principal, desenvolvi rotas e serviços para recuperar os dados da base de dados externa que foram colocados no PostgreSQL. Para isso, eu utilizei um recurso do Postgis que permite fazer consultas geoespaciais com base na aproximação de um ponto e retornar as áreas que estão dentro de um raio específico.
+            No repositório de back-end principal, desenvolvi rotas e serviços para recuperar os dados da base de dados externa que foram colocados no PostgreSQL. Para isso, eu utilizei um recurso do PostGIS que permite fazer consultas geoespaciais com base na aproximação de um ponto e retornar as áreas que estão dentro de um raio específico.
         </p>
         <p align="justify">
             Desenvolvi duas rotas para isso: uma que retorna os dados geográficos de uma área específica, e outra que retorna os dados geográficos de várias áreas passadas como parâmetro, evitando assim os riscos de excesso de sessões e consultas ao banco de dados ao mesmo tempo.
         </p>
+        <p align="justify">
+            Abaixo, temos como exemplo o service que trabalha com os dados geoambientais:
+        </p>
+            <pre>
+            <code>
+import numpy as np
+from sqlalchemy.orm import Session
+from shapely.geometry import Polygon
+from .models import GeoSpatialData
+from .repositories import GeospatialDataRepository
+from .exceptions import GeospatialDataNotFoundError
+class GeospatialDataService:
+    def __init__(self, session: Session):
+        self.repository = GeospatialDataRepository(session)
+    def get_meaningful_raster_data(self, rasters: list) -> dict:
+        """
+        Processa uma lista de dados raster e calcula a média dos valores numéricos para cada chave.
+        Se não houver valores numéricos, mantém o primeiro valor encontrado.
+        """
+        values = {}
+        for geo in rasters:
+            for date in geo.raster:
+                for key, value in geo.raster[date].items():
+                    if key not in values:
+                        values[key] = {
+                            'valor': [],
+                            'medida': value.get('medida')
+                        }
+                    values[key]['valor'].append(value.get('valor'))
+        for key, value in values.items():
+            # Filtra apenas os valores numéricos
+            numeric_values = [v for v in value['valor'] if isinstance(v, (int, float))]
+            if numeric_values:
+                # Calcula a média dos valores numéricos
+                values[key]['valor'] = sum(numeric_values) / len(numeric_values)
+            else:
+                # Usa o primeiro valor original se não houver valor numérico
+                values[key]['valor'] = value['valor'][0] if value['valor'] else None
+        return values
+    def get_data_from_coordinates(self, coordinates: list(list[float])) -> GeoSpatialData: 
+        """
+        Retorna os dados de todos os pontos que estão até 10km de distância do polígono. 
+        """
+        geospatial_data = []
+        longitude = float(np.mean([coord[0] for coord in coordinates]))
+        latitude = float(np.mean([coord[1] for coord in coordinates]))
+        distance_km = 10.0
+        geospatial_data = self.repository.get_data_from_coordinates(
+            longitude=longitude, 
+            latitude=latitude, 
+            distance_km=distance_km
+        )
+        if not geospatial_data:
+            raise GeospatialDataNotFoundError
+        # Calcula a média dos dados raster
+        meaningful_raster_data = self.get_meaningful_raster_data(geospatial_data)
+        return GeoSpatialData(
+            id=str(coordinates),
+            geom=Polygon(coordinates),
+            raster=meaningful_raster_data
+        )
+    def get_batch_data_from_coordinates(self, coordinates: list(list[list[float]])) -> list[GeoSpatialData]:
+        """
+        Retorna os dados de todos os pontos que estão até 10km de distância dos polígonos.
+        """
+        geospatial_data = []
+        for polygon in coordinates:
+            if isinstance(polygon, dict) and 'coordinates' in polygon:
+                poly = polygon['coordinates']
+            else:
+                raise ValueError("Invalid input format: each item in coordinates must be a dictionary with a 'coordinates' key.")
+            if not all(
+                isinstance(coord, (list, tuple)) and len(coord) == 2 and
+                all(isinstance(x, (float, int)) for x in coord)
+                for coord in poly
+            ):
+                raise ValueError(f"Coordenadas inválidas detectadas em: {poly}")
+            longitudes = [float(coord[0]) for coord in poly]
+            latitudes = [float(coord[1]) for coord in poly]
+            longitude = float(np.mean(longitudes))
+            latitude = float(np.mean(latitudes))
+            distance_km = 10.0
+            data = self.repository.get_data_from_coordinates(
+                longitude=longitude, 
+                latitude=latitude, 
+                distance_km=distance_km
+            )
+            if not data:
+                raise GeospatialDataNotFoundError
+            # Calcula a média dos dados raster
+            meaningful_raster_data = self.get_meaningful_raster_data(data)
+            geospatial_data.append(GeoSpatialData(
+                id=str(poly),
+                geom=Polygon(poly),
+                raster=meaningful_raster_data
+            ))
+        return geospatial_data
+            </code>
+            </pre>
     </details>
     <details>
         <summary>Desenvolvi a lógica de edição de usuários de acordo com a criptografia dos dados implementada</summary>
@@ -2842,6 +3150,83 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
             Para isso, precisei capturar a chave de criptografia do usuário no banco que continha as chaves de criptografia, e utilizar essa chave para criptografar os dados do usuário antes de enviá-los para o banco de dados.
             Além disso, também precisei enviar os dados descriptografados para o Redis, que seria utilizado para armazenar os dados dos usuários de forma temporária, para que eles pudessem ser utilizados no front-end da aplicação.
         </p>
+        <p align="justify">
+            Abaixo, temos um exemplo de como foi implementada a lógica de edição de usuários:
+        </p>
+            <pre>
+            <code>
+    def update_user_postgres(
+            self, 
+            id: UUID, 
+            full_name: str = None, 
+            email: str = None, 
+            role: UserRole = None,
+            password: str = None
+            ) -> User:
+        secondary_session = SecondarySession()
+        service2 = UsersKeysService(secondary_session)
+        user_key = service2.get_user_by_user_id(id)
+        if not user_key:
+            raise UserNotFoundError
+        fernet = Fernet(user_key.encryption_key)
+        user = self.get_user_by_id(id)
+        if email:
+            if user.email != email:
+                    if self.repository.get_by_email(email):
+                        raise EmailAlreadyInUseError
+                    user.email = email
+        if full_name:
+            if user.full_name != full_name:
+                user.full_name = full_name
+        if role:
+            user.role = role
+        if password:
+            user.set_password(password)
+        user.email = fernet.encrypt(user.email.encode("utf-8")).decode()
+        user.full_name = fernet.encrypt(user.full_name.encode("utf-8")).decode()
+        return self.repository.update(user)
+    def update_user_redis(self, user: UUID) -> User:
+        secondary_session = SecondarySession()
+        service2 = UsersKeysService(secondary_session)
+        user_key = service2.get_user_by_user_id(user.id)
+        if not user_key:
+            raise UserNotFoundError
+        fernet = Fernet(user_key.encryption_key)
+        found = False
+        user_data = {
+            'id' : str(user.id),
+            'full_name': fernet.decrypt(user.full_name.encode("utf-8")).decode(),
+            'email': fernet.decrypt(user.email.encode("utf-8")).decode(),
+        }
+        users = redis_client.get(f"users")
+        if users:
+            users = json.loads(users)  
+        else:
+            users = [] 
+        for i, user_json in enumerate(users):
+            if str(user.id) == str(user_json["id"]):
+                users[i] = user_data
+                found = True
+                break
+        if not found:
+            users.append(user_data)
+        redis_client.setex(f"users", 3600, json.dumps(users))
+    def update_user(
+            self, 
+            id: UUID, 
+            full_name: str = None, 
+            email: str = None, 
+            role: UserRole = None,
+            password: str = None
+            ) -> User:
+        user = self.update_user_postgres(id, full_name, email, role, password)
+        self.update_user_redis(user)
+        if user:
+            user.email = email
+            user.full_name = full_name
+        return user
+            </code>
+            </pre>
     </details>
     <details>
         <summary>Na parte do front-end, fui eu que implementei a chamada dos modelos de machine learning</summary>
@@ -2850,18 +3235,190 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
             Para isso, precisei utilizar as rotas que eu desenvolvi para capturar os dados de amostras das áreas de reflorestamento e enviar esses dados para o modelo de machine learning.
             Tendo esses dados, enviei para o modelo de machine learning, que retornou as melhores espécies e técnicas de manejo para a área de reflorestamento.
         </p>
+        <p align="justify">
+            Abaixo, temos um exemplo de como foi implementada a chamada dos modelos de machine learning:
+        </p>
+            <pre>
+            <code>
+    const fetchReforestedAreas = async (): Promise<ReforestedArea[]> => {
+        try {
+            const response = await fetch("http://127.0.0.1:5000/reforested_areas");
+            if (!response.ok) {
+                throw new Error("Erro ao buscar as áreas reflorestadas");
+            }
+            const data: ReforestedArea[] = await response.json();
+            return data;
+        } catch (error) {
+            console.error(error);
+            return [];
+        }
+    };
+    const fetchReforestedAreaData = async (area: ReforestedArea): Promise<GeospatialData | null> => {
+        console.log("Fetch body:", area.geom.coordinates[0].map(coord => [coord[1], coord[0]]));
+        try {
+            const token = localStorage.getItem("token");
+            const response = await fetch("http://127.0.0.1:5000/geospatial_data", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    coordinates: area.geom.coordinates[0].map(coord => [coord[1], coord[0]]),
+                }),
+            });
+            if (!response.ok) {
+                throw new Error(`Erro ao buscar os dados geoespaciais da área: ${response.statusText}`);
+            }
+            const data: GeospatialData = await response.json();
+            return data;
+        }
+        catch (error) {
+            console.error(error);
+            return null;
+        }
+    };
+    const classifyArea = async (area: GeospatialData) => {
+        try {
+            const payload = {
+                temperatura: area.raster["temperatura"]?.["valor"] || null,
+                precipitacao: area.raster["precipitacao"]?.["valor"] || null,
+                altitude: area.raster["altitude"]?.["valor"] || null,
+                declividade: area.raster["declividade"]?.["valor"] || null,
+                exposicao: area.raster["exposicao"]?.["valor"] || null,
+                distancia_vertical_drenagem: area.raster["distancia_vertical_drenagem"]?.["valor"] || null,
+                densidade_drenagem: area.raster["densidade_drenagem"]?.["valor"] || null,
+                cobertura_arborea: area.raster["cobertura_arborea"]?.["valor"] || null,
+            };
+            const response = await fetch("http://127.0.0.1:5000/classificar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+            if (!response.ok) {
+                throw new Error("Erro ao classificar a área");
+            }
+            const data = await response.json();
+            setClassificationResult(data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    const predictStrategy = async (area: GeospatialData) => {
+        try {
+            const payload = {
+                temperatura: area.raster["temperatura"]?.["valor"] || 0,
+                precipitacao: area.raster["precipitacao"]?.["valor"] || 0,
+                altitude: area.raster["altitude"]?.["valor"] || 0,
+                declividade: area.raster["declividade"]?.["valor"] || 0,
+                exposicao: area.raster["exposicao"]?.["valor"] || 0,
+                distancia_vertical_drenagem: area.raster["distancia_vertical_drenagem"]?.["valor"] || 0,
+                densidade_drenagem: area.raster["densidade_drenagem"]?.["valor"] || 0,
+                cobertura_arborea: area.raster["cobertura_arborea"]?.["valor"] || 0,
+            };
+            console.log("Payload de previsão:", payload);
+            const response = await fetch("http://127.0.0.1:5000/prever-estrategia", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+            if (!response.ok) {
+                throw new Error("Erro ao prever a estratégia");
+            }
+            const data = await response.json();
+            setStrategyResult(data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+            </code>
+            </pre>
     </details>
     <details>
-        <summary>Desenvolvi a tela de dados do usuário logado</summary>
+        <summary>Desenvolvi a tela de dados do usuário logado, com a exibição, a edição e a exclusão dos dados do usuário</summary>
         <p align="justify">
             Desenvolvi a tela que exibe os dados do usuário logado, utilizando os dados que foram enviados para o Redis.
         </p>
-    </details>
-    <details>
-        <summary>Desenvolvi a parte de edição do usuário logado</summary>
         <p align="justify">
-            Ainda na tela de dados do usuário logado, desenvolvi a parte de edição do usuário logado.
+            A tela exibe os dados do usuário logado, como nome, email, cargo, data de criação e data de atualização, além de permitir a edição e a exclusão dos dados do usuário.
+        <p align="justify">
+            O código abaixo contém as funções que utilizam o back-end para realizar essas funções:
         </p>
+            <pre>
+            <code>
+    const fetchUserData = async () => {
+        try {
+        const token = localStorage.getItem("token");
+        const id = localStorage.getItem("id");
+        const res = await fetch(`http://localhost:5000/users/${id}`, {
+            headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+            },
+        });
+        const data = await res.json();
+        setUser(data);
+        setFormData({ full_name: data.full_name, email: data.email, role: data.role });
+        } catch (err) {
+        console.error("Erro ao buscar dados do usuário:", err);
+        } finally {
+        setLoading(false);
+        }
+    };
+    const updateUserData = async () => {
+        try {
+        const token = localStorage.getItem("token");
+        const id = localStorage.getItem("id");
+        const res = await fetch(`http://localhost:5000/users/${id}`, {
+            method: "PUT",
+            headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(formData),
+        });
+        if (res.ok) {
+            const updated = await res.json();
+            setUser(updated);
+            setEditMode(false);
+            showToast("Usuário atualizado com sucesso!", "success");
+        } else {
+            const text = await res.text();
+            console.error("Erro ao atualizar usuário:", text);
+            showToast("Erro ao atualizar o usuário.", "error");
+        }
+        } catch (err) {
+        console.error("Erro de rede:", err);
+        showToast("Erro de rede ao atualizar usuário.", "error");
+        }
+    };
+    const deleteAccount = async () => {
+        try {
+        const token = localStorage.getItem("token");
+        const id = localStorage.getItem("id");
+        const res = await fetch(`http://localhost:5000/users/${id}`, {
+            method: "DELETE",
+            headers: {
+            Authorization: `Bearer ${token}`,
+            },
+        });
+        if (res.ok) {
+            localStorage.clear();
+            showToast("Conta excluída com sucesso.", "success");
+            setTimeout(() => {
+            window.location.href = "/login";
+            }, 2000);
+        } else {
+            console.error("Erro ao excluir conta:", await res.text());
+            showToast("Erro ao excluir a conta.", "error");
+        }
+        } catch (err) {
+        console.error("Erro de rede:", err);
+        showToast("Erro de rede ao excluir conta.", "error");
+        }
+    };
+            </code>
+            </pre>
     </details>
     <details>
         <summary>Desenvolvi a tela de dashboard que lista as áreas de reflorestamento que correm algum risco</summary>
@@ -2869,7 +3426,210 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
             Com base nos dados de amostra do AMBDATA para cada área cadastrada conseguidos no endpoint que criei, desenvolvi a tela de dashboard que lista as áreas de reflorestamento que correm algum risco, utilizando lógica simples de comparação.
             A tela exibe somente as áreas que correm algum risco e, ao clicar em uma área, uma seção lateral é aberta com os seguintes dados da área: a espécie recomendada, técnicas de manejo recomendadas, dados geoambientais aproximados, a explicação de por que a área foi enquadrada no risco e recomendações de ações a serem tomadas.
         </p>
+        <p align="justify">
+            Abaixo, temos um exemplo de como foi implementada a lógica simples de comparação para verificar se a área corre algum risco:
+        </p>
+            <pre>
+            <code>
+    const verifyRisk = (area: GeospatialData): RiskFactors => {
+        const temperatura = area.raster.temperatura?.valor || 0;
+        const precipitacao = area.raster.precipitacao?.valor || 0;
+        const declividade = area.raster.declividade?.valor || 0;
+        const cobertura = area.raster.cobertura_arborea?.valor || 0;
+        const drenagem = area.raster.densidade_drenagem?.valor || 0;
+        const distDrenagem = area.raster.distancia_vertical_drenagem?.valor || 0;
+        const soloOriginal = area.raster.solo?.valor || "";
+        const altitude = area.raster.altitude?.valor || 0;
+        const tipoSolo = classifySoilType(soloOriginal);
+        const risks: RiskFactors = {
+            ambientais: {
+                seca: {
+                    valor:
+                        temperatura > 30 &&
+                        precipitacao < 1000 &&
+                        (tipoSolo.includes("alta_infiltracao") || tipoSolo.includes("baixa_fertilidade")),
+                    explicacao: "Temperatura acima de 30°C, precipitação abaixo de 1000mm e solo com alta infiltração ou baixa fertilidade.",
+                    recomendacao: "Melhorar a retenção de água no solo com cobertura vegetal e uso de matéria orgânica. Implementar irrigação controlada.",
+                },
+                queimadas: {
+                    valor: temperatura > 35 && cobertura < 20 && precipitacao < 800,
+                    explicacao: "Temperatura acima de 35°C, cobertura arbórea abaixo de 20% e precipitação abaixo de 800mm.",
+                    recomendacao: "Reforçar aceiros e realizar campanhas de prevenção contra incêndios."
+                },
+                inundacao: {
+                    valor: tipoSolo.includes("baixo_drenagem") && declividade < 10 && precipitacao > 1200,
+                    explicacao: "Solo de baixa drenagem, declividade abaixo de 10° e precipitação acima de 1200mm.",
+                    recomendacao: "🛣️💧 Construir canais de drenagem e evitar construções em áreas de risco."
+                },
+                desertificacao: {
+                    valor: temperatura > 32 && precipitacao < 600 && cobertura < 10,
+                    explicacao: "Temperatura acima de 32°C, precipitação abaixo de 600mm e cobertura arbórea abaixo de 10%.",
+                    recomendacao: "🌱🌳 Plantar espécies nativas resistentes e proteger o solo contra erosão."
+                },
+                alagamento_urbano: {
+                    valor: declividade < 5 && distDrenagem < 50,
+                    explicacao: "Declividade abaixo de 5° e distância da drenagem menor que 50m.",
+                    recomendacao: "🛣️💧 Melhorar a infraestrutura de drenagem urbana e pavimentação permeável."
+                }
+            },
+            geologicos: {
+                erosao: {
+                    valor: declividade > 10 && cobertura < 50,
+                    explicacao: "Declividade acima de 10° e cobertura arbórea abaixo de 50%.",
+                    recomendacao: "🛡️🌳 Instalar barreiras vegetais e promover cobertura vegetal permanente."
+                },
+                deslizamento: {
+                    valor: declividade > 25 && cobertura < 30 && tipoSolo.includes("baixo_drenagem"),
+                    explicacao: "Declividade acima de 25°, cobertura arbórea abaixo de 30% e solo de baixa drenagem.",
+                    recomendacao: "🚫🏗️ Evitar cortes de encostas e usar técnicas de contenção com vegetação."
+                },
+                contaminacao_aquifero: {
+                    valor: altitude < 400 && distDrenagem < 50 && tipoSolo.includes("alta_infiltracao"),
+                    explicacao: "Altitude abaixo de 400m, distância da drenagem menor que 50m e solo de alta infiltração.",
+                    recomendacao: "🚫🧴 Restringir uso de agrotóxicos e monitorar qualidade da água subterrânea."
+                },
+                assoreamento: {
+                    valor: cobertura < 30 && declividade > 10 && distDrenagem < 50,
+                    explicacao: "Cobertura arbórea baixa, declividade significativa e proximidade com corpos d'água.",
+                    recomendacao: "🛡️🌿 Implantar barreiras vegetais e proteger as margens dos corpos d'água."
+                },
+                compactacao: {
+                    valor: tipoSolo.includes("argiloso") && declividade < 5,
+                    explicacao: "Solo argiloso com baixa declividade, propenso à compactação.",
+                    recomendacao: "🏗️🛣️ Evitar tráfego pesado e realizar práticas de descompactação."
+                }
+            },
+            biologicos: {
+                pragas: {
+                    valor: cobertura < 40 && distDrenagem < 50,
+                    explicacao: "Cobertura arbórea abaixo de 40% e distância da drenagem menor que 50m.",
+                    recomendacao: "🐞🧪 Adotar manejo integrado de pragas com monitoramento e controle biológico."
+                },
+                baixa_resiliencia: {
+                    valor: cobertura < 10 && drenagem > 25,
+                    explicacao: "Cobertura arbórea abaixo de 10% e drenagem acima de 25km/km².",
+                    recomendacao: "🌱🌳 Diversificar a vegetação e restaurar áreas degradadas."
+                }
+            },
+            antrópicos: {
+                poluicao: {
+                    valor: distDrenagem < 100 && drenagem > 10,
+                    explicacao: "Distância da drenagem menor que 100m e drenagem acima de 10km/km².",
+                    recomendacao: "🔍📢 Fiscalizar fontes de poluentes e promover educação ambiental."
+                },
+                isolamento_hidrico: {
+                    valor: altitude > 800 && distDrenagem > 150,
+                    explicacao: "Altitude acima de 800m e distância da drenagem maior que 150m.",
+                    recomendacao: "🌊🌿 Interligar corpos hídricos com corredores ecológicos e reflorestamento."
+                }
+            }
+        };
+        return risks;
+    };
+            </code>
+            </pre>
     </details>
+    <details>
+        <summary>Dentro da tela de dashboard, desenvolvi a funcionalidade de extração de relatórios em PDF, CSV e JSON</summary>
+        <p align="justify">
+            Dentro da tela de dashboard, desenvolvi a funcionalidade de extração de relatórios em PDF, CSV e JSON para todas as áreas de reflorestamento que correm algum risco ou para uma área específica selecionada.
+        </p>
+        <p align="justify">
+            Para a geração de PDF, utilizei jspdf e jspdf-autotable, que são bibliotecas JavaScript para geração de PDFs no navegador.
+            Enquanto para a geração de CSV e JSON, não utilizei nenhuma biblioteca, apenas gerei os arquivos diretamente no navegador.
+        </p>
+        <p align="justify">
+            Abaixo, temos um exemplo de como foi implementada a geração de PDF:
+        </p>
+            <pre>
+            <code>
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+const removeEmojis = (text: string): string => {
+    return text.replace(
+        /([\u2700-\u27BF]|[\uE000-\uF8FF]|[\uD83C-\uDBFF\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83D[\uDC00-\uDE4F]|\uFE0F)/g,
+        ""
+    );
+};
+const formatDataForPDF = (data: any, parentKey = ""): any[] => {
+    const rows: any[] = [];
+    for (const key in data) {
+        if (Object.prototype.hasOwnProperty.call(data, key)) {
+            const newKey = parentKey ? `${parentKey} > ${key}` : key;
+            // Verifica se está dentro de "risks"
+            if (parentKey.includes("risks") && typeof data[key] === "object" && data[key] !== null) {
+                if (!data[key].hasOwnProperty("valor")){
+                    rows.push(...formatDataForPDF(data[key], newKey));
+                }
+                // Filtra apenas os objetos com "valor = true"
+                if (data[key].valor === true) {
+                    rows.push({
+                        key: `${newKey} > valor`,
+                        value: "Sim",
+                    })
+                    rows.push({
+                        key: `${newKey} > explicacao`,
+                        value: removeEmojis(data[key].explicacao) || "",
+                    });
+                    rows.push({
+                        key: `${newKey} > recomendacao`,
+                        value: removeEmojis(data[key].recomendacao) || "",
+                    });
+                }
+            } else if (typeof data[key] === "object" && data[key] !== null) {
+                // Continua a recursão para outros objetos
+                rows.push(...formatDataForPDF(data[key], newKey));
+            } else {
+                // Adiciona outros valores normalmente
+                const sanitizedValue =
+                    typeof data[key] === "string" ? removeEmojis(data[key]) : data[key];
+                rows.push({ key: newKey, value: sanitizedValue });
+            }
+        }
+    }
+    return rows;
+};
+export const exportToPDF = (data: any, filename: string) => {
+    const doc = new jsPDF();
+    doc.setFontSize(14);
+    // Verifica se é um array (relatorio geral) ou um objeto (relatorio individual)
+    if (Array.isArray(data)) {
+        doc.text(`Relatório Geral`, 90, 10);
+        data.forEach((item, index) => {
+            // Adiciona espaçamento entre os relatórios
+            if (index > 0) {
+                doc.addPage();
+            }
+            doc.text(`Relatório da Área ${item.area.name}`, 20, 20);
+            const formattedData = formatDataForPDF(item);
+            const tableData = formattedData.map((item) => [item.key, item.value]);
+            autoTable(doc, {
+                head: [["Campo", "Valor"]],
+                body: tableData,
+                startY: 30 + index * 10,
+                styles: { fontSize: 10, cellPadding: 3 },
+                headStyles: { fillColor: [22, 160, 133] },
+            });
+        });
+    } else {
+        doc.text(`Relatório da Área ${data.area.name}`, 10, 10);
+        const formattedData = formatDataForPDF(data);
+        const tableData = formattedData.map((item) => [item.key, item.value]);
+        // Adiciona uma linha extra para o espaçamento
+        tableData.unshift(["", ""]);
+        autoTable(doc, {
+            head: [["Campo", "Valor"]],
+            body: tableData,
+            startY: 20,
+            styles: { fontSize: 10, cellPadding: 3 },
+            headStyles: { fillColor: [22, 160, 133] },
+        });
+    }
+    doc.save(`${filename}.pdf`);
+};
+            </code>
+            </pre>
+    </details>        
 </ul>
 
 <h3>Hard Skills</h3>
@@ -2888,7 +3648,7 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
                 <summary>Explicação: </summary>
                 <p>
                     ETL é um processo de extração, transformação e carregamento de dados, utilizado para integrar dados de diferentes fontes em um único repositório.
-                    No projeto, foi utilizado para receber os dados da base de dados externa do AMBDATA, que estavam em formato .asc e .shp, e transformá-los usando Python com GeoPandas, para que pudessem ser colocados no PostgreSQL com PostGIS.
+                    No projeto, foi utilizado para receber os dados da base de dados externa do AMBDATA, que estavam em formato .asc e .shp, e transformá-los usando Python com GeoPandas e rasterio, para que pudessem ser colocados no PostgreSQL com PostGIS.
                     Pessoalmente, fui responsável por desenvolver o repositório de ETL, garantindo que os dados fossem transformados corretamente e pudessem ser utilizados na aplicação.
                     No meu dia a dia, eu faço ETL com frequência para integrar dados de diferentes fontes e diferentes clientes, mas foi a primeira vez que desenvolvi um ETL voltado para dados geoespaciais.
                 </p>
@@ -3019,12 +3779,25 @@ Atuei como desenvolvedora full-stack. A seguir, estão listadas as minhas contri
                 <summary>Explicação: </summary>
                 <p>
                     GeoPandas é uma biblioteca Python que usa o Pandas para permitir o trabalho com dados geoespaciais, facilitando a manipulação e análise de dados geográficos.
-                    No projeto, foi utilizado para transformar os dados da base de dados externa do AMBDATA, que estavam em formato .asc e .shp, para que pudessem ser colocados no PostgreSQL com PostGIS.
+                    No projeto, foi utilizado para transformar os dados da base de dados externa com os limites do território brasileiro do IBGE, que estavam em formato .shp, para que pudessem ser utilizados no PostgreSQL com PostGIS.
                     Utilizei para desenvolver o repositório de ETL, garantindo que os dados fossem transformados corretamente e pudessem ser utilizados na aplicação. Foi uma experiência muito especial, pois nunca tinha trabalhado com dados geoespaciais antes.
                 </p>
             </details>
         </td>
     </tr>
+    <tr>
+        <td>rasterio</td>
+        <td>★★★★★★★★☆☆</td>
+        <td>
+            <details>
+                <summary>Explicação: </summary>
+                <p>
+                    rasterio é uma biblioteca Python para leitura e escrita de dados raster, que permite trabalhar com imagens geoespaciais e realizar operações de análise espacial.
+                    No projeto, foi utilizado para ler os dados da base de dados externa do AMBDATA, que estavam em formato .asc, e transformá-los para que pudessem ser utilizados no PostgreSQL com PostGIS.
+                    Utilizei ao desenvolver o repositório de ETL, garantindo que os dados fossem lidos corretamente e pudessem ser transformados para o formato adequado e armazenados no PostgreSQL com PostGIS.
+                </p>
+            </details>
+        </td>
     <tr>
         <td>PostGIS</td>
         <td>★★★★★★★★★☆</td>
