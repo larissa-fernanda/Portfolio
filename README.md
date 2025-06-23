@@ -1,14 +1,15 @@
 <h1 align="center">Portfólio das APIs - Larissa Reis</h1>
-<h2>Introdução</h2>
+<h1>Introdução</h1>
 <p>Este portfólio foi criado com o intuito de apresentar os projetos desenvolvidos ao longo do curso de Banco de Dados na Faculdade de Tecnologia de São José dos Campos - Prof. Jessen Vidal.</p>
-<h2>Sumário</h2>
+<h1>Sumário</h1>
 <p align="center">
     <a href="#sobre_mim">Sobre mim</a></li> • 
     <a href="#contato">Contato</a> • 
+    <a href="#conhecimentos">Principais conhecimentos</a></li> •
     <a href="#projetos">Projetos</a>
 </p>
 
-<h2 id="sobre_mim">Sobre mim</h2>
+<h1 id="sobre_mim">Sobre mim</h1>
 
 <p align="center">
     <img src="https://github.com/user-attachments/assets/06d48fd0-ccf9-4863-9a9d-b1d5a1c8c106" alt="Imagem do WhatsApp" width="20%">
@@ -38,6 +39,66 @@
     <a href="mailto:larireis.contato@gmail.com">Email</a> • 
     <a href="https://github.com/larissa-fernanda">GitHub</a>
 </p>
+
+<h1 id="conhecimentos">Principais conhecimentos</h1>
+<ul>
+    <details>
+        <summary>Linguagens de Programação e Frameworks de Dados</summary>
+        <ul>
+            <li><strong>Python:</strong> Linguagem principal para desenvolvimento de scripts, automações, ETLs e análises de dados.</li>
+            <li><strong>SQL:</strong> Linguagem padrão para consultas, manipulação e análise de dados em bancos relacionais.</li>
+            <li><strong>Apache Spark:</strong> Framework para processamento distribuído de grandes volumes de dados.</li>
+            <li><strong>Polars:</strong> Biblioteca moderna e de alta performance para manipulação de DataFrames em Python.</li>
+            <li><strong>Pandas:</strong> Biblioteca tradicional e muito usada para análise e manipulação de dados tabulares em Python.</li>
+            <li><strong>JavaScript:</strong> Linguagem usada para desenvolvimento web e pequenas automações no front-end.</li>
+            <li><strong>HTML e CSS (intermediário):</strong> Conhecimentos básicos para criação de páginas web e estilização de conteúdo.</li>
+            <li><strong>Java (intermediário):</strong> Linguagem utilizada principalmente para aplicações back-end, APIs e projetos de engenharia de software.</li>
+            <li><strong>TypeScript (intermediário):</strong> Superset do JavaScript que adiciona tipagem estática, muito usado em aplicações web modernas.</li>
+            <li><strong>React (intermediário):</strong> Biblioteca JavaScript para criação de interfaces de usuário reativas e dinâmicas.</li>
+        </ul>
+    </details>
+    <details>
+        <summary>Ferramentas de Engenharia de Dados e Orquestração</summary>
+        <ul>
+            <li><strong>Apache Airflow:</strong> Plataforma para orquestração de pipelines de dados, agendando e monitorando tarefas de ETL/ELT.</li>
+            <li><strong>Databricks:</strong> Ambiente de engenharia de dados que combina notebooks, Spark e gestão colaborativa de dados.</li>
+            <li><strong>DBT:</strong> Ferramenta de transformação de dados orientada a SQL, com foco em modelagem, testes e versionamento de dados.</li>
+            <li><strong>AWS (S3, Glue, Athena, Lambda, DMS, RDS):</strong> Conjunto de serviços de nuvem para armazenamento, transformação, consulta, integração e processamento de dados.</li>
+        </ul>
+    </details>
+    <details>
+        <summary>Bancos de Dados e Armazenamento</summary>
+        <ul>
+            <li><strong>PostgreSQL:</strong> Banco de dados relacional open-source, robusto e muito utilizado em projetos de engenharia de dados.</li>
+            <li><strong>Supabase:</strong> Plataforma Backend-as-a-Service baseada em PostgreSQL, com API pronta e recursos de autenticação e storage.</li>
+            <li><strong>Data Warehousing:</strong> Princípios e práticas para construção de repositórios analíticos de dados, como modelagem dimensional.</li>
+            <li><strong>Data Lake:</strong> Abordagem para armazenamento de grandes volumes de dados em formatos brutos e variados, com escalabilidade.</li>
+            <li><strong>MongoDB:</strong> Banco de dados NoSQL orientado a documentos, utilizado para armazenar dados não estruturados e semi-estruturados.</li>
+        </ul>
+    </details>
+    <details>
+        <summary>Visualização de Dados e Analytics</summary>
+        <ul>
+            <li><strong>Power BI:</strong> Plataforma de Business Intelligence da Microsoft, focada na criação de dashboards e relatórios interativos.</li>
+            <li><strong>Metabase:</strong> Ferramenta open-source para visualização de dados, geração de relatórios e dashboards de forma rápida e fácil.</li>
+        </ul>
+    </details>
+    <details>
+        <summary>Ferramentas de Desenvolvimento e Versionamento</summary>
+        <ul>
+            <li><strong>Linux (Ubuntu):</strong> Sistema operacional de código aberto, amplamente utilizado para desenvolvimento e deploy de aplicações.</li>
+            <li><strong>Git e GitHub:</strong> Controle de versão de código e colaboração em projetos através de repositórios remotos.</li>
+        </ul>
+    </details>
+    <details>
+        <summary>Metodologias de Trabalho</summary>
+        <ul>
+            <li><strong>Scrum e Kanban:</strong> Metodologias ágeis utilizadas para gestão de projetos, com foco em entregas incrementais e gestão visual de tarefas.</li>
+            <li><strong>Metodologias Ágeis:</strong> Conjunto de princípios que privilegiam entregas rápidas, adaptação constante e trabalho colaborativo.</li>
+            <li><strong>Data Governance:</strong> Práticas para garantir a qualidade, segurança, privacidade e integridade dos dados ao longo de todo o ciclo de vida.</li>
+        </ul>
+    </details>
+</ul>
 
 <h1 id="projetos">Projetos</h1>
 <ul>
