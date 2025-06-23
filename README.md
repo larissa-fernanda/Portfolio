@@ -2420,7 +2420,7 @@ public class OpnTrackController {
     Em diversos momentos, pensei em desistir do projeto, mas graças ao apoio dos meus colegas de equipe, consegui superar as dificuldades e concluir o projeto.
 </p>
 
-<h2 id="api5">Projeto 5: Sistema de análise de dados de recrutamento e seleção de candidatos</h2>
+<h2 id="api5">Projeto 5: DataViz - Sistema de análise de dados de recrutamento e seleção de candidatos</h2>
 
 <h3>Descrição</h3>
 
@@ -2789,7 +2789,7 @@ public class OpnTrackController {
     Do ponto de vista técnico, foi o semestre em que mais aprendi sobre a função de Scrum Master, pois consegui focar completamente na função, sem me preocupar com o desenvolvimento do back-end ou front-end. 
     O comprometimento e harmonia da equipe também foram fundamentais para o meu aprendizado, pois pude me dedicar mais às práticas ágeis e ao gerenciamento do projeto. 
     Sobre o DevOps, em especial sobre o versionamento do banco de dados, vi como ele pode facilitar a vida dos desenvolvedores e confesso que foi uma pena não ter conseguido implementar antes, pois o projeto poderia ter sido ainda mais produtivo.
-    Este projeto me proporcionou meu primeiro contato com a modelagem de dados em formato estrela, o que foi extremamente útil para o meu aprendizado, pois é ums técnica que eu venho tendo que aplicar em diversos projetos desde então.
+    Este projeto me proporcionou meu primeiro contato com a modelagem de dados em formato estrela, o que foi extremamente útil para o meu aprendizado, pois é uma técnica que eu venho tendo que aplicar em diversos projetos desde então.
 </p>
 <p align="justify">
     Diria que minha maior contribuição foi a de conseguir manter a equipe unida e motivada, mesmo diante dos desafios técnicos que enfrentamos.
@@ -3937,5 +3937,5 @@ export const exportToPDF = (data: any, filename: string) => {
     Do ponto de vista técnico, aprendi muito sobre os conceitos da Lei Geral de Proteção de Dados (LGPD) e como aplicá-los na prática, que os tão temidos bancos de dados noSQL são mais simples do que parecem e que dificilmente as máquinas vão dominar o mundo, já que o trabalho de Machine Learning depende muito de humanos para serem treinados e calibrados corretamente. Além disso, descobri também que existe um vasto mundo de tipos de arquivos que eu ainda preciso explorar, como os arquivos .asc e .shp que eu nunca tinha visto antes, e de extensões de bancos de dados que valem a pena conhecer, como o PostGIS.
 </p>
 <p align="justify">
-    Por fim, aprendi também que, às vezes, é das menores equipes que surgem os melhores projetos, já que isso exige uma colaboração e comunicação ainda maior entre os membros, além de uma maior eficácia por parte de todos na hora de executar as tarefas. Mas, apesar disso, não posso deixar de registrar a importância de ter um Product Owner que saiba se comunicar bem com a equipe e que esteja disposto a ouvir as sugestões e opiniões dos desenvolvedores, pois isso faz toda a diferença no andamento do projeto e na qualidade do produto final, além de uma equipe que saiba trabalhar em conjunto e de forma empática, ajudando uns aos outros.
+    Por fim, aprendi também que, às vezes, é das menores equipes que surgem os melhores projetos, já que isso exige uma colaboração e comunicação ainda maior entre os membros, além de uma maior eficácia por parte de todos na hora de executar as tarefas. E, junto a isso, não posso deixar de registrar a importância de ter um Product Owner que saiba se comunicar bem com a equipe e que esteja disposto a ouvir as sugestões e opiniões dos desenvolvedores, pois faz toda a diferença no andamento do projeto e na qualidade do produto final, além de uma equipe que saiba trabalhar em conjunto e de forma empática, ajudando uns aos outros.
 </p>
