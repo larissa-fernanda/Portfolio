@@ -7,6 +7,7 @@
     <a href="#contato">Contato</a> • 
     <a href="#conhecimentos">Principais conhecimentos</a></li> •
     <a href="#projetos">Projetos</a>
+    <a href="#conclusão">Conclusão</a>
 </p>
 
 <h1 id="sobre_mim">Sobre mim</h1>
@@ -18,7 +19,8 @@
 <p align="justify">
     Concluí o Ensino Médio em 2018 e me vi diante do gigante desafio de escolher uma profissão.
     Sempre fui apaixonada por animais e, por muito tempo, pensei em seguir a carreira de veterinária, mas era economicamente inviável para mim.
-    Então, após considerar várias opções, decidi estudar Python e lógica de programação no final da pandemia, o que me levou a descobrir o curso de Banco de Dados na FATEC como uma boa opção.
+    Então, após considerar várias opções, decidi estudar Python e lógica de programação no final da pandemia, buscando atingir a independência financeira.
+    Isto me levou a descobrir o mundo da tecnologia e, mais especificamente, a área de Engenharia de Dados, juntamente com o curso de Banco de Dados na FATEC.
     Coincidentemente, as inscrições para o vestibular para o segundo semestre de 2022 da Faculdade estavam abertas. 
     Fiz a prova, passei e assim comecei minha jornada oficial na área de tecnologia.
 </p>
@@ -3938,4 +3940,19 @@ export const exportToPDF = (data: any, filename: string) => {
 </p>
 <p align="justify">
     Por fim, aprendi também que, às vezes, é das menores equipes que surgem os melhores projetos, já que isso exige uma colaboração e comunicação ainda maior entre os membros, além de uma maior eficácia por parte de todos na hora de executar as tarefas. E, junto a isso, não posso deixar de registrar a importância de ter um Product Owner que saiba se comunicar bem com a equipe e que esteja disposto a ouvir as sugestões e opiniões dos desenvolvedores, pois faz toda a diferença no andamento do projeto e na qualidade do produto final, além de uma equipe que saiba trabalhar em conjunto e de forma empática, ajudando uns aos outros.
+</p>
+
+<h1 id="conclusao">Conclusão</h1>
+<p align="justify">
+    Diria que a Larissa que entrou na Fatec em 2022 e a Larissa que está saindo em 2025 são pessoas completamente diferentes, tanto do ponto de vista técnico quanto do ponto de vista pessoal. 
+    Apesar de ter entrado com conhecimento prévio em programação, eu não tinha quase nenhum conhecimento na área de tecnologia, e hoje me sinto muito mais confiante e preparada para enfrentar os desafios do mercado de trabalho.
+    Acredito que a Fatec me proporcionou uma base sólida de conhecimentos e habilidades, além de ter me ensinado a importância de estar sempre aprendendo e me atualizando em uma área tão dinâmica e em constante evolução como a tecnologia.
+</p>
+<p align="justify">
+    Do ponto de vista pessoal, sinto que amadureci muito durante esse período, aprendendo a lidar com desafios. 
+    Aprendi a trabalhar em equipe de uma forma bem mais colaborativa e empática, além de ter desenvolvido habilidades de comunicação e liderança que considero essenciais para o meu futuro profissional.
+    Sou muito grata por todos os amigos que levarei comigo para a vida e pelos professores com quem tive a oportunidade de aprender e crescer, tanto profissionalmente quanto pessoalmente.
+</p>
+<p align="justify">
+    Por fim, gostaria de ressaltar que eu consegui atingir meu objetivo: já estou em minha terceira experiência profissional na área de tecnologia, o que me deixa muito feliz e realizada, pois sei que estou no caminho certo para alcançar meus objetivos pessoais.
 </p>
