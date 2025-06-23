@@ -6,7 +6,7 @@
     <a href="#sobre_mim">Sobre mim</a></li> • 
     <a href="#contato">Contato</a> • 
     <a href="#conhecimentos">Principais conhecimentos</a></li> •
-    <a href="#projetos">Projetos</a>
+    <a href="#projetos">Projetos</a> •
     <a href="#conclusão">Conclusão</a>
 </p>
 
